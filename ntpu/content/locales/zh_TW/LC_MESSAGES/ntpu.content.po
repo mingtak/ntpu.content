@@ -1,0 +1,1137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-04-12 03:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./article.py:102
+msgid "Abstract"
+msgstr "摘要"
+
+#: ./profile.py:107
+msgid "Address"
+msgstr "地址"
+
+#: ./config.py:12
+msgid "Afghanistan"
+msgstr "阿富汗"
+
+#: ./config.py:12
+msgid "Albania"
+msgstr "阿爾巴尼亞"
+
+#: ./config.py:12
+msgid "Algeria"
+msgstr "阿爾及利亞"
+
+#: ./article.py:154
+msgid "All author consent"
+msgstr "所有作者同意"
+
+#: ./profile.py:79
+msgid "Alternative Email"
+msgstr "備用email"
+
+#: ./config.py:12
+msgid "Andorra"
+msgstr ""
+
+#: ./config.py:13
+msgid "Angola"
+msgstr ""
+
+#: ./config.py:13
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: ./config.py:13
+msgid "Argentina"
+msgstr ""
+
+#: ./config.py:13
+msgid "Armenia"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.article.xml
+msgid "Article"
+msgstr ""
+
+#: ./article.py:76
+msgid "Article title"
+msgstr ""
+
+#: ./article.py:68
+msgid "Article type"
+msgstr ""
+
+#: ./config.py:14
+msgid "Aruba"
+msgstr ""
+
+#: ./config.py:14
+msgid "Australia"
+msgstr ""
+
+#: ./config.py:14
+msgid "Austria"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.author.xml
+msgid "Author"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.author.xml
+msgid "Author information"
+msgstr ""
+
+#: ./article.py:126
+msgid "Authors"
+msgstr ""
+
+#: ./config.py:14
+msgid "Azerbaijan"
+msgstr ""
+
+#: ./config.py:4
+#: ./profile.py:141
+msgid "Bachelor's degree"
+msgstr ""
+
+#: ./config.py:14
+msgid "Bahamas"
+msgstr ""
+
+#: ./config.py:15
+msgid "Bahrain"
+msgstr ""
+
+#: ./config.py:15
+msgid "Bangladesh"
+msgstr ""
+
+#: ./config.py:15
+msgid "Barbados"
+msgstr ""
+
+#: ./profile.py:41
+msgid "Basic"
+msgstr ""
+
+#: ./profile.py:42
+msgid "Basic persional info"
+msgstr ""
+
+#: ./profile.py:44
+msgid "Basic persional infomation (fields in RED DOT are Required)"
+msgstr ""
+
+#: ./config.py:15
+msgid "Belarus"
+msgstr ""
+
+#: ./config.py:15
+msgid "Belgium"
+msgstr ""
+
+#: ./config.py:16
+msgid "Belize"
+msgstr ""
+
+#: ./config.py:16
+msgid "Benin"
+msgstr ""
+
+#: ./config.py:16
+msgid "Bhutan"
+msgstr ""
+
+#: ./config.py:16
+msgid "Bolivia"
+msgstr ""
+
+#: ./config.py:16
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: ./config.py:17
+msgid "Botswana"
+msgstr ""
+
+#: ./config.py:17
+msgid "Brazil"
+msgstr ""
+
+#: ./config.py:17
+msgid "Brunei"
+msgstr ""
+
+#: ./config.py:17
+msgid "Bulgaria"
+msgstr ""
+
+#: ./config.py:17
+msgid "Burkina Faso"
+msgstr ""
+
+#: ./config.py:18
+msgid "Burma"
+msgstr ""
+
+#: ./config.py:18
+msgid "Burundi"
+msgstr ""
+
+#: ./config.py:18
+msgid "Cambodia"
+msgstr ""
+
+#: ./config.py:18
+msgid "Cameroon"
+msgstr ""
+
+#: ./config.py:18
+msgid "Canada"
+msgstr ""
+
+#: ./config.py:19
+msgid "Cape Verde"
+msgstr ""
+
+#: ./config.py:19
+msgid "Central African Republic"
+msgstr ""
+
+#: ./config.py:19
+msgid "Chad"
+msgstr ""
+
+#: ./config.py:19
+msgid "Chile"
+msgstr ""
+
+#: ./config.py:20
+msgid "China"
+msgstr ""
+
+#: ./config.py:20
+msgid "Colombia"
+msgstr ""
+
+#: ./config.py:20
+msgid "Comoros"
+msgstr ""
+
+#: ./config.py:20
+msgid "Congo, Democratic Republic of the"
+msgstr ""
+
+#: ./config.py:21
+msgid "Congo, Republic of the"
+msgstr ""
+
+#: ./profile.py:66
+msgid "Contact"
+msgstr ""
+
+#: ./profile.py:67
+msgid "Contact Information"
+msgstr ""
+
+#: ./profile.py:69
+msgid "Contact Information (fields in RED DOT are Required)"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.article.xml
+msgid "Contribute article"
+msgstr ""
+
+#: ./article.py:144
+msgid "Corresponding authors"
+msgstr ""
+
+#: ./config.py:21
+msgid "Costa Rica"
+msgstr ""
+
+#: ./config.py:21
+msgid "Cote d'Ivoire"
+msgstr ""
+
+#: ./profile.py:95
+msgid "Country"
+msgstr ""
+
+#: ./article.py:114
+msgid "Cover letter"
+msgstr ""
+
+#: ./config.py:21
+msgid "Croatia"
+msgstr ""
+
+#: ./config.py:22
+msgid "Cuba"
+msgstr ""
+
+#: ./config.py:22
+msgid "Curacao"
+msgstr ""
+
+#: ./config.py:22
+msgid "Cyprus"
+msgstr ""
+
+#: ./config.py:22
+msgid "Czech Republic"
+msgstr ""
+
+#: ./profile.py:139
+msgid "Degree"
+msgstr ""
+
+#: ./config.py:22
+msgid "Denmark"
+msgstr ""
+
+#: ./config.py:23
+msgid "Djibouti"
+msgstr ""
+
+#: ./config.py:4
+msgid "Doctor"
+msgstr ""
+
+#: ./config.py:23
+msgid "Dominica"
+msgstr ""
+
+#: ./config.py:23
+msgid "Dominican Republic"
+msgstr ""
+
+#: ./config.py:23
+msgid "East Timor"
+msgstr ""
+
+#: ./config.py:24
+msgid "Ecuador"
+msgstr ""
+
+#: ./profile.py:134
+msgid "Education"
+msgstr ""
+
+#: ./profile.py:112
+msgid "Educational & Experience"
+msgstr ""
+
+#: ./profile.py:115
+msgid "Educational & Experience (fields in RED DOT are Required)"
+msgstr ""
+
+#: ./config.py:24
+msgid "Egypt"
+msgstr ""
+
+#: ./config.py:24
+msgid "El Salvador"
+msgstr ""
+
+#: ./profile.py:73
+msgid "Email"
+msgstr ""
+
+#: ./article.py:108
+msgid "English abstract"
+msgstr ""
+
+#: ./article.py:95
+msgid "English keywords"
+msgstr ""
+
+#: ./article.py:82
+msgid "English title"
+msgstr ""
+
+#: ./config.py:24
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: ./config.py:25
+msgid "Eritrea"
+msgstr ""
+
+#: ./config.py:25
+msgid "Estonia"
+msgstr ""
+
+#: ./config.py:25
+msgid "Ethiopia"
+msgstr ""
+
+#: ./article.py:166
+msgid "Exclusive or non-exclusive license"
+msgstr ""
+
+#: ./profile.py:129
+msgid "Experience"
+msgstr ""
+
+#: ./profile.py:146
+msgid "Expertise"
+msgstr ""
+
+#: ./profile.py:90
+msgid "Fax number"
+msgstr ""
+
+#: ./config.py:6
+msgid "Female"
+msgstr ""
+
+#: ./config.py:25
+msgid "Fiji"
+msgstr ""
+
+#: ./config.py:25
+msgid "Finland"
+msgstr ""
+
+#: ./config.py:26
+msgid "France"
+msgstr ""
+
+#: ./profile.py:49
+msgid "Full name, include first name and last name"
+msgstr ""
+
+#: ./config.py:26
+msgid "Gabon"
+msgstr ""
+
+#: ./config.py:26
+msgid "Gambia, The"
+msgstr ""
+
+#: ./profile.py:54
+msgid "Gender"
+msgstr ""
+
+#: ./config.py:26
+msgid "Georgia"
+msgstr ""
+
+#: ./config.py:26
+msgid "Germany"
+msgstr ""
+
+#: ./config.py:27
+msgid "Ghana"
+msgstr ""
+
+#: ./config.py:27
+msgid "Greece"
+msgstr ""
+
+#: ./config.py:27
+msgid "Grenada"
+msgstr ""
+
+#: ./config.py:27
+msgid "Guatemala"
+msgstr ""
+
+#: ./config.py:27
+msgid "Guinea"
+msgstr ""
+
+#: ./config.py:28
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: ./config.py:28
+msgid "Guyana"
+msgstr ""
+
+#: ./config.py:28
+msgid "Haiti"
+msgstr ""
+
+#: ./config.py:28
+msgid "Holy See"
+msgstr ""
+
+#: ./config.py:29
+msgid "Honduras"
+msgstr ""
+
+#: ./config.py:29
+msgid "Hong Kong"
+msgstr ""
+
+#: ./config.py:29
+msgid "Hungary"
+msgstr ""
+
+#: ./article.py:54
+msgid "I am submitting from"
+msgstr ""
+
+#: ./config.py:29
+msgid "Iceland"
+msgstr ""
+
+#: ./config.py:29
+msgid "India"
+msgstr ""
+
+#: ./config.py:30
+msgid "Indonesia"
+msgstr ""
+
+#: ./profile.py:119
+msgid "Institution"
+msgstr ""
+
+#: ./profile.py:31
+msgid "Invalid email address."
+msgstr ""
+
+#: ./config.py:30
+msgid "Iran"
+msgstr ""
+
+#: ./config.py:30
+msgid "Iraq"
+msgstr ""
+
+#: ./config.py:30
+msgid "Ireland"
+msgstr ""
+
+#: ./config.py:30
+msgid "Israel"
+msgstr ""
+
+#: ./config.py:30
+msgid "Italy"
+msgstr ""
+
+#: ./config.py:31
+msgid "Jamaica"
+msgstr ""
+
+#: ./config.py:31
+msgid "Japan"
+msgstr ""
+
+#: ./config.py:31
+msgid "Jordan"
+msgstr ""
+
+#: ./config.py:31
+msgid "Kazakhstan"
+msgstr ""
+
+#: ./config.py:31
+msgid "Kenya"
+msgstr ""
+
+#: ./article.py:88
+msgid "Keywords"
+msgstr ""
+
+#: ./config.py:32
+msgid "Kiribati"
+msgstr ""
+
+#: ./config.py:32
+msgid "Korea, North"
+msgstr ""
+
+#: ./config.py:32
+msgid "Korea, South"
+msgstr ""
+
+#: ./config.py:32
+msgid "Kosovo"
+msgstr ""
+
+#: ./config.py:32
+msgid "Kuwait"
+msgstr ""
+
+#: ./config.py:33
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: ./article.py:61
+msgid "Langeuage"
+msgstr ""
+
+#: ./config.py:33
+msgid "Laos"
+msgstr ""
+
+#: ./config.py:33
+msgid "Latvia"
+msgstr ""
+
+#: ./config.py:33
+msgid "Lebanon"
+msgstr ""
+
+#: ./config.py:33
+msgid "Lesotho"
+msgstr ""
+
+#: ./config.py:34
+msgid "Liberia"
+msgstr ""
+
+#: ./config.py:34
+msgid "Libya"
+msgstr ""
+
+#: ./config.py:34
+msgid "Liechtenstein"
+msgstr ""
+
+#: ./config.py:34
+msgid "Lithuania"
+msgstr ""
+
+#: ./config.py:34
+msgid "Luxembourg"
+msgstr ""
+
+#: ./config.py:35
+msgid "Macau"
+msgstr ""
+
+#: ./config.py:35
+msgid "Macedonia"
+msgstr ""
+
+#: ./config.py:35
+msgid "Madagascar"
+msgstr ""
+
+#: ./config.py:35
+msgid "Malawi"
+msgstr ""
+
+#: ./config.py:35
+msgid "Malaysia"
+msgstr ""
+
+#: ./config.py:36
+msgid "Maldives"
+msgstr ""
+
+#: ./config.py:6
+msgid "Male"
+msgstr ""
+
+#: ./config.py:36
+msgid "Mali"
+msgstr ""
+
+#: ./config.py:36
+msgid "Malta"
+msgstr ""
+
+#: ./article.py:46
+msgid "Manuscript Metadata"
+msgstr ""
+
+#: ./config.py:36
+msgid "Marshall Islands"
+msgstr ""
+
+#: ./config.py:4
+msgid "Master's degree"
+msgstr ""
+
+#: ./config.py:36
+msgid "Mauritania"
+msgstr ""
+
+#: ./config.py:37
+msgid "Mauritius"
+msgstr ""
+
+#: ./article.py:89
+msgid "Maximum 5 keywords, separated with commas."
+msgstr ""
+
+#: ./config.py:37
+msgid "Mexico"
+msgstr ""
+
+#: ./config.py:37
+msgid "Micronesia"
+msgstr ""
+
+#: ./config.py:37
+msgid "Moldova"
+msgstr ""
+
+#: ./config.py:37
+msgid "Monaco"
+msgstr ""
+
+#: ./config.py:38
+msgid "Mongolia"
+msgstr ""
+
+#: ./config.py:38
+msgid "Montenegro"
+msgstr ""
+
+#: ./config.py:38
+msgid "Morocco"
+msgstr ""
+
+#: ./config.py:38
+msgid "Mozambique"
+msgstr ""
+
+#: ./profile.py:48
+msgid "Name"
+msgstr ""
+
+#: ./config.py:39
+msgid "Namibia"
+msgstr ""
+
+#: ./config.py:39
+msgid "Nauru"
+msgstr ""
+
+#: ./config.py:39
+msgid "Nepal"
+msgstr ""
+
+#: ./config.py:39
+msgid "Netherlands"
+msgstr ""
+
+#: ./config.py:39
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: ./config.py:40
+msgid "New Zealand"
+msgstr ""
+
+#: ./config.py:40
+msgid "Nicaragua"
+msgstr ""
+
+#: ./config.py:40
+msgid "Niger"
+msgstr ""
+
+#: ./config.py:40
+msgid "Nigeria"
+msgstr ""
+
+#: ./config.py:40
+msgid "North Korea"
+msgstr ""
+
+#: ./config.py:41
+msgid "Norway"
+msgstr ""
+
+#: ./config.py:41
+msgid "Oman"
+msgstr ""
+
+#: ./article.py:70
+#: ./config.py:10
+msgid "Original paper"
+msgstr ""
+
+#: ./config.py:4
+msgid "Other"
+msgstr ""
+
+#: ./config.py:41
+msgid "Pakistan"
+msgstr ""
+
+#: ./config.py:41
+msgid "Palau"
+msgstr ""
+
+#: ./config.py:41
+msgid "Palestinian Territories"
+msgstr ""
+
+#: ./config.py:42
+msgid "Panama"
+msgstr ""
+
+#: ./config.py:42
+msgid "Papua New Guinea"
+msgstr ""
+
+#: ./config.py:42
+msgid "Paraguay"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.profile.xml
+msgid "Personal profile"
+msgstr ""
+
+#: ./config.py:42
+msgid "Peru"
+msgstr ""
+
+#: ./config.py:42
+msgid "Philippines"
+msgstr ""
+
+#: ./profile.py:85
+msgid "Phone number"
+msgstr ""
+
+#: ./article.py:135
+msgid "Please select authors"
+msgstr ""
+
+#: ./config.py:43
+msgid "Poland"
+msgstr ""
+
+#: ./config.py:43
+msgid "Portugal"
+msgstr ""
+
+#: ./profile.py:124
+msgid "Position"
+msgstr ""
+
+#: ./config.py:4
+msgid "Postdoc Research"
+msgstr ""
+
+#: ./profiles/default/types/ntpu.content.profile.xml
+msgid "Profile"
+msgstr ""
+
+#: ./config.py:43
+msgid "Qatar"
+msgstr ""
+
+#: ./profile.py:147
+msgid "Research area & Expertise"
+msgstr ""
+
+#: ./config.py:10
+msgid "Research note"
+msgstr ""
+
+#: ./config.py:10
+msgid "Review article"
+msgstr ""
+
+#: ./config.py:43
+msgid "Romania"
+msgstr ""
+
+#: ./config.py:43
+msgid "Russia"
+msgstr ""
+
+#: ./config.py:43
+msgid "Rwanda"
+msgstr ""
+
+#: ./config.py:44
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: ./config.py:44
+msgid "Saint Lucia"
+msgstr ""
+
+#: ./config.py:44
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: ./config.py:45
+msgid "Samoa"
+msgstr ""
+
+#: ./config.py:45
+msgid "San Marino"
+msgstr ""
+
+#: ./config.py:45
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: ./config.py:45
+msgid "Saudi Arabia"
+msgstr ""
+
+#: ./article.py:145
+msgid "Select at least one corresponding author."
+msgstr ""
+
+#: ./config.py:46
+msgid "Senegal"
+msgstr ""
+
+#: ./config.py:46
+msgid "Serbia"
+msgstr ""
+
+#: ./config.py:46
+msgid "Seychelles"
+msgstr ""
+
+#: ./config.py:46
+msgid "Sierra Leone"
+msgstr ""
+
+#: ./config.py:46
+msgid "Singapore"
+msgstr ""
+
+#: ./config.py:47
+msgid "Sint Maarten"
+msgstr ""
+
+#: ./config.py:47
+msgid "Slovakia"
+msgstr ""
+
+#: ./config.py:47
+msgid "Slovenia"
+msgstr ""
+
+#: ./config.py:47
+msgid "Solomon Islands"
+msgstr ""
+
+#: ./config.py:47
+msgid "Somalia"
+msgstr ""
+
+#: ./config.py:48
+msgid "South Africa"
+msgstr ""
+
+#: ./config.py:48
+msgid "South Korea"
+msgstr ""
+
+#: ./config.py:48
+msgid "South Sudan"
+msgstr ""
+
+#: ./config.py:48
+msgid "Spain"
+msgstr ""
+
+#: ./config.py:48
+msgid "Sri Lanka"
+msgstr ""
+
+#: ./article.py:49
+msgid "Submit a new manuscript(fields in RED DOT are Required)"
+msgstr ""
+
+#: ./article.py:53
+msgid "Submitting from"
+msgstr ""
+
+#: ./config.py:49
+msgid "Sudan"
+msgstr ""
+
+#: ./config.py:49
+msgid "Suriname"
+msgstr ""
+
+#: ./config.py:49
+msgid "Swaziland"
+msgstr ""
+
+#: ./config.py:49
+msgid "Sweden"
+msgstr ""
+
+#: ./config.py:49
+msgid "Switzerland"
+msgstr ""
+
+#: ./config.py:49
+msgid "Syria"
+msgstr ""
+
+#: ./article.py:56
+#: ./config.py:50
+#: ./profile.py:97
+msgid "Taiwan"
+msgstr ""
+
+#: ./config.py:50
+msgid "Tajikistan"
+msgstr ""
+
+#: ./config.py:50
+msgid "Tanzania"
+msgstr ""
+
+#: ./config.py:50
+msgid "Thailand"
+msgstr ""
+
+#: ./config.py:50
+msgid "Timor-Leste"
+msgstr ""
+
+#: ./profile.py:60
+msgid "Title"
+msgstr ""
+
+#: ./config.py:51
+msgid "Togo"
+msgstr ""
+
+#: ./config.py:51
+msgid "Tonga"
+msgstr ""
+
+#: ./config.py:51
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: ./config.py:51
+msgid "Tunisia"
+msgstr ""
+
+#: ./config.py:51
+msgid "Turkey"
+msgstr ""
+
+#: ./config.py:52
+msgid "Turkmenistan"
+msgstr ""
+
+#: ./config.py:52
+msgid "Tuvalu"
+msgstr ""
+
+#: ./config.py:52
+msgid "Uganda"
+msgstr ""
+
+#: ./config.py:52
+msgid "Ukraine"
+msgstr ""
+
+#: ./config.py:52
+msgid "United Arab Emirates"
+msgstr ""
+
+#: ./config.py:53
+msgid "United Kingdom"
+msgstr ""
+
+#: ./config.py:53
+msgid "Uruguay"
+msgstr ""
+
+#: ./config.py:53
+msgid "Uzbekistan"
+msgstr ""
+
+#: ./config.py:53
+msgid "Vanuatu"
+msgstr ""
+
+#: ./config.py:53
+msgid "Venezuela"
+msgstr ""
+
+#: ./config.py:54
+msgid "Vietnam"
+msgstr ""
+
+#: ./config.py:54
+msgid "Yemen"
+msgstr ""
+
+#: ./config.py:54
+msgid "Zambia"
+msgstr ""
+
+#: ./config.py:54
+msgid "Zimbabwe"
+msgstr ""
+
+#: ./profile.py:102
+msgid "Zip"
+msgstr ""
+
+#: ./config.py:8
+msgid "en-us"
+msgstr ""
+
+#: ./profile.py:61
+msgid "for eg. Dr, Prof, Mr, Ms..."
+msgstr ""
+
+#. Default: "I confirm this manuscript has not been accepted                           for publication elsewhere, is not being considered                           for publication elsewhere and does not duplicate material                           already published. I confirm all authors consent to                           publication of this manuscript."
+#: ./article.py:155
+msgid "help_allAuthorConsent"
+msgstr ""
+
+#. Default: "Select authors and order, first is main author, second is 2'nd author..."
+#: ./article.py:129
+msgid "help_authors"
+msgstr ""
+
+#. Default: "Enter your cover letter here.                       DO NOT include your cover letter                       in the manuscript file that you                       will upload.The word limit of this                       column is 1024 characters."
+#: ./article.py:115
+msgid "help_coverLetter"
+msgstr ""
+
+#. Default: "I have read and agreed with the following statements:                           1. I am authorized by all co-author(s) to submit this article                           on their behalf and as the contact for the Editorial process.                           I am responsible for communicating with the other authors about                           progress, submissions of revisions and final approval of proofs.                           2. All authors agree with the Personal Information Collection                           Statement , and the staff of the journal will be using the                           personal information that I provided in the APSERS system for                           the sole purpose of contacting me concerning the publishing of                           the Article.                           3. The article I have submitted to the journal for review is                           original, has been written by the stated authors and has not been                           published elsewhere. Also, the Article is not currently being                           considered for publication by any other journal and will not be                           submitted for such review while under review by this journal."
+#: ./article.py:167
+msgid "help_license"
+msgstr ""
+
+#: ./article.py:45
+msgid "manuscript metadata"
+msgstr ""
+
+#: ./article.py:137
+msgid "name"
+msgstr ""
+
+#: ./config.py:8
+msgid "zh-cn"
+msgstr ""
+
+#: ./article.py:63
+#: ./config.py:8
+msgid "zh-tw"
+msgstr ""
+
