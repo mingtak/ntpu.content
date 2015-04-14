@@ -28,5 +28,30 @@
   <column value="keywordsC"/>
   <column value="keywordsE"/>
 
+  <index name="blindSetup" meta_type="FieldIndex">
+    <indexed_attr value="blindSetup" />
+  </index>
+  <column value="blindSetup"/>
+
+  <index name="assignInternalReviewer" meta_type="KeywordIndex">
+    <indexed_attr value="assignInternalReviewer" />
+  </index>
+  <column value="assignInternalReviewer"/>
+
+  <index name="assignExternalReviewer" meta_type="KeywordIndex">
+    <indexed_attr value="assignExternalReviewer" />
+  </index>
+  <column value="assignExternalReviewer"/>
+
+  <index name="assignExtraReviewer" meta_type="KeywordIndex">
+    <indexed_attr value="assignExtraReviewer" />
+  </index>
+  <column value="assignExtraReviewer"/>
+
+  <index name="acceptOrReject" meta_type="KeywordIndex">
+    <indexed_attr value="acceptOrReject" />
+  </index>
+  <column value="acceptOrReject"/>
+
 </object>
 

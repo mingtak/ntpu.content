@@ -20,7 +20,7 @@ from plone import api
 from collective import dexteritytextindexer
 from plone.indexer import indexer
 
-from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject
+from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject, BlindSetup
 
 from ntpu.content import MessageFactory as _
 
@@ -62,9 +62,17 @@ class IArticle(form.Schema, IImageScaleTraversable):
     Contribute article
     """
 
+    dexterity.write_permission(blindSetup='ntpu.content.IsSuperEditor')
+    blindSetup = schema.Choice(
+        title=_(u'Blind setup'),
+        vocabulary=BlindSetup,
+        default=True,
+        required=True,
+    )
+
     dexterity.write_permission(assignInternalReviewer='ntpu.content.IsSuperEditor')
     assignInternalReviewer = schema.Choice(
-        title=_('Assign internal reviewer'),
+        title=_(u'Assign internal reviewer'),
         source=availableInternalReviewer,
         required=False,
     )
@@ -76,7 +84,18 @@ class IArticle(form.Schema, IImageScaleTraversable):
             source=availableExternalReviewer,
         ),
 #        min_length=2,
-        max_length=3,
+        max_length=2,
+        required=True,
+    )
+
+    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    assignExtraReviewer = schema.List(
+        title=_(u'Assign external reviewer'),
+        value_type=schema.Choice(
+            source=availableExternalReviewer,
+        ),
+        min_length=1,
+        max_length=1,
         required=False,
     )
 
@@ -191,7 +210,10 @@ class IArticle(form.Schema, IImageScaleTraversable):
         label=_(u"Authors"),
         fields=['authors', 'corresponging', 'allAuthorConsent', 'license'],
         description=_(u"help_authors",
-                      default=u"Select authors and order, first is main author, second is 2'nd author..."),
+                      default=u"Select authors and order, first is main author,\
+                                second is 2'nd author...<br> \
+                                Note: Before submitting, you mustbe agree 'All author consent' \
+                                , 'Exclusive or non-exclusive license' and check them."),
     )
 
     dexterity.write_permission(authors='ntpu.content.IsOwner')
@@ -323,3 +345,28 @@ grok.global_adapter(keywordsC_indexer, name='keywordsC')
 def keywordsE_indexer(obj):
     return obj.engKeywords.split(',')
 grok.global_adapter(keywordsE_indexer, name='keywordsE')
+
+@indexer(Interface)
+def blindSetup_indexer(obj):
+    return obj.blindSetup
+grok.global_adapter(blindSetup_indexer, name='blindSetup')
+
+@indexer(Interface)
+def assignInternalReviewer_indexer(obj):
+    return obj.assignInternalReviewer
+grok.global_adapter(assignInternalReviewer_indexer, name='assignInternalReviewer')
+
+@indexer(Interface)
+def assignExternalReviewer_indexer(obj):
+    return obj.assignExternalReviewer
+grok.global_adapter(assignExternalReviewer_indexer, name='assignExternalReviewer')
+
+@indexer(Interface)
+def assignExtraReviewer_indexer(obj):
+    return obj.assignExtraReviewer
+grok.global_adapter(assignExtraReviewer_indexer, name='assignExtraReviewer')
+
+@indexer(Interface)
+def acceptOrReject_indexer(obj):
+    return obj.acceptOrReject
+grok.global_adapter(acceptOrReject_indexer, name='acceptOrReject')

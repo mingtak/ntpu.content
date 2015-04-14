@@ -16,7 +16,6 @@
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>External Reviewer</permission-role>
@@ -82,6 +81,7 @@
    <permission-role>Super Editor</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -105,6 +105,7 @@
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>Super Editor</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Manager</permission-role>
@@ -154,6 +155,7 @@
   <guard>
    <guard-permission>Request review</guard-permission>
    <guard-role>Owner</guard-role>
+   <guard-expression>python:here.allAuthorConsent == True and here.license == True</guard-expression>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
