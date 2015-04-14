@@ -1,0 +1,31 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="ntpu.content">
+
+  <configure zcml:condition="installed AccessControl.security">
+
+    <permission
+      id="ntpu.content.IsSuperEditor"
+      title="ntpu.content: Is Super Editor"
+      />
+
+    <permission
+      id="ntpu.content.IsInternalReviewer"
+      title="ntpu.content: Is Internal Reviewer"
+      />
+
+    <permission
+      id="ntpu.content.IsExternalReviewer"
+      title="ntpu.content: Is External Reviewer"
+      />
+
+    <permission
+      id="ntpu.content.IsOwner"
+      title="ntpu.content: Is Owner"
+      />
+
+  </configure>
+
+</configure>
+

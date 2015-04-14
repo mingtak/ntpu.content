@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+ <property
+    name="title">Contains workflow definitions for your portal</property>
+ <bindings>
+  <default>
+   <bound-workflow workflow_id="simple_publication_workflow"/>
+  </default>
+  <type type_id="Discussion Item">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="File"/>
+  <type type_id="Folder">
+   <bound-workflow workflow_id="private_folder_workflow"/>
+  </type>
+  <type type_id="Image"/>
+  <type type_id="ntpu.content.article">
+   <bound-workflow workflow_id="ntpu_review_article_workflow"/>
+  </type>
+  <type type_id="ntpu.content.author">
+   <bound-workflow workflow_id="private_folder_workflow"/>
+  </type>
+  <type type_id="ntpu.content.profile">
+   <bound-workflow workflow_id="private_folder_workflow"/>
+  </type>
+ </bindings>
+</object>

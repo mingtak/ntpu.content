@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-12 03:39+0000\n"
+"POT-Creation-Date: 2015-04-13 07:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +22,15 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: ./config.py:12
+#: ./config.py:31
 msgid "Afghanistan"
 msgstr ""
 
-#: ./config.py:12
+#: ./config.py:32
 msgid "Albania"
 msgstr ""
 
-#: ./config.py:12
+#: ./config.py:33
 msgid "Algeria"
 msgstr ""
 
@@ -42,23 +42,23 @@ msgstr ""
 msgid "Alternative Email"
 msgstr ""
 
-#: ./config.py:12
+#: ./config.py:34
 msgid "Andorra"
 msgstr ""
 
-#: ./config.py:13
+#: ./config.py:35
 msgid "Angola"
 msgstr ""
 
-#: ./config.py:13
+#: ./config.py:36
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: ./config.py:13
+#: ./config.py:37
 msgid "Argentina"
 msgstr ""
 
-#: ./config.py:13
+#: ./config.py:38
 msgid "Armenia"
 msgstr ""
 
@@ -74,15 +74,15 @@ msgstr ""
 msgid "Article type"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:39
 msgid "Aruba"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:40
 msgid "Australia"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:41
 msgid "Austria"
 msgstr ""
 
@@ -98,28 +98,28 @@ msgstr ""
 msgid "Authors"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:42
 msgid "Azerbaijan"
 msgstr ""
 
-#: ./config.py:4
+#: ./config.py:6
 #: ./profile.py:141
 msgid "Bachelor's degree"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:43
 msgid "Bahamas"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:44
 msgid "Bahrain"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:45
 msgid "Bangladesh"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:46
 msgid "Barbados"
 msgstr ""
 
@@ -135,108 +135,104 @@ msgstr ""
 msgid "Basic persional infomation (fields in RED DOT are Required)"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:47
 msgid "Belarus"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:48
 msgid "Belgium"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:49
 msgid "Belize"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:50
 msgid "Benin"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:51
 msgid "Bhutan"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:52
 msgid "Bolivia"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:53
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: ./config.py:17
+#: ./config.py:54
 msgid "Botswana"
 msgstr ""
 
-#: ./config.py:17
+#: ./config.py:55
 msgid "Brazil"
 msgstr ""
 
-#: ./config.py:17
+#: ./config.py:56
 msgid "Brunei"
 msgstr ""
 
-#: ./config.py:17
+#: ./config.py:57
 msgid "Bulgaria"
 msgstr ""
 
-#: ./config.py:17
+#: ./config.py:58
 msgid "Burkina Faso"
 msgstr ""
 
-#: ./config.py:18
+#: ./config.py:59
 msgid "Burma"
 msgstr ""
 
-#: ./config.py:18
+#: ./config.py:60
 msgid "Burundi"
 msgstr ""
 
-#: ./config.py:18
+#: ./config.py:61
 msgid "Cambodia"
 msgstr ""
 
-#: ./config.py:18
+#: ./config.py:62
 msgid "Cameroon"
 msgstr ""
 
-#: ./config.py:18
+#: ./config.py:63
 msgid "Canada"
 msgstr ""
 
-#: ./config.py:19
+#: ./config.py:64
 msgid "Cape Verde"
 msgstr ""
 
-#: ./config.py:19
+#: ./config.py:65
 msgid "Central African Republic"
 msgstr ""
 
-#: ./config.py:19
+#: ./config.py:66
 msgid "Chad"
 msgstr ""
 
-#: ./config.py:19
+#: ./config.py:67
 msgid "Chile"
 msgstr ""
 
-#: ./config.py:20
+#: ./config.py:68
 msgid "China"
 msgstr ""
 
-#: ./config.py:20
+#: ./config.py:69
 msgid "Colombia"
 msgstr ""
 
-#: ./config.py:20
+#: ./config.py:70
 msgid "Comoros"
 msgstr ""
 
-#: ./config.py:20
-msgid "Congo, Democratic Republic of the"
-msgstr ""
-
-#: ./config.py:21
-msgid "Congo, Republic of the"
+#: ./config.py:71
+msgid "Congo"
 msgstr ""
 
 #: ./profile.py:66
@@ -259,11 +255,11 @@ msgstr ""
 msgid "Corresponding authors"
 msgstr ""
 
-#: ./config.py:21
+#: ./config.py:72
 msgid "Costa Rica"
 msgstr ""
 
-#: ./config.py:21
+#: ./config.py:73
 msgid "Cote d'Ivoire"
 msgstr ""
 
@@ -275,23 +271,23 @@ msgstr ""
 msgid "Cover letter"
 msgstr ""
 
-#: ./config.py:21
+#: ./config.py:74
 msgid "Croatia"
 msgstr ""
 
-#: ./config.py:22
+#: ./config.py:75
 msgid "Cuba"
 msgstr ""
 
-#: ./config.py:22
+#: ./config.py:76
 msgid "Curacao"
 msgstr ""
 
-#: ./config.py:22
+#: ./config.py:77
 msgid "Cyprus"
 msgstr ""
 
-#: ./config.py:22
+#: ./config.py:78
 msgid "Czech Republic"
 msgstr ""
 
@@ -299,31 +295,31 @@ msgstr ""
 msgid "Degree"
 msgstr ""
 
-#: ./config.py:22
+#: ./config.py:79
 msgid "Denmark"
 msgstr ""
 
-#: ./config.py:23
+#: ./config.py:80
 msgid "Djibouti"
 msgstr ""
 
-#: ./config.py:4
+#: ./config.py:8
 msgid "Doctor"
 msgstr ""
 
-#: ./config.py:23
+#: ./config.py:81
 msgid "Dominica"
 msgstr ""
 
-#: ./config.py:23
+#: ./config.py:82
 msgid "Dominican Republic"
 msgstr ""
 
-#: ./config.py:23
+#: ./config.py:83
 msgid "East Timor"
 msgstr ""
 
-#: ./config.py:24
+#: ./config.py:84
 msgid "Ecuador"
 msgstr ""
 
@@ -339,11 +335,11 @@ msgstr ""
 msgid "Educational & Experience (fields in RED DOT are Required)"
 msgstr ""
 
-#: ./config.py:24
+#: ./config.py:85
 msgid "Egypt"
 msgstr ""
 
-#: ./config.py:24
+#: ./config.py:86
 msgid "El Salvador"
 msgstr ""
 
@@ -363,19 +359,19 @@ msgstr ""
 msgid "English title"
 msgstr ""
 
-#: ./config.py:24
+#: ./config.py:87
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:88
 msgid "Eritrea"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:89
 msgid "Estonia"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:90
 msgid "Ethiopia"
 msgstr ""
 
@@ -395,19 +391,19 @@ msgstr ""
 msgid "Fax number"
 msgstr ""
 
-#: ./config.py:6
+#: ./config.py:15
 msgid "Female"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:91
 msgid "Fiji"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:92
 msgid "Finland"
 msgstr ""
 
-#: ./config.py:26
+#: ./config.py:93
 msgid "France"
 msgstr ""
 
@@ -415,71 +411,72 @@ msgstr ""
 msgid "Full name, include first name and last name"
 msgstr ""
 
-#: ./config.py:26
+#: ./config.py:94
 msgid "Gabon"
 msgstr ""
 
-#: ./config.py:26
-msgid "Gambia, The"
+#: ./config.py:95
+msgid "Gambia"
 msgstr ""
 
+#. Default: "GGGGG"
 #: ./profile.py:54
 msgid "Gender"
 msgstr ""
 
-#: ./config.py:26
+#: ./config.py:96
 msgid "Georgia"
 msgstr ""
 
-#: ./config.py:26
+#: ./config.py:97
 msgid "Germany"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:98
 msgid "Ghana"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:99
 msgid "Greece"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:100
 msgid "Grenada"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:101
 msgid "Guatemala"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:102
 msgid "Guinea"
 msgstr ""
 
-#: ./config.py:28
+#: ./config.py:103
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: ./config.py:28
+#: ./config.py:104
 msgid "Guyana"
 msgstr ""
 
-#: ./config.py:28
+#: ./config.py:105
 msgid "Haiti"
 msgstr ""
 
-#: ./config.py:28
+#: ./config.py:106
 msgid "Holy See"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:107
 msgid "Honduras"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:108
 msgid "Hong Kong"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:109
 msgid "Hungary"
 msgstr ""
 
@@ -487,15 +484,15 @@ msgstr ""
 msgid "I am submitting from"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:110
 msgid "Iceland"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:111
 msgid "India"
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:112
 msgid "Indonesia"
 msgstr ""
 
@@ -507,43 +504,43 @@ msgstr ""
 msgid "Invalid email address."
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:113
 msgid "Iran"
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:114
 msgid "Iraq"
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:115
 msgid "Ireland"
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:116
 msgid "Israel"
 msgstr ""
 
-#: ./config.py:30
+#: ./config.py:117
 msgid "Italy"
 msgstr ""
 
-#: ./config.py:31
+#: ./config.py:118
 msgid "Jamaica"
 msgstr ""
 
-#: ./config.py:31
+#: ./config.py:119
 msgid "Japan"
 msgstr ""
 
-#: ./config.py:31
+#: ./config.py:120
 msgid "Jordan"
 msgstr ""
 
-#: ./config.py:31
+#: ./config.py:121
 msgid "Kazakhstan"
 msgstr ""
 
-#: ./config.py:31
+#: ./config.py:122
 msgid "Kenya"
 msgstr ""
 
@@ -551,27 +548,27 @@ msgstr ""
 msgid "Keywords"
 msgstr ""
 
-#: ./config.py:32
+#: ./config.py:123
 msgid "Kiribati"
 msgstr ""
 
-#: ./config.py:32
+#: ./config.py:124
 msgid "Korea, North"
 msgstr ""
 
-#: ./config.py:32
+#: ./config.py:125
 msgid "Korea, South"
 msgstr ""
 
-#: ./config.py:32
+#: ./config.py:126
 msgid "Kosovo"
 msgstr ""
 
-#: ./config.py:32
+#: ./config.py:127
 msgid "Kuwait"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:128
 msgid "Kyrgyzstan"
 msgstr ""
 
@@ -579,75 +576,75 @@ msgstr ""
 msgid "Langeuage"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:129
 msgid "Laos"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:130
 msgid "Latvia"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:131
 msgid "Lebanon"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:132
 msgid "Lesotho"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:133
 msgid "Liberia"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:134
 msgid "Libya"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:135
 msgid "Liechtenstein"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:136
 msgid "Lithuania"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:137
 msgid "Luxembourg"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:138
 msgid "Macau"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:139
 msgid "Macedonia"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:140
 msgid "Madagascar"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:141
 msgid "Malawi"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:142
 msgid "Malaysia"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:143
 msgid "Maldives"
 msgstr ""
 
-#: ./config.py:6
+#: ./config.py:14
 msgid "Male"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:144
 msgid "Mali"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:145
 msgid "Malta"
 msgstr ""
 
@@ -655,19 +652,19 @@ msgstr ""
 msgid "Manuscript Metadata"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:146
 msgid "Marshall Islands"
 msgstr ""
 
-#: ./config.py:4
+#: ./config.py:7
 msgid "Master's degree"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:147
 msgid "Mauritania"
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:148
 msgid "Mauritius"
 msgstr ""
 
@@ -675,35 +672,35 @@ msgstr ""
 msgid "Maximum 5 keywords, separated with commas."
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:149
 msgid "Mexico"
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:150
 msgid "Micronesia"
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:151
 msgid "Moldova"
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:152
 msgid "Monaco"
 msgstr ""
 
-#: ./config.py:38
+#: ./config.py:153
 msgid "Mongolia"
 msgstr ""
 
-#: ./config.py:38
+#: ./config.py:154
 msgid "Montenegro"
 msgstr ""
 
-#: ./config.py:38
+#: ./config.py:155
 msgid "Morocco"
 msgstr ""
 
-#: ./config.py:38
+#: ./config.py:156
 msgid "Mozambique"
 msgstr ""
 
@@ -711,84 +708,80 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ./config.py:39
+#: ./config.py:157
 msgid "Namibia"
 msgstr ""
 
-#: ./config.py:39
+#: ./config.py:158
 msgid "Nauru"
 msgstr ""
 
-#: ./config.py:39
+#: ./config.py:159
 msgid "Nepal"
 msgstr ""
 
-#: ./config.py:39
+#: ./config.py:160
 msgid "Netherlands"
 msgstr ""
 
-#: ./config.py:39
+#: ./config.py:161
 msgid "Netherlands Antilles"
 msgstr ""
 
-#: ./config.py:40
+#: ./config.py:162
 msgid "New Zealand"
 msgstr ""
 
-#: ./config.py:40
+#: ./config.py:163
 msgid "Nicaragua"
 msgstr ""
 
-#: ./config.py:40
+#: ./config.py:164
 msgid "Niger"
 msgstr ""
 
-#: ./config.py:40
+#: ./config.py:165
 msgid "Nigeria"
 msgstr ""
 
-#: ./config.py:40
-msgid "North Korea"
-msgstr ""
-
-#: ./config.py:41
+#: ./config.py:166
 msgid "Norway"
 msgstr ""
 
-#: ./config.py:41
+#: ./config.py:167
 msgid "Oman"
 msgstr ""
 
 #: ./article.py:70
-#: ./config.py:10
+#: ./config.py:25
 msgid "Original paper"
 msgstr ""
 
-#: ./config.py:4
+#: ./config.py:10
 msgid "Other"
 msgstr ""
 
-#: ./config.py:41
+#: ./config.py:168
 msgid "Pakistan"
 msgstr ""
 
-#: ./config.py:41
+#: ./config.py:169
 msgid "Palau"
 msgstr ""
 
-#: ./config.py:41
+#: ./config.py:170
 msgid "Palestinian Territories"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:171
 msgid "Panama"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:172
 msgid "Papua New Guinea"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:173
 msgid "Paraguay"
 msgstr ""
 
@@ -796,11 +789,11 @@ msgstr ""
 msgid "Personal profile"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:174
 msgid "Peru"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:175
 msgid "Philippines"
 msgstr ""
 
@@ -812,11 +805,11 @@ msgstr ""
 msgid "Please select authors"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:176
 msgid "Poland"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:177
 msgid "Portugal"
 msgstr ""
 
@@ -824,7 +817,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: ./config.py:4
+#: ./config.py:9
 msgid "Postdoc Research"
 msgstr ""
 
@@ -832,7 +825,7 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:178
 msgid "Qatar"
 msgstr ""
 
@@ -840,51 +833,51 @@ msgstr ""
 msgid "Research area & Expertise"
 msgstr ""
 
-#: ./config.py:10
+#: ./config.py:27
 msgid "Research note"
 msgstr ""
 
-#: ./config.py:10
+#: ./config.py:26
 msgid "Review article"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:179
 msgid "Romania"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:180
 msgid "Russia"
 msgstr ""
 
-#: ./config.py:43
+#: ./config.py:181
 msgid "Rwanda"
 msgstr ""
 
-#: ./config.py:44
+#: ./config.py:182
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: ./config.py:44
+#: ./config.py:183
 msgid "Saint Lucia"
 msgstr ""
 
-#: ./config.py:44
+#: ./config.py:184
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: ./config.py:45
+#: ./config.py:185
 msgid "Samoa"
 msgstr ""
 
-#: ./config.py:45
+#: ./config.py:186
 msgid "San Marino"
 msgstr ""
 
-#: ./config.py:45
+#: ./config.py:187
 msgid "Sao Tome and Principe"
 msgstr ""
 
-#: ./config.py:45
+#: ./config.py:188
 msgid "Saudi Arabia"
 msgstr ""
 
@@ -892,63 +885,59 @@ msgstr ""
 msgid "Select at least one corresponding author."
 msgstr ""
 
-#: ./config.py:46
+#: ./config.py:189
 msgid "Senegal"
 msgstr ""
 
-#: ./config.py:46
+#: ./config.py:190
 msgid "Serbia"
 msgstr ""
 
-#: ./config.py:46
+#: ./config.py:191
 msgid "Seychelles"
 msgstr ""
 
-#: ./config.py:46
+#: ./config.py:192
 msgid "Sierra Leone"
 msgstr ""
 
-#: ./config.py:46
+#: ./config.py:193
 msgid "Singapore"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:194
 msgid "Sint Maarten"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:195
 msgid "Slovakia"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:196
 msgid "Slovenia"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:197
 msgid "Solomon Islands"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:198
 msgid "Somalia"
 msgstr ""
 
-#: ./config.py:48
+#: ./config.py:199
 msgid "South Africa"
 msgstr ""
 
-#: ./config.py:48
-msgid "South Korea"
-msgstr ""
-
-#: ./config.py:48
+#: ./config.py:200
 msgid "South Sudan"
 msgstr ""
 
-#: ./config.py:48
+#: ./config.py:201
 msgid "Spain"
 msgstr ""
 
-#: ./config.py:48
+#: ./config.py:202
 msgid "Sri Lanka"
 msgstr ""
 
@@ -960,129 +949,129 @@ msgstr ""
 msgid "Submitting from"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:203
 msgid "Sudan"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:204
 msgid "Suriname"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:205
 msgid "Swaziland"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:206
 msgid "Sweden"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:207
 msgid "Switzerland"
 msgstr ""
 
-#: ./config.py:49
+#: ./config.py:208
 msgid "Syria"
 msgstr ""
 
 #: ./article.py:56
-#: ./config.py:50
+#: ./config.py:209
 #: ./profile.py:97
 msgid "Taiwan"
 msgstr ""
 
-#: ./config.py:50
+#: ./config.py:210
 msgid "Tajikistan"
 msgstr ""
 
-#: ./config.py:50
+#: ./config.py:211
 msgid "Tanzania"
 msgstr ""
 
-#: ./config.py:50
+#: ./config.py:212
 msgid "Thailand"
-msgstr ""
-
-#: ./config.py:50
-msgid "Timor-Leste"
 msgstr ""
 
 #: ./profile.py:60
 msgid "Title"
 msgstr ""
 
-#: ./config.py:51
+#: ./config.py:213
 msgid "Togo"
 msgstr ""
 
-#: ./config.py:51
+#: ./config.py:214
 msgid "Tonga"
 msgstr ""
 
-#: ./config.py:51
+#: ./config.py:215
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: ./config.py:51
+#: ./config.py:216
 msgid "Tunisia"
 msgstr ""
 
-#: ./config.py:51
+#: ./config.py:217
 msgid "Turkey"
 msgstr ""
 
-#: ./config.py:52
+#: ./config.py:218
 msgid "Turkmenistan"
 msgstr ""
 
-#: ./config.py:52
+#: ./config.py:219
 msgid "Tuvalu"
 msgstr ""
 
-#: ./config.py:52
+#: ./config.py:220
 msgid "Uganda"
 msgstr ""
 
-#: ./config.py:52
+#: ./config.py:221
 msgid "Ukraine"
 msgstr ""
 
-#: ./config.py:52
+#: ./config.py:222
 msgid "United Arab Emirates"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:223
 msgid "United Kingdom"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:224
+msgid "United States"
+msgstr ""
+
+#: ./config.py:225
 msgid "Uruguay"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:226
 msgid "Uzbekistan"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:227
 msgid "Vanuatu"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:228
 msgid "Venezuela"
 msgstr ""
 
-#: ./config.py:54
+#: ./config.py:229
 msgid "Vietnam"
 msgstr ""
 
-#: ./config.py:54
+#: ./config.py:230
 msgid "Yemen"
 msgstr ""
 
-#: ./config.py:54
+#: ./config.py:231
 msgid "Zambia"
 msgstr ""
 
-#: ./config.py:54
+#: ./config.py:232
 msgid "Zimbabwe"
 msgstr ""
 
@@ -1090,7 +1079,7 @@ msgstr ""
 msgid "Zip"
 msgstr ""
 
-#: ./config.py:8
+#: ./config.py:21
 msgid "en-us"
 msgstr ""
 
@@ -1126,12 +1115,12 @@ msgstr ""
 msgid "name"
 msgstr ""
 
-#: ./config.py:8
+#: ./config.py:20
 msgid "zh-cn"
 msgstr ""
 
 #: ./article.py:63
-#: ./config.py:8
+#: ./config.py:19
 msgid "zh-tw"
 msgstr ""
 

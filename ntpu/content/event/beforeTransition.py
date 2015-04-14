@@ -2,7 +2,7 @@ from five import grok
 from zope.interface import Interface
 from plone import api
 from Products.PlonePAS.events import UserInitialLoginInEvent, UserLoggedInEvent
-
+from Products.DCWorkflow.interfaces import IBeforeTransitionEvent
 
 @grok.subscribe(UserInitialLoginInEvent)
 def userLoggedIn(event):

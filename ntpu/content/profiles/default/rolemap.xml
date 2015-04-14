@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Super Editor"/>
+    <role name="Internal Reviewer"/>
+    <role name="External Reviewer"/>
+  </roles>
+  <permissions>
+
+    <permission name="ntpu.content: Is Super Editor" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Super Editor"/>
+    </permission>
+
+    <permission name="ntpu.content: Is Internal Reviewer" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Internal Reviewer"/>
+    </permission>
+
+    <permission name="ntpu.content: Is External Reviewer" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="External Reviewer"/>
+    </permission>
+
+    <permission name="ntpu.content: Is Owner" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner"/>
+    </permission>
+
+  </permissions>
+</rolemap>

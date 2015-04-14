@@ -52,7 +52,7 @@ class IProfile(form.Schema, IImageScaleTraversable):
 
     gender = schema.Choice(
         title=_(u'Gender'),
-        values=GenderOption,
+        vocabulary=GenderOption,
         required=True,
     )
 
@@ -93,7 +93,7 @@ class IProfile(form.Schema, IImageScaleTraversable):
 
     country = schema.Choice(
         title=_(u'Country'),
-        values=CountryList,
+        vocabulary=CountryList,
         default=_(u"Taiwan"),
         required=True,
     )
@@ -137,7 +137,7 @@ class IProfile(form.Schema, IImageScaleTraversable):
 
     degree = schema.Choice(
         title=_(u'Degree'),
-        values=Degree,
+        vocabulary=Degree,
         default=_(u"Bachelor's degree"),
         required=False,
     )

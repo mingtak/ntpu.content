@@ -36,4 +36,6 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <include file="permissions.zcml" />
+
 </configure>
