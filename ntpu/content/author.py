@@ -56,12 +56,11 @@ class Author(Container):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class SampleView(grok.View):
+class SampleView(dexterity.DisplayForm):
     """ sample view class """
 
     grok.context(IAuthor)
     grok.require('zope2.View')
-
     # grok.name('view')
 
     # Add view methods here

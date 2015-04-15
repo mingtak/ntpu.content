@@ -15,14 +15,126 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2>
-        Rendered from
-        article_templates/<span tal:replace="template/id" />
-    </h2>
+<tal:checkId condition="python:view.checkIdInReviewerList() or view.getCurrent().getId() == context.owner_info()['id']">
+
+      <h2 tal:content="context/articleTitle"/>
+      <h3 tal:condition="context/engTitle" tal:content="context/engTitle"/>
+<div tal:condition="context/abstract">
+      <strong i18n:translate="">Abstract</strong>
+      <p tal:content="context/abstract"/>
+</div>
+
+<div tal:condition="context/engAbstract">
+      <strong i18n:translate="">English abstract</strong>
+      <p tal:content="context/engAbstract"/>
+</div>
+
+<div tal:condition="context/keywords">
+      <strong i18n:translate="">Keywords</strong>
+      <p tal:content="context/keywords"/>
+</div>
+
+<div tal:condition="context/engKeywords">
+      <strong i18n:translate="">English keywords</strong>
+      <p tal:content="context/engKeywords"/>
+</div>
+
+<div tal:condition="context/articleType">
+      <strong i18n:translate="">Article type</strong>
+      <p tal:content="context/articleType"/>
+</div>
+
+<div tal:condition="context/articleLanguage">
+      <strong i18n:translate="">Language</strong>
+      <p tal:content="context/articleLanguage"/>
+</div>
+
+<div tal:condition="context/attachFile">
+      <strong i18n:translate="">attachFile:</strong>
+      <a tal:attributes="href string:${context/absolute_url}/@@download/attachFile/${context/attachFile/filename}"
+         tal:content="context/attachFile/filename" />
+</div>
+<br>
+<hr>
+
+<div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getRoles()))) > 0
+                           or view.getBlind() == False
+                           or view.getCurrent().getId() == context.owner_info()['id']">
+<br>
+    <h3 i18n:translate="">Author Information</h3>
+<br>
+
+    <div tal:condition="python:context.authors != None">
+      <tal:repeat define="brain view/getSelfBrain"
+                  repeat="author brain/authorsInformation">
+        <p>
+          <strong i18n:translate="">Name(Chinese): </strong>
+          <span tal:content="python:author['authorNameC']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Name(English): </strong>
+          <span tal:content="python:author['authorNameE']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Institution(Chinese): </strong>
+          <span tal:content="python:author['institutionC']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Institution(English): </strong>
+          <span tal:content="python:author['institutionE']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Title(Chinese): </strong>
+          <span tal:content="python:author['titleC']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Title(English): </strong>
+          <span tal:content="python:author['titleE']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Email: </strong>
+          <span tal:content="python:author['email']" />
+        </p>
+
+        <p>
+          <strong i18n:translate="">Phone: </strong>
+          <span tal:content="python:author['phone']" />
+        </p>
+<hr>
+
+      </tal:repeat>
+    </div>
+
+</div>
+
+<tal:reviewcomment define="selfBrain python:view.getSelfBrain()">
+  <br>
+  <h3 i18n:translate="">Review Comments</h3>
+  <div tal:repeat="comment python:selfBrain.reviewResults">
+    <p><strong i18n:translate="">Review time:</strong><span tal:content="python:comment[1]"/></p>
+    <p><strong i18n:translate="">Accpect or Reject:</strong><span tal:content="python:comment[2]"/></p>
+    <p><strong i18n:translate="">Comment:</strong><span tal:content="python:comment[3]"/></p>
+    <br>
+  </div>
+<hr>
+</tal:reviewcomment>
 
 
-    <div tal:content="context/Title">Title inserted here</div>
+<h3 tal:condition="python:(not view.alreadyReview()) and (not view.isOwner())" >
+  <a href="./edit" i18n:translate="">Review</a>
+</h3>
 
+<h3 tal:condition="python:view.isOwner() and view.getSelfBrain().review_state == 'draft'" >
+  <a href="./edit" i18n:translate="">Edit</a>
+</h3>
+
+</tal:checkId>
   </metal:content-core>
 </metal:main>
 

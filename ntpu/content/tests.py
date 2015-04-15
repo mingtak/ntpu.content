@@ -52,6 +52,22 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for PageWithFile
+        ztc.ZopeDocFileSuite(
+            'PageWithFile.txt',
+            package='ntpu.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
+        # Integration tests for Journal
+        ztc.ZopeDocFileSuite(
+            'Journal.txt',
+            package='ntpu.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for SystemFolder
         ztc.ZopeDocFileSuite(
             'SystemFolder.txt',

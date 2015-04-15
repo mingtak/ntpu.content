@@ -47,6 +47,7 @@
  <state state_id="externalAssigned" title="External assigned">
   <description>External reviewer assigned</description>
   <exit-transition transition_id="accept"/>
+  <exit-transition transition_id="extraReviewer"/>
   <exit-transition transition_id="reject"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>External Reviewer</permission-role>
@@ -93,6 +94,21 @@
    <permission-role>Super Editor</permission-role>
   </permission-map>
  </state>
+ <state state_id="rejected" title="Reject">
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+ </state>
  <state state_id="submitted" title="Submitted">
   <exit-transition transition_id="assignInternal"/>
   <exit-transition transition_id="retract"/>
@@ -126,6 +142,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=assignExternal" category="workflow" icon="">Assign external reviewer</action>
   <guard>
    <guard-role>Internal Reviewer</guard-role>
+   <guard-expression>python:here.assignExternalReviewer is not None</guard-expression>
   </guard>
  </transition>
  <transition transition_id="assignInternal" title="Assign internal reviewer" new_state="internalAssigned" trigger="USER" before_script="" after_script="">
@@ -133,9 +150,16 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=assignInternal" category="workflow" icon="">Assign internal reviewer</action>
   <guard>
    <guard-role>Super Editor</guard-role>
+   <guard-expression>python:here.assignInternalReviewer is not None</guard-expression>
   </guard>
  </transition>
- <transition transition_id="reject" title="Reject" new_state="draft" trigger="USER" before_script="" after_script="">
+ <transition transition_id="extraReviewer" title="Extra reviewer" new_state="internalAssigned" trigger="USER" before_script="" after_script="">
+  <action url="%(content_url)s/content_status_modify?workflow_action=extraReviewer" category="workflow" icon="">ExtraReviewer</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="reject" title="Reject" new_state="rejected" trigger="USER" before_script="" after_script="">
   <description>Reject to draft</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=reject" category="workflow" icon="">Reject</action>
   <guard>

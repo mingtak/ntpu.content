@@ -53,5 +53,8 @@
   </index>
   <column value="acceptOrReject"/>
 
+  <column value="reviewResults"/>
+
+  <column value="authorsInformation"/>
 </object>
 

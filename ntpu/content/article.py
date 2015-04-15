@@ -19,8 +19,11 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone import api
 from collective import dexteritytextindexer
 from plone.indexer import indexer
+from DateTime import DateTime
 
 from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject, BlindSetup
+
+from ntpu.content import defaultForms
 
 from ntpu.content import MessageFactory as _
 
@@ -57,12 +60,25 @@ def availableAuthor(context):
     return SimpleVocabulary(terms)
 
 
+class AlreadySelected(Invalid):
+    __doc__ = _(u"This reviewer already selected.")
+
+
 class IArticle(form.Schema, IImageScaleTraversable):
     """
     Contribute article
     """
 
+    form.fieldset(
+        _(u'Review State'),
+        label=_(u"Review State"),
+        fields=['blindSetup', 'assignInternalReviewer', 'assignExternalReviewer',
+                'assignExtraReviewer', 'acceptOrReject', 'externalReviewerComment'],
+    )
+
+
     dexterity.write_permission(blindSetup='ntpu.content.IsSuperEditor')
+    dexterity.read_permission(blindSetup='ntpu.content.IsSuperEditor')
     blindSetup = schema.Choice(
         title=_(u'Blind setup'),
         vocabulary=BlindSetup,
@@ -71,36 +87,37 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     dexterity.write_permission(assignInternalReviewer='ntpu.content.IsSuperEditor')
+    dexterity.read_permission(assignInternalReviewer='ntpu.content.IsSuperEditor')
     assignInternalReviewer = schema.Choice(
         title=_(u'Assign internal reviewer'),
         source=availableInternalReviewer,
-        required=False,
+        default=None,
+        required=True,
     )
 
     dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
     assignExternalReviewer = schema.List(
         title=_(u'Assign external reviewer'),
         value_type=schema.Choice(
             source=availableExternalReviewer,
         ),
-#        min_length=2,
+        min_length=2,
         max_length=2,
         required=True,
     )
 
-    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
-    assignExtraReviewer = schema.List(
+    dexterity.write_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.read_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
+    assignExtraReviewer = schema.Choice(
         title=_(u'Assign external reviewer'),
-        value_type=schema.Choice(
-            source=availableExternalReviewer,
-        ),
-        min_length=1,
-        max_length=1,
+        source=availableExternalReviewer,
         required=False,
     )
 
 #    form.mode(acceptOrReject='hidden')
     dexterity.write_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
+    dexterity.read_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
     acceptOrReject = schema.Choice(
         title=_(u'Accept or Reject'),
         vocabulary=AcceptOrReject,
@@ -109,6 +126,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     dexterity.write_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
+    dexterity.read_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
     externalReviewerComment = schema.Text(
         title=_(u'External reviewer comment'),
         required=True,
@@ -133,7 +151,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(articleLanguage='ntpu.content.IsOwner')
     articleLanguage = schema.Choice(
-        title=_(u'Langeuage'),
+        title=_(u'Language'),
         vocabulary=ArticleLanguage,
         default=_(u"zh-tw"),
         required=True,
@@ -223,7 +241,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
         value_type=schema.Choice(
             title=_(u'name'),
             source=availableAuthor,
+            required=True,
         ),
+        min_length=1,
         required=True,
     )
 
@@ -234,7 +254,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
         value_type=schema.Choice(
             title=_(u'name'),
             source=availableAuthor,
+            required=True,
         ),
+        min_length=1,
         required=True,
     )
 
@@ -274,35 +296,101 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    @invariant
+    def validateExtraReviewer(data):
+        if data.assignExternalReviewer is None:
+            return True
+        if data.assignExtraReviewer in data.assignExternalReviewer:
+            raise AlreadySelected(_(u"This reviewer already selected."))
+
 
 class Article(Container):
     grok.implements(IArticle)
 
 
-class SampleView(grok.View):
+class SampleView(dexterity.DisplayForm):
     """ sample view class """
 
     grok.context(IArticle)
     grok.require('zope2.View')
-    # grok.name('view')
+    grok.name('view')
+
+    def checkIdInReviewerList(self):
+        roles = api.user.get_roles()
+        context = self.context
+        currentUserId = api.user.get_current().getId()
+        if len(set(['Manager', 'Site Administrator', 'Super Editor']) & set(roles)) > 0:
+            return True
+        if len(set(['Internal Reviewer', 'External Reviewer']) & set(roles)) > 0:
+            if (context.assignInternalReviewer is not None and currentUserId in context.assignInternalReviewer) or \
+               (context.assignExternalReviewer is not None and currentUserId in context.assignExternalReviewer) or \
+               (context.assignExtraReviewer is not None and currentUserId in context.assignExtraReviewer):
+                return True
+        else:
+            return False
+
+    def alreadyReview(self):
+        roles = api.user.get_roles()
+        context = self.context
+        currentUserId = api.user.get_current().getId()
+        if list(set(['Manager', 'Site Administrator', 'Super Editor']) & set(roles)) != []:
+            return False
+
+        alreadyReviewer = []
+        if self.getSelfBrain().reviewResults is not None:
+            for item in self.getSelfBrain().reviewResults:
+                alreadyReviewer.append(item[0])
+
+        if currentUserId in alreadyReviewer:
+            return True
+        else:
+            return False
+
+    def getBlind(self):
+        return self.context.blindSetup
+
+    def getRoles(self):
+        return api.user.get_roles()
+
+    def isAnonymous(self):
+        return api.user.is_anonymous()
+
+    def getCurrent(self):
+        return api.user.get_current()
+
+    def isOwner(self):
+        if self.isAnonymous():
+            return False
+        currentUserId = self.getCurrent().getId()
+        ownerId = self.context.owner_info()['id']
+        if currentUserId == ownerId:
+            return True
+        else:
+            return False
+
+    def getSelfBrain(self):
+        catalog = self.context.portal_catalog
+        uid = self.context.UID()
+        brain = catalog(UID=uid)
+        return brain[0]
 
 
-@indexer(Interface)
+@indexer(IArticle)
 def submittingFrom_indexer(obj):
     return obj.submittingFrom
 grok.global_adapter(submittingFrom_indexer, name='submittingFrom')
 
-@indexer(Interface)
+@indexer(IArticle)
 def articleLanguage_indexer(obj):
     return obj.articleLanguage
 grok.global_adapter(articleLanguage_indexer, name='articleLanguage')
 
-@indexer(Interface)
+@indexer(IArticle)
 def articleType_indexer(obj):
     return obj.articleType
 grok.global_adapter(articleType_indexer, name='articleType')
 
-@indexer(Interface)
+@indexer(IArticle)
 def articleTitle_indexer(obj):
     result = []
     if obj.articleTitle is not None:
@@ -312,17 +400,17 @@ def articleTitle_indexer(obj):
     return result
 grok.global_adapter(articleTitle_indexer, name='articleTitle')
 
-@indexer(Interface)
+@indexer(IArticle)
 def articleTitleC_indexer(obj):
     return obj.articleTitle
 grok.global_adapter(articleTitleC_indexer, name='articleTitleC')
 
-@indexer(Interface)
+@indexer(IArticle)
 def articleTitleE_indexer(obj):
     return obj.articleTitleE
 grok.global_adapter(articleTitleE_indexer, name='articleTitleE')
 
-@indexer(Interface)
+@indexer(IArticle)
 def keywords_indexer(obj):
     result = []
     if obj.keywords is not None:
@@ -336,37 +424,92 @@ def keywords_indexer(obj):
     return result
 grok.global_adapter(keywords_indexer, name='keywords')
 
-@indexer(Interface)
+@indexer(IArticle)
 def keywordsC_indexer(obj):
     return obj.keywords.split(',')
 grok.global_adapter(keywordsC_indexer, name='keywordsC')
 
-@indexer(Interface)
+@indexer(IArticle)
 def keywordsE_indexer(obj):
     return obj.engKeywords.split(',')
 grok.global_adapter(keywordsE_indexer, name='keywordsE')
 
-@indexer(Interface)
+@indexer(IArticle)
 def blindSetup_indexer(obj):
     return obj.blindSetup
 grok.global_adapter(blindSetup_indexer, name='blindSetup')
 
-@indexer(Interface)
+@indexer(IArticle)
 def assignInternalReviewer_indexer(obj):
     return obj.assignInternalReviewer
 grok.global_adapter(assignInternalReviewer_indexer, name='assignInternalReviewer')
 
-@indexer(Interface)
+@indexer(IArticle)
 def assignExternalReviewer_indexer(obj):
     return obj.assignExternalReviewer
 grok.global_adapter(assignExternalReviewer_indexer, name='assignExternalReviewer')
 
-@indexer(Interface)
+@indexer(IArticle)
 def assignExtraReviewer_indexer(obj):
     return obj.assignExtraReviewer
 grok.global_adapter(assignExtraReviewer_indexer, name='assignExtraReviewer')
 
-@indexer(Interface)
+@indexer(IArticle)
 def acceptOrReject_indexer(obj):
     return obj.acceptOrReject
 grok.global_adapter(acceptOrReject_indexer, name='acceptOrReject')
+
+@indexer(IArticle)
+def reviewResults_indexer(obj):
+    catalog = obj.portal_catalog
+    catalogItem = catalog({'UID':obj.UID()})
+    if len(catalogItem) == 0:
+        return
+    else:
+        catalogItem = catalogItem[0]
+    results = catalogItem.reviewResults
+    if obj.acceptOrReject is None:
+        return results
+    if results is None:
+        results = []
+    currentUserId = api.user.get_current().getId()
+    now = DateTime().strftime('%c')
+    results.append([currentUserId, now,
+                    obj.acceptOrReject,
+                    '%s' % obj.externalReviewerComment])
+    obj.acceptOrReject = None
+    obj.externalReviewerComment = None
+    return results
+grok.global_adapter(reviewResults_indexer, name='reviewResults')
+
+@indexer(IArticle)
+def authorsInformation_indexer(obj):
+    catalog = obj.portal_catalog
+    selfUID = obj.UID()
+    selfBrain = catalog(UID=selfUID)
+    if len(selfBrain) > 0:
+        selfBrain = selfBrain[0]
+        ownerId = obj.owner_info()['id']
+        currentUserId = api.user.get_current().getId()
+        if ownerId != currentUserId:
+            return selfBrain.authorsInformation
+
+    result = []
+    for uid in obj.authors:
+        brain = catalog(UID=uid)
+        if len(brain) == 0:
+            continue
+        item = brain[0]
+        authorInfo = {
+            'authorNameC':item.authorNameC,
+            'authorNameE':item.authorNameE,
+            'institutionC':item.institutionC,
+            'institutionE':item.institutionE,
+            'titleC':item.titleC,
+            'titleE':item.titleE,
+            'email':item.email,
+            'phone':item.phone,
+        }
+        result.append(authorInfo)
+    return result
+grok.global_adapter(authorsInformation_indexer, name='authorsInformation')

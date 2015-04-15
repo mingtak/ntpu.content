@@ -38,4 +38,42 @@
 
   <include file="permissions.zcml" />
 
+  <!-- article -->
+  <adapter
+      for="Products.CMFCore.interfaces.IFolderish
+           Products.CMFDefault.interfaces.ICMFDefaultSkin
+           plone.dexterity.interfaces.IDexterityFTI"
+      provides="zope.publisher.interfaces.browser.IBrowserPage"
+      factory=".defaultForms.ArticleAddView"
+      name="ntpu.content.article"
+      />
+
+  <browser:page
+      for="ntpu.content.article.IArticle"
+      name="edit"
+      permission="cmf.ModifyPortalContent"
+      class=".defaultForms.ArticleEditForm"
+      />
+
+  <!-- author -->
+  <adapter
+      for="Products.CMFCore.interfaces.IFolderish
+           Products.CMFDefault.interfaces.ICMFDefaultSkin
+           plone.dexterity.interfaces.IDexterityFTI"
+      provides="zope.publisher.interfaces.browser.IBrowserPage"
+      factory=".defaultForms.AuthorAddView"
+      name="ntpu.content.author"
+      />
+
+  <browser:page
+      for="ntpu.content.author.IAuthor"
+      name="edit"
+      permission="cmf.ModifyPortalContent"
+      class=".defaultForms.AuthorEditForm"
+      />
+
+  <!-- z3c.jbot -->
+  <browser:jbot
+    directory="jbot_template" />
+
 </configure>

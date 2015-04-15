@@ -592,7 +592,7 @@ msgid "Kyrgyzstan"
 msgstr "吉爾吉斯坦"
 
 #: ./article.py:117
-msgid "Langeuage"
+msgid "Language"
 msgstr "語言"
 
 #: ./config.py:135

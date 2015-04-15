@@ -595,7 +595,7 @@ msgid "Kyrgyzstan"
 msgstr ""
 
 #: ./article.py:117
-msgid "Langeuage"
+msgid "Language"
 msgstr ""
 
 #: ./config.py:135
