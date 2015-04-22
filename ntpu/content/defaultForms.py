@@ -48,6 +48,8 @@ class ArticleEditForm(DefaultEditForm):
         super(ArticleEditForm, self).updateWidgets()
         view = api.content.get_view(name='view', context=self.context, request=self.request)
         selfBrain = view.getSelfBrain()
+        if len(selfBrain) == 0:
+            return
         currentUserId = api.user.get_current().getId()
 
         if 'Site Administrator' in view.getRoles():

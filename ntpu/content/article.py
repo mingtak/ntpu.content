@@ -331,11 +331,23 @@ class SampleView(dexterity.DisplayForm):
         currentUserId = api.user.get_current().getId()
         if len(set(['Manager', 'Site Administrator', 'Super Editor']) & set(roles)) > 0:
             return True
+
         if len(set(['Internal Reviewer', 'External Reviewer']) & set(roles)) > 0:
-            if (context.assignInternalReviewer is not None and currentUserId in context.assignInternalReviewer) or \
-               (context.assignExternalReviewer is not None and currentUserId in context.assignExternalReviewer) or \
-               (context.assignExtraReviewer is not None and currentUserId in context.assignExtraReviewer):
-                return True
+            if context.assignInternalReviewer is not None:
+                if currentUserId == context.assignInternalReviewer.to_object.getId():
+                    return True
+            if context.assignExternalReviewer is not None:
+                reviewer = context.assignExternalReviewer
+                ids = []
+                for i in reviewer:
+                    ids.append(i.to_object.getId())
+                if currentUserId in ids:
+                    return True
+            if context.assignExtraReviewer is not None:
+                if currentUserId == context.assignExtraReviewer.to_object.getId():
+                    return True
+            else:
+                return False
         else:
             return False
 
@@ -382,6 +394,8 @@ class SampleView(dexterity.DisplayForm):
         catalog = self.context.portal_catalog
         uid = self.context.UID()
         brain = catalog(UID=uid)
+        if len(brain) == 0:
+            return brain
         return brain[0]
 
 
@@ -451,7 +465,10 @@ grok.global_adapter(blindSetup_indexer, name='blindSetup')
 
 @indexer(IArticle)
 def assignInternalReviewer_indexer(obj):
-    return obj.assignInternalReviewer
+    if obj.assignInternalReviewer is None:
+        return
+    else:
+        return obj.assignInternalReviewer.to_object.getId()
 grok.global_adapter(assignInternalReviewer_indexer, name='assignInternalReviewer')
 
 @indexer(IArticle)

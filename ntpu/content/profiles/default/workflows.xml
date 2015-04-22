@@ -11,8 +11,9 @@
   </type>
   <type type_id="File"/>
   <type type_id="Folder">
-   <bound-workflow workflow_id="private_folder_workflow"/>
+   <bound-workflow workflow_id="system_private_folder_workflow"/>
   </type>
+
   <type type_id="Image"/>
   <type type_id="ntpu.content.article">
    <bound-workflow workflow_id="ntpu_review_article_workflow"/>

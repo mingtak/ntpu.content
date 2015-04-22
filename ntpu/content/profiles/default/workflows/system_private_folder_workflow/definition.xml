@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="private_folder_workflow" title="private_folder_workflow" description=" - Normally used with the Intranet/Extranet workflow on folder types. - Only has two states: Private and Internal Draft." state_variable="review_state" initial_state="internal" manager_bypass="False">
+<dc-workflow workflow_id="system_private_folder_workflow" title="private_folder_workflow" description=" - Normally used with the Intranet/Extranet workflow on folder types. - Only has two states: Private and Internal Draft." state_variable="review_state" initial_state="internal" manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
@@ -7,30 +7,19 @@
   <description>Visible to all intranet users.</description>
   <exit-transition transition_id="hide"/>
   <permission-map name="Access contents information" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>Reader</permission-role>
    <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
-   <permission-role>Reader</permission-role>
    <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
   </permission-map>
  </state>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
