@@ -71,7 +71,6 @@ class ArticleEditForm(DefaultEditForm):
                             if key in ['acceptOrReject', 'externalReviewerComment']:
                                 group.fields[key].mode = 'hidden'
                     group.description = 'You are already reviewd this paper.'
-
         if not view.checkIdInReviewerList():
             for group in self.groups:
                 for key in group.fields.keys():

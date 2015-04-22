@@ -53,8 +53,16 @@
   </index>
   <column value="acceptOrReject"/>
 
+  <index name="groups" meta_type="KeywordIndex">
+    <indexed_attr value="groups" />
+  </index>
+  <column value="groups"/>
+
   <column value="reviewResults"/>
 
   <column value="authorsInformation"/>
+
+
+
 </object>
 

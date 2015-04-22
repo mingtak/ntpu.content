@@ -88,11 +88,11 @@ msgstr "阿路巴"
 
 #: ./article.py:74
 msgid "Assign external reviewer"
-msgstr "指定外部編審"
+msgstr "指定審查委員"
 
 #: ./article.py:67
 msgid "Assign internal reviewer"
-msgstr "指定內部編審"
+msgstr "指定責任編輯"
 
 #: ./config.py:46
 msgid "Australia"
@@ -405,7 +405,7 @@ msgstr "專業領域"
 
 #: ./article.py:94
 msgid "External reviewer comment"
-msgstr "編審意見"
+msgstr "審查意見"
 
 #: ./profile.py:90
 msgid "Fax number"

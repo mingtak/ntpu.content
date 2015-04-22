@@ -22,30 +22,23 @@ from plone.indexer import indexer
 from DateTime import DateTime
 
 from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject, BlindSetup
-
 from ntpu.content import defaultForms
+from ntpu.content.profile import IProfile
+
+from plone.autoform import directives
+from plone.formwidget.autocomplete import AutocompleteFieldWidget
 
 from ntpu.content import MessageFactory as _
 
 
 @grok.provider(IContextSourceBinder)
 def availableInternalReviewer(context):
-    internalReviewers = api.user.get_users(groupname='InternalReviewer')
-    terms = []
-    for item in internalReviewers:
-        terms.append(SimpleVocabulary.createTerm(item.getId(), item.getId(), "%s, %s" %
-            (item.getId(), ('' if item.getProperty('fullname') is None else item.getProperty('fullname')))))
-    return SimpleVocabulary(terms)
+    return ObjPathSourceBinder(Type="Profile", groups="InternalReviewer")(context)
 
 
 @grok.provider(IContextSourceBinder)
 def availableExternalReviewer(context):
-    externalReviewers = api.user.get_users(groupname='ExternalReviewer')
-    terms = []
-    for item in externalReviewers:
-        terms.append(SimpleVocabulary.createTerm(item.getId(), item.getId(), "%s, %s" %
-            (item.getId(), ('' if item.getProperty('fullname') is None else item.getProperty('fullname')))))
-    return SimpleVocabulary(terms)
+    return ObjPathSourceBinder(Type="Profile", groups="ExternalReviewer")(context)
 
 
 @grok.provider(IContextSourceBinder)
@@ -73,7 +66,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         _(u'Review State'),
         label=_(u"Review State"),
         fields=['blindSetup', 'assignInternalReviewer', 'assignExternalReviewer',
-                'assignExtraReviewer', 'acceptOrReject', 'externalReviewerComment'],
+                'assignExtraReviewer', 'acceptOrReject', 'externalReviewerComment', 'reviewCommentAttached'],
     )
 
 
@@ -81,6 +74,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.read_permission(blindSetup='ntpu.content.IsSuperEditor')
     blindSetup = schema.Choice(
         title=_(u'Blind setup'),
+        description=_(u'Recommend using double-blind review'),
         vocabulary=BlindSetup,
         default=True,
         required=True,
@@ -88,7 +82,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(assignInternalReviewer='ntpu.content.IsSuperEditor')
     dexterity.read_permission(assignInternalReviewer='ntpu.content.IsSuperEditor')
-    assignInternalReviewer = schema.Choice(
+    assignInternalReviewer = RelationChoice(
         title=_(u'Assign internal reviewer'),
         source=availableInternalReviewer,
         default=None,
@@ -97,9 +91,10 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
     dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
-    assignExternalReviewer = schema.List(
+#    form.widget(assignExternalReviewer=AutocompleteFieldWidget)
+    assignExternalReviewer = RelationList(
         title=_(u'Assign external reviewer'),
-        value_type=schema.Choice(
+        value_type=RelationChoice(
             source=availableExternalReviewer,
         ),
         min_length=2,
@@ -109,7 +104,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
     dexterity.read_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
-    assignExtraReviewer = schema.Choice(
+    assignExtraReviewer = RelationChoice(
         title=_(u'Assign external reviewer'),
         source=availableExternalReviewer,
         required=False,
@@ -119,24 +114,32 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
     dexterity.read_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
     acceptOrReject = schema.Choice(
-        title=_(u'Accept or Reject'),
+        title=_(u'Result of Review'),
         vocabulary=AcceptOrReject,
         default=None,
         required=True,
     )
 
+
     dexterity.write_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
     dexterity.read_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
     externalReviewerComment = schema.Text(
         title=_(u'External reviewer comment'),
-        required=True,
+        required=False,
+    )
+
+    dexterity.write_permission(reviewCommentAttached='ntpu.content.IsExternalReviewer')
+    dexterity.read_permission(reviewCommentAttached='ntpu.content.IsExternalReviewer')
+    reviewCommentAttached = NamedBlobFile(
+        title=_(u'External reviewer comment attached file'),
+        required = False,
     )
 
     form.fieldset(
         _(u'manuscript metadata'),
         label=_(u"Manuscript Metadata"),
         fields=['submittingFrom', 'articleLanguage', 'articleType', 'articleTitle', 'engTitle',
-                'keywords', 'engKeywords', 'abstract', 'engAbstract', 'coverLetter'],
+                'runningTitle', 'keywords', 'engKeywords', 'abstract', 'engAbstract', 'coverLetter'],
         description=_(u"Submit a new manuscript(fields in RED DOT are Required)"),
     )
 
@@ -179,6 +182,12 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=False,
     )
 
+    dexterity.write_permission(runningTitle='ntpu.content.IsOwner')
+    runningTitle = schema.TextLine(
+        title=_(u'Running title'),
+        required=False,
+    )
+
     dexteritytextindexer.searchable('keywords')
     dexterity.write_permission(keywords='ntpu.content.IsOwner')
     keywords = schema.TextLine(
@@ -199,6 +208,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(abstract='ntpu.content.IsOwner')
     abstract = schema.Text(
         title=_(u'Abstract'),
+        description=_(u'Please limit the number of words in 500 words or less'),
         required=True,
     )
 
@@ -446,12 +456,20 @@ grok.global_adapter(assignInternalReviewer_indexer, name='assignInternalReviewer
 
 @indexer(IArticle)
 def assignExternalReviewer_indexer(obj):
-    return obj.assignExternalReviewer
+    result = []
+    if obj.assignExternalReviewer is None:
+        return
+    for item in obj.assignExternalReviewer:
+        result.append(item.to_object.getId())
+    return result
 grok.global_adapter(assignExternalReviewer_indexer, name='assignExternalReviewer')
 
 @indexer(IArticle)
 def assignExtraReviewer_indexer(obj):
-    return obj.assignExtraReviewer
+    if obj.assignExtraReviewer is None:
+        return
+    else:
+        return obj.assignExtraReviewer.to_object.getId()
 grok.global_adapter(assignExtraReviewer_indexer, name='assignExtraReviewer')
 
 @indexer(IArticle)

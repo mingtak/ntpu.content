@@ -21,6 +21,8 @@ from ntpu.content.config import GenderOption, CountryList, Degree
 from Products.CMFDefault.utils import checkEmailAddress
 from Products.CMFDefault.exceptions import EmailAddressInvalid
 
+from plone.indexer import indexer
+
 from ntpu.content import MessageFactory as _
 
 
@@ -159,3 +161,10 @@ class SampleView(grok.View):
     grok.context(IProfile)
     grok.require('zope2.View')
     # grok.name('view')
+
+
+@indexer(IProfile)
+def groups_indexer(obj):
+    groups = obj.getOwner().getGroups()
+    return groups
+grok.global_adapter(groups_indexer, name='groups')

@@ -19,6 +19,12 @@
 
       <h2 tal:content="context/articleTitle"/>
       <h3 tal:condition="context/engTitle" tal:content="context/engTitle"/>
+
+<div tal:condition="context/runningTitle">
+      <strong i18n:translate="">Running Title</strong>
+      <p tal:content="context/runningTitle"/>
+</div>
+
 <div tal:condition="context/abstract">
       <strong i18n:translate="">Abstract</strong>
       <p tal:content="context/abstract"/>
