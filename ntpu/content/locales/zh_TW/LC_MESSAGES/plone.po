@@ -24,10 +24,10 @@ msgid "Super Editor"
 msgstr "主編"
 
 msgid "External Reviewer"
-msgstr "外評"
+msgstr "審查委員"
 
 msgid "Internal Reviewer"
-msgstr "內評"
+msgstr "責任編輯"
 
 #. Default: "Internal draft"
 #: CMFPlone/profiles/default/workflows/intranet_folder_workflow/definition.xml

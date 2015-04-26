@@ -5,18 +5,17 @@ from plone import api
 from Products.DCWorkflow.interfaces import IBeforeTransitionEvent
 from ntpu.content import MessageFactory as _
 
-"""
+
 @grok.subscribe(IArticle, IBeforeTransitionEvent)
-def userLoggedIn(item, event):
-    import pdb; pdb.set_trace()
-    if event.transition.getId() == 'reject':
-    if event.transition.getId() != 'submitting':
-        return
-
-    import pdb; pdb.set_trace()
-
-    if item.allAuthorConsent == False:
-        api.portal.show_message(message=_(u"Please check 'All author consent' field"), request=item.REQUEST, type='warn')
-    if item.license == False:
-        api.portal.show_message(message=_(u"Please check 'Exclusive or non-exclusive license' field"), request=item.REQUEST, type='warn')
-"""
+def retract(item, event):
+    if event.new_state.getId() == 'draft':
+        item.blindSetup = None
+        item.assignInternalReviewer = None
+        item.assignInternalReviewer1 = None
+        item.assignInternalReviewer2 = None
+        item.assignInternalReviewer3 = None
+        item.assignExternalReviewer = None
+        item.assignExtraReviewer = None
+        item.acceptOrReject = None
+        item.externalReviewerComment = None
+        item.reindexObject()

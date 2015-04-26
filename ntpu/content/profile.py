@@ -22,6 +22,7 @@ from Products.CMFDefault.utils import checkEmailAddress
 from Products.CMFDefault.exceptions import EmailAddressInvalid
 
 from plone.indexer import indexer
+from plone import api
 
 from ntpu.content import MessageFactory as _
 
@@ -155,12 +156,44 @@ class Profile(Container):
     grok.implements(IProfile)
 
 
-class SampleView(grok.View):
+class SampleView(dexterity.DisplayForm):
     """ sample view class """
 
     grok.context(IProfile)
     grok.require('zope2.View')
-    # grok.name('view')
+    grok.name('view')
+
+    def newInReview(self):
+        """ New InReview article """
+        catalog = self.context.portal_catalog
+        brain = catalog(
+                    {"Type":"Article", "review_state":"inReview"},
+                    sort_on="modified",
+                    sort_order="reverse",
+                )
+        return brain
+
+    def newSubmitted(self):
+        """ New submitted article """
+        catalog = self.context.portal_catalog
+        brain = catalog(
+                    {"Type":"Article", "review_state":"submitted"},
+                    sort_on="modified",
+                    sort_order="reverse",
+                )
+        return brain
+
+    def internalAssigned(self):
+        """ internalAssigned article """
+        catalog = self.context.portal_catalog
+        brain = catalog(
+                    {"Type":"Article",
+                     "review_state":"internalAssigned",},
+                    sort_on="modified",
+                    sort_order="reverse",
+                )
+        return brain
+
 
 
 @indexer(IProfile)

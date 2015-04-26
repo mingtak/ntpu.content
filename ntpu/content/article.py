@@ -65,8 +65,16 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.fieldset(
         _(u'Review State'),
         label=_(u"Review State"),
-        fields=['blindSetup', 'assignInternalReviewer', 'assignExternalReviewer',
-                'assignExtraReviewer', 'acceptOrReject', 'externalReviewerComment', 'reviewCommentAttached'],
+        fields=['blindSetup',
+                'assignInternalReviewer',
+                'assignExternalReviewer',
+                'assignExtraReviewer',
+                'assignExternalReviewer1',
+                'assignExternalReviewer2',
+                'assignExternalReviewer3',
+                'acceptOrReject',
+                'externalReviewerComment',
+                'reviewCommentAttached'],
     )
 
 
@@ -89,8 +97,8 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
-    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
-    dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.write_permission(assignExternalReviewer='cmf.ManagePortal')
+    dexterity.read_permission(assignExternalReviewer='cmf.ManagePortal')
 #    form.widget(assignExternalReviewer=AutocompleteFieldWidget)
     assignExternalReviewer = RelationList(
         title=_(u'Assign external reviewer'),
@@ -102,8 +110,38 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
-    dexterity.write_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
-    dexterity.read_permission(assignExtraReviewer='ntpu.content.IsInternalReviewer')
+
+    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    form.widget(assignExternalReviewer=AutocompleteFieldWidget)
+    assignExternalReviewer1 = RelationChoice(
+        title=_(u'Assign first external reviewer'),
+        source=availableExternalReviewer,
+        required=False,
+    )
+
+
+    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    form.widget(assignExternalReviewer=AutocompleteFieldWidget)
+    assignExternalReviewer2 = RelationChoice(
+        title=_(u'Assign second external reviewer'),
+        source=availableExternalReviewer,
+        required=False,
+    )
+
+    dexterity.write_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    dexterity.read_permission(assignExternalReviewer='ntpu.content.IsInternalReviewer')
+    form.widget(assignExternalReviewer3=AutocompleteFieldWidget)
+    assignExternalReviewer3 = RelationChoice(
+        title=_(u'Assign third external reviewer'),
+        source=availableExternalReviewer,
+        required=False,
+    )
+
+
+    dexterity.write_permission(assignExtraReviewer='cmf.ManagePortal')
+    dexterity.read_permission(assignExtraReviewer='cmf.ManagePortal')
     assignExtraReviewer = RelationChoice(
         title=_(u'Assign external reviewer'),
         source=availableExternalReviewer,
@@ -398,6 +436,16 @@ class SampleView(dexterity.DisplayForm):
             return brain
         return brain[0]
 
+    def getPhysicalPath(self):
+        context = self.context
+        pathList = context.getPhysicalPath()
+        physicalPath = '/'
+        for item in pathList:
+            if item == '':
+                continue
+            physicalPath += '%s/' % item
+        return physicalPath
+
 
 @indexer(IArticle)
 def submittingFrom_indexer(obj):
@@ -431,7 +479,7 @@ grok.global_adapter(articleTitleC_indexer, name='articleTitleC')
 
 @indexer(IArticle)
 def articleTitleE_indexer(obj):
-    return obj.articleTitleE
+    return obj.engTitle
 grok.global_adapter(articleTitleE_indexer, name='articleTitleE')
 
 @indexer(IArticle)
@@ -463,6 +511,7 @@ def blindSetup_indexer(obj):
     return obj.blindSetup
 grok.global_adapter(blindSetup_indexer, name='blindSetup')
 
+
 @indexer(IArticle)
 def assignInternalReviewer_indexer(obj):
     if obj.assignInternalReviewer is None:
@@ -480,6 +529,7 @@ def assignExternalReviewer_indexer(obj):
         result.append(item.to_object.getId())
     return result
 grok.global_adapter(assignExternalReviewer_indexer, name='assignExternalReviewer')
+
 
 @indexer(IArticle)
 def assignExtraReviewer_indexer(obj):

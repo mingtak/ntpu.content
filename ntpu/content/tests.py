@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for CommentFile
+        ztc.ZopeDocFileSuite(
+            'CommentFile.txt',
+            package='ntpu.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for PageWithFile
         ztc.ZopeDocFileSuite(
             'PageWithFile.txt',

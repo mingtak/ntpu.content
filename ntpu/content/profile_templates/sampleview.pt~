@@ -11,11 +11,12 @@
     This is a sample view template. It will not be used for rendering the
     content unless activated by creation of a view class with a matching name.
 </tal:comment>
-
+<tal:isowner condition="context/@@is_owner">
 <metal:main fill-slot="content-core">
+
   <metal:content-core define-macro="content-core">
 
-<tal:isowner condition="context/@@is_owner">
+
 
     <h2 i18n:translate="">Personal informat</h2>
     <div>
@@ -133,10 +134,11 @@
     <br/><hr/>
 </tal:internalReview>
 
-</tal:isowner>
-  </metal:content-core>
-</metal:main>
 
+  </metal:content-core>
+
+</metal:main>
+</tal:isowner>
 </body>
 </html>
 

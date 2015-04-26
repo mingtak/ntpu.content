@@ -1,33 +1,28 @@
 <?xml version="1.0"?>
-<object name="ntpu.content.article"
+<object name="ntpu.content.commentfile"
    meta_type="Dexterity FTI"
    i18n:domain="ntpu.content" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Article</property>
+  <property name="title" i18n:translate="">CommentFile</property>
   <property name="description"
-    i18n:translate="">Contribute article</property>
+    i18n:translate="">Review comment attached file</property>
   <property name="icon_expr">string:${portal_url}/document_icon.png</property>
-  <property name="factory">ntpu.content.article</property>
+  <property name="factory">ntpu.content.commentfile</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-   <element value="Image"/>
-   <element value="File"/>
-   <element value="ntpu.content.commentfile"/>
-  </property>
+  <property name="allowed_content_types" />
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">ntpu.content.article.IArticle</property>
-  <property name="klass">ntpu.content.article.Article</property>
+  <property name="schema">ntpu.content.commentfile.ICommentFile</property>
+  <property name="klass">ntpu.content.commentfile.CommentFile</property>
 
   <property name="behaviors">
-<!--     <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/> -->
-    <element value="ntpu.behavior.attachedfile.IAttachedFile" />
-    <element value="funlog.behavior.namedfromtimestamp.INamedFromTimeStamp" />
-  </property>
+   <!--  <element value="plone.app.content.interfaces.INameFromTitle" /> -->
+     <element value="plone.app.dexterity.behaviors.filename.INameFromFileName"/>
+     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
+   </property>
 
   <!-- View information -->
   <property name="link_target"></property>
@@ -37,7 +32,7 @@
    <element value="view"/>
   </property>
   <property name="default_view_fallback">False</property>
-  <property name="add_permission">cmf.AddPortalContent</property>
+  <property name="add_permission">cmf.ManagePortal</property>
 
 
   <!-- Method aliases -->

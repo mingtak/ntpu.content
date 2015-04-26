@@ -8,6 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="ntpu.content.commentfile" meta_type="Dexterity FTI" />
   <object name="ntpu.content.pagewithfile" meta_type="Dexterity FTI" />
   <object name="ntpu.content.journal" meta_type="Dexterity FTI" />
   <object name="ntpu.content.systemfolder" meta_type="Dexterity FTI" />

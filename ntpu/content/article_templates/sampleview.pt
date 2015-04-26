@@ -55,6 +55,26 @@
       <p tal:content="context/articleLanguage"/>
 </div>
 
+<tal:file define="catalog python:context.portal_catalog;
+                  files python:catalog({'Type':'File', 'path':view.getPhysicalPath()},
+                                       sort_on='created', sort_order='reverse')">
+  <a tal:attributes="href python:files[0].getURL()" i18n:translate="">Attached file</a>
+</tal:file>
+<br/><br/>
+<tal:images define="catalog python:context.portal_catalog;
+                    images python:catalog({'Type':'Image', 'path':view.getPhysicalPath()},
+                                          sort_on='created', sort_order='reverse')"
+            repeat="image images">
+<p>
+  <a tal:attributes="href string:${image/getURL}/@@images/image/" target="_blank">
+    <img tal:attributes="src string:${image/getURL}/@@images/image/preview">
+  </a>
+  <br/>
+  <span tal:content="string:${image/Title}: ${image/Description}"/>
+</p>
+</tal:images>
+
+
 <div tal:condition="context/attachFile">
       <strong i18n:translate="">attachFile:</strong>
       <a tal:attributes="href string:${context/absolute_url}/@@download/attachFile/${context/attachFile/filename}"
