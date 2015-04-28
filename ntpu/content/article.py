@@ -144,7 +144,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         title=_(u'Result of Review'),
         vocabulary=AcceptOrReject,
         default=None,
-        required=True,
+        required=False,
     )
 
     dexterity.write_permission(externalReviewerComment1='ntpu.content.IsExternalReviewer')
@@ -193,7 +193,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         title=_(u'Result of Review'),
         vocabulary=AcceptOrReject,
         default=None,
-        required=True,
+        required=False,
     )
 
     dexterity.write_permission(externalReviewerComment2='ntpu.content.IsExternalReviewer')
@@ -241,7 +241,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         title=_(u'Result of Review'),
         vocabulary=AcceptOrReject,
         default=None,
-        required=True,
+        required=False,
     )
 
     dexterity.write_permission(externalReviewerComment3='ntpu.content.IsExternalReviewer')
@@ -505,24 +505,22 @@ class SampleView(dexterity.DisplayForm):
 
         if len(set(['Internal Reviewer', 'External Reviewer']) & set(roles)) > 0:
             if context.assignInternalReviewer is not None:
-                if currentUserId == context.assignInternalReviewer.to_object.getId():
+                if currentUserId == context.assignInternalReviewer.to_object.owner_info()['id']:
                     return True
-            if context.assignExternalReviewer is not None:
-                reviewer = context.assignExternalReviewer
-                ids = []
-                for i in reviewer:
-                    ids.append(i.to_object.getId())
-                if currentUserId in ids:
+                if currentUserId == context.assignExternalReviewer1.to_object.owner_info()['id']:
                     return True
-            if context.assignExtraReviewer is not None:
-                if currentUserId == context.assignExtraReviewer.to_object.getId():
+                if currentUserId == context.assignExternalReviewer2.to_object.owner_info()['id']:
+                    return True
+                if currentUserId == context.assignExternalReviewer3.to_object.owner_info()['id']:
                     return True
             else:
                 return False
         else:
             return False
 
+
 #### waiting for modify
+    """
     def alreadyReview(self):
         roles = api.user.get_roles()
         context = self.context
@@ -539,6 +537,7 @@ class SampleView(dexterity.DisplayForm):
             return True
         else:
             return False
+    """
 
     def getBlind(self):
         return self.context.blindSetup

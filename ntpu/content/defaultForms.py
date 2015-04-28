@@ -37,9 +37,24 @@ class EditView(DefaultEditView):
     form = EditForm
 
 
+
 ##### Edit form, use updateWidgets to turn hidden/display
 class ArticleEditForm(DefaultEditForm):
     template = ViewPageTemplateFile('template/editForm.pt')
+
+    def getReviewerId(self, reviewerItem):
+        """ reviewerItem like articleItem.assignExternalReviewer2 """
+        if reviewerItem is None:
+            return None
+        else:
+            return reviewerItem.to_object.owner_info()['id']
+
+    def hiddenFields(self, label, mode, keys=[]):
+        for group in self.groups:
+            if group.label == label:
+                for key in group.fields.keys():
+                    if key in keys:
+                        group.fields[key].mode = mode
 
     def update(self):
         DefaultEditForm.update(self)
@@ -48,36 +63,56 @@ class ArticleEditForm(DefaultEditForm):
         super(ArticleEditForm, self).updateWidgets()
         view = api.content.get_view(name='view', context=self.context, request=self.request)
         selfBrain = view.getSelfBrain()
+
+
         if len(selfBrain) == 0:
             return
-        currentUserId = api.user.get_current().getId()
 
         if 'Site Administrator' in view.getRoles():
             return
 
-        if selfBrain.reviewResults is None or len(selfBrain.reviewResults) < 2:
-            for group in self.groups:
-                for key in group.fields.keys():
-                    if key in ['assignExtraReviewer',]:
-                       group.fields[key].mode = 'hidden'
-        elif len(selfBrain.reviewResults) == 2:
-            for group in self.groups:
-                for key in group.fields.keys():
-                    if key in ['assignExternalReviewer',]:
-                        group.fields[key].mode = 'display'
-        if selfBrain.reviewResults is not None:
-            for comment in selfBrain.reviewResults:
-                if currentUserId == comment[0]:
-                    for group in self.groups:
-                        for key in group.fields.keys():
-                            if key in ['acceptOrReject', 'externalReviewerComment']:
-                                group.fields[key].mode = 'hidden'
-                    group.description = 'You are already reviewd this paper.'
-        if not view.checkIdInReviewerList():
-            for group in self.groups:
-                for key in group.fields.keys():
-                    if key in ['acceptOrReject', 'externalReviewerComment']:
-                        group.fields[key].mode = 'hidden'
+
+        currentUserId = api.user.get_current().getId()
+        articleItem = selfBrain.getObject()
+        reviewer_1_id = self.getReviewerId(articleItem.assignExternalReviewer1)
+        reviewer_2_id = self.getReviewerId(articleItem.assignExternalReviewer2)
+        reviewer_3_id = self.getReviewerId(articleItem.assignExternalReviewer3)
+
+        if articleItem.assignExternalReviewer1 is not None and articleItem.acceptInvit1 != False:
+            label = "Review State"
+            keys = ['assignExternalReviewer1']
+            self.hiddenFields(label=label, mode="display", keys=keys)
+
+        if articleItem.assignExternalReviewer2 is not None and articleItem.acceptInvit2 != False:
+            label = "Review State"
+            keys = ['assignExternalReviewer2']
+            self.hiddenFields(label=label, mode="display", keys=keys)
+
+        if articleItem.assignExternalReviewer3 is not None and articleItem.acceptInvit3 != False:
+            label = "Review State"
+            keys = ['assignExternalReviewer1']
+            self.hiddenFields(label=label, mode="display", keys=keys)
+
+        if currentUserId != reviewer_1_id:
+            label = "Review State"
+            keys = ['acceptOrReject1',
+                    'externalReviewerComment1',
+                    'reviewCommentAttached1',]
+            self.hiddenFields(label=label, mode="hidden", keys=keys)
+
+        if currentUserId != reviewer_2_id:
+            label = "Review State"
+            keys = ['acceptOrReject2',
+                    'externalReviewerComment2',
+                    'reviewCommentAttached2',]
+            self.hiddenFields(label=label, mode="hidden", keys=keys)
+
+        if currentUserId != reviewer_3_id:
+            label = "Review State"
+            keys = ['acceptOrReject3',
+                    'externalReviewerComment3',
+                    'reviewCommentAttached3',]
+            self.hiddenFields(label=label, mode="hidden", keys=keys)
 
 
 class ArticleEditView(DefaultEditView):

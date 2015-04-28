@@ -147,7 +147,7 @@
 </tal:reviewcomment>
 
 
-<h3 tal:condition="python:(not view.alreadyReview()) and (not view.isOwner())" >
+<h3 atal:condition="python:(not view.alreadyReview()) and (not view.isOwner())" >
   <a href="./edit" i18n:translate="">Review</a>
 </h3>
 
