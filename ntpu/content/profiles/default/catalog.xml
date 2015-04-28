@@ -38,16 +38,6 @@
   </index>
   <column value="assignInternalReviewer"/>
 
-  <index name="assignExternalReviewer" meta_type="KeywordIndex">
-    <indexed_attr value="assignExternalReviewer" />
-  </index>
-  <column value="assignExternalReviewer"/>
-
-  <index name="assignExtraReviewer" meta_type="KeywordIndex">
-    <indexed_attr value="assignExtraReviewer" />
-  </index>
-  <column value="assignExtraReviewer"/>
-
   <index name="acceptOrReject" meta_type="KeywordIndex">
     <indexed_attr value="acceptOrReject" />
   </index>
@@ -62,7 +52,59 @@
 
   <column value="authorsInformation"/>
 
+  <index name="assignExternalReviewer1" meta_type="KeywordIndex">
+    <indexed_attr value="assignExternalReviewer1" />
+  </index>
+  <column value="assignExternalReviewer1"/>
 
+  <index name="assignExternalReviewer2" meta_type="KeywordIndex">
+    <indexed_attr value="assignExternalReviewer2" />
+  </index>
+  <column value="assignExternalReviewer2"/>
+
+  <index name="assignExternalReviewer3" meta_type="KeywordIndex">
+    <indexed_attr value="assignExternalReviewer3" />
+  </index>
+  <column value="assignExternalReviewer3"/>
+
+  <index name="category" meta_type="FieldIndex">
+    <indexed_attr value="category" />
+  </index>
+  <column value="category"/>
+
+  <index name="acceptInvit1" meta_type="FieldIndex">
+    <indexed_attr value="acceptInvit1" />
+  </index>
+  <column value="acceptInvit1"/>
+
+  <index name="acceptInvit2" meta_type="FieldIndex">
+    <indexed_attr value="acceptInvit2" />
+  </index>
+  <column value="acceptInvit2"/>
+
+  <index name="acceptInvit3" meta_type="FieldIndex">
+    <indexed_attr value="acceptInvit3" />
+  </index>
+  <column value="acceptInvit3"/>
+
+  <index name="invitEmail1" meta_type="FieldIndex">
+    <indexed_attr value="invitEmail1" />
+  </index>
+  <column value="invitEmail1"/>
+
+  <index name="invitEmail2" meta_type="FieldIndex">
+    <indexed_attr value="invitEmail2" />
+  </index>
+  <column value="invitEmail2"/>
+
+  <index name="invitEmail3" meta_type="FieldIndex">
+    <indexed_attr value="invitEmail3" />
+  </index>
+  <column value="invitEmail3"/>
+
+  <column value="abstract" />
+
+  <column value="engAbstract" />
 
 </object>
 

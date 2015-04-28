@@ -7,11 +7,6 @@
       i18n:domain="ntpu.content">
 <body>
 
-<tal:comment tal:condition="nothing">
-    This is a sample view template. It will not be used for rendering the
-    content unless activated by creation of a view class with a matching name.
-</tal:comment>
-
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
@@ -27,6 +22,7 @@
     </div>
     <br/><hr/>
 
+<!-- 管理員桌面 -->
 <tal:admin define="roles context/@@get_roles"
              condition="python:'Site Administrator' in roles or 'Manager' in roles">
 
@@ -44,7 +40,9 @@
         <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
            <span tal:replace="item/engAbstract" />
         </p>
-
+        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
+           <span tal:replace="python:item.category.values()[0]" />
+        </p>
       <form tal:attributes="action string:${item/getURL}">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
@@ -53,6 +51,7 @@
     <br/><hr/>
 </tal:admin>
 
+<!-- 主編桌面 -->
 <tal:super_editor define="roles context/@@get_roles"
              condition="python:'Super Editor' in roles">
 
@@ -69,6 +68,10 @@
         </p>
         <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
            <span tal:replace="item/engAbstract" />
+        </p>
+
+        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
+           <span tal:replace="python:item.category.values()[0]" />
         </p>
 
       <form tal:attributes="action string:${item/getURL}">
@@ -93,6 +96,10 @@
            <span tal:replace="item/engAbstract" />
         </p>
 
+        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
+           <span tal:replace="python:item.category.values()[0]" />
+        </p>
+
       <form tal:attributes="action string:${item/getURL}">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
@@ -102,7 +109,7 @@
     <br/><hr/>
 </tal:super_editor>
 
-
+<!-- 責任編輯桌面 -->
 <tal:internalReview define="roles context/@@get_roles"
              condition="python:'Internal Reviewer' in roles or 'Manager' in roles">
 
@@ -132,6 +139,39 @@
     </div>
     <br/><hr/>
 </tal:internalReview>
+
+
+<!-- 審查委員桌面 -->
+<tal:ExternalReview define="roles context/@@get_roles"
+                    condition="python:'External Reviewer' in roles or 'Manager' in roles">
+<tal:test define="backref view/externalReviewerBackRef" />
+
+    <h2 i18n:translate="">External Reviewer Region</h2>
+    <div tal:define="brain view/internalAssigned;
+                     currentUserId context/@@getCurrentUserId"
+         tal:repeat="item brain">
+      <tal:check condition="python:item.assignInternalReviewer == currentUserId">
+        <p><strong i18n:translate="">Article title(Chinese):</strong>
+           <span tal:replace="item/articleTitleC" />
+        </p>
+        <p tal:condition="item/articleTitleE"><strong i18n:translate="">Article title(English):</strong>
+           <span tal:replace="item/articleTitleE" />
+        </p>
+        <p tal:condition="item/abstract"><strong i18n:translate="">Abstract(Chinese):</strong>
+           <span tal:replace="item/abstract" />
+        </p>
+        <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
+           <span tal:replace="item/engAbstract" />
+        </p>
+
+      <form tal:attributes="action string:${item/getURL}">
+          <input type="submit" value="Detail" i18n:attributes="value"/>
+      </form>
+      <br/>
+      </tal:check>
+    </div>
+    <br/><hr/>
+</tal:ExternalReview>
 
 </tal:isowner>
   </metal:content-core>

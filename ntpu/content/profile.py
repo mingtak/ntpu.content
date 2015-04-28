@@ -24,7 +24,32 @@ from Products.CMFDefault.exceptions import EmailAddressInvalid
 from plone.indexer import indexer
 from plone import api
 
+# Back references
+from Acquisition import aq_inner
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
+from zope.security import checkPermission
+from zc.relation.interfaces import ICatalog
+
+# i18n
 from ntpu.content import MessageFactory as _
+
+
+def back_references(source_object, attribute_name):
+    """
+    Return back references from source object on specified attribute_name
+    """
+    catalog = getUtility(ICatalog)
+    intids = getUtility(IIntIds)
+    result = []
+    for rel in catalog.findRelations(
+                   dict(to_id=intids.getId(aq_inner(source_object)),
+                   from_attribute=attribute_name)):
+        obj = intids.queryObject(rel.from_id)
+        if obj is not None and checkPermission('zope2.View', obj):
+            result.append(obj)
+    return result
+
 
 
 def checkEmail(value):
@@ -162,6 +187,22 @@ class SampleView(dexterity.DisplayForm):
     grok.context(IProfile)
     grok.require('zope2.View')
     grok.name('view')
+
+    def internalReviewerBackRef(self):
+        return back_references(self.context, 'assignInternalReviewer')
+
+    def externalReviewerBackRef(self):
+        externalReviewerList = []
+        back1 = back_references(self.context, 'assignExternalReviewer1')
+        back2 = back_references(self.context, 'assignExternalReviewer2')
+        back3 = back_references(self.context, 'assignExternalReviewer3')
+        if bool(back1):
+            externalReviewerList.append(back1[0])
+        if bool(back2):
+            externalReviewerList.append(back2[0])
+        if bool(back3):
+            externalReviewerList.append(back3[0])
+        return externalReviewerList
 
     def newInReview(self):
         """ New InReview article """

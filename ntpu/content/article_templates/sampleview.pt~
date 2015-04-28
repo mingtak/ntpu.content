@@ -7,6 +7,11 @@
       i18n:domain="ntpu.content">
 <body>
 
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 

@@ -9,6 +9,7 @@ from DateTime import DateTime
 from ntpu.content import MessageFactory as _
 
 
+# for Owner
 @grok.subscribe(IArticle, IObjectAddedEvent)
 @grok.subscribe(IArticle, IObjectModifiedEvent)
 def addedOrModifiedArticle(obj, event):
