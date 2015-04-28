@@ -25,3 +25,4 @@ def userLoggedIn(event):
             myName=currentUserFullName,
             email=currentUserEmail,
         )
+        profile.reindexObject()

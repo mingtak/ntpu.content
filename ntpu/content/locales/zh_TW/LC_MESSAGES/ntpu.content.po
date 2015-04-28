@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-27 15:38+0000\n"
+"POT-Creation-Date: 2015-04-28 09:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 msgid "2015 University of Taipei. All Rights Reserved."
 msgstr "© 2015 University of Taipei. All Rights Reserved."
 
-#: ./article.py:285
+#: ./article.py:358
 #: ./article_templates/sampleview.pt:24
 #: ./journal.py:54
 msgid "Abstract"
 msgstr "摘要"
 
-#: ./browser/template/inviteReivew.pt:20
+#: ./browser/template/inviteReview.pt:20
 #: ./profile_templates/sampleview.pt:37
 msgid "Abstract(Chinese):"
 msgstr "中文摘要:"
 
-#: ./browser/template/inviteReivew.pt:21
+#: ./browser/template/inviteReview.pt:21
 #: ./profile_templates/sampleview.pt:40
 msgid "Abstract(English):"
 msgstr "英文摘要:"
 
-#: ./article.py:130
+#: ./article.py:136
 msgid "Accept invitation"
 msgstr "接受邀請"
 
-#: ./article.py:131
+#: ./article.py:137
 msgid "Accept the invitation to review"
 msgstr "接受審查邀請"
 
@@ -70,7 +70,7 @@ msgstr "阿爾巴尼亞"
 msgid "Algeria"
 msgstr "阿爾及利亞"
 
-#: ./article.py:358
+#: ./article.py:431
 msgid "All author consent"
 msgstr "所有作者同意"
 
@@ -102,7 +102,7 @@ msgstr "亞美尼亞"
 msgid "Article"
 msgstr "投稿"
 
-#: ./article.py:249
+#: ./article.py:322
 msgid "Article title"
 msgstr "稿件標題"
 
@@ -114,7 +114,7 @@ msgstr "中文標題:"
 msgid "Article title(English):"
 msgstr "英文標題:"
 
-#: ./article.py:240
+#: ./article.py:313
 #: ./article_templates/sampleview.pt:44
 msgid "Article type"
 msgstr "文章型態"
@@ -123,19 +123,19 @@ msgstr "文章型態"
 msgid "Aruba"
 msgstr "阿路巴"
 
-#: ./article.py:114
+#: ./article.py:120
 msgid "Assign first external reviewer"
 msgstr "指定第一位審查委員"
 
-#: ./article.py:103
+#: ./article.py:109
 msgid "Assign internal reviewer"
 msgstr "指定責任編輯"
 
-#: ./article.py:140
+#: ./article.py:169
 msgid "Assign second external reviewer"
 msgstr "指定第二位審查委員"
 
-#: ./article.py:166
+#: ./article.py:217
 msgid "Assign third external reviewer"
 msgstr "指定第三位審查委員"
 
@@ -168,7 +168,7 @@ msgstr "作者資訊"
 msgid "Author information"
 msgstr "作者資訊"
 
-#: ./article.py:320
+#: ./article.py:393
 #: ./journal.py:32
 msgid "Authors"
 msgstr "作者"
@@ -234,7 +234,7 @@ msgstr "不丹"
 msgid "Biochemistry of Exercise, Nutrition of Exercise"
 msgstr "運動生化學/運動營養學"
 
-#: ./article.py:92
+#: ./article.py:98
 msgid "Blind setup"
 msgstr "單雙盲審查設定"
 
@@ -282,7 +282,7 @@ msgstr "柬埔寨"
 msgid "Cameroon"
 msgstr "喀麥隆"
 
-#: ./event/addedOrModifiedArticle.py:23
+#: ./event/addedOrModifiedArticle.py:24
 msgid "Can not modify the contents of the period for review"
 msgstr "稿件送審期間無法修改稿件內容"
 
@@ -294,11 +294,11 @@ msgstr "加拿大"
 msgid "Cape Verde"
 msgstr "維德角島"
 
-#: ./article.py:299
+#: ./article.py:372
 msgid "Category"
 msgstr "分類"
 
-#: ./browser/template/inviteReivew.pt:22
+#: ./browser/template/inviteReview.pt:22
 #: ./profile_templates/sampleview.pt:43
 msgid "Category:"
 msgstr "分類:"
@@ -359,7 +359,7 @@ msgstr "聯絡人資訊 (有紅點為必填欄位)"
 msgid "Contribute article"
 msgstr "投稿期刊"
 
-#: ./article.py:345
+#: ./article.py:418
 msgid "Corresponding authors"
 msgstr "通訊作者"
 
@@ -375,7 +375,7 @@ msgstr "象牙海岸"
 msgid "Country"
 msgstr "國家"
 
-#: ./article.py:308
+#: ./article.py:381
 msgid "Cover letter"
 msgstr "封面信函"
 
@@ -403,7 +403,7 @@ msgstr "捷克"
 msgid "DOI"
 msgstr "DOI"
 
-#: ./browser/template/inviteReivew.pt:15
+#: ./browser/template/inviteReview.pt:15
 msgid "Dear Professor"
 msgstr "敬愛的教授"
 
@@ -484,19 +484,19 @@ msgstr "電子郵件"
 msgid "Email:"
 msgstr "Email:"
 
-#: ./article.py:293
+#: ./article.py:366
 #: ./article_templates/sampleview.pt:29
 #: ./journal.py:59
 msgid "English abstract"
 msgstr "英文摘要"
 
-#: ./article.py:277
+#: ./article.py:350
 #: ./article_templates/sampleview.pt:39
 #: ./journal.py:69
 msgid "English keywords"
 msgstr "英文關鍵字"
 
-#: ./article.py:256
+#: ./article.py:329
 #: ./journal.py:49
 msgid "English title"
 msgstr "英文標題"
@@ -517,7 +517,7 @@ msgstr "愛沙尼亞"
 msgid "Ethiopia"
 msgstr "衣索匹亞"
 
-#: ./article.py:371
+#: ./article.py:444
 msgid "Exclusive or non-exclusive license"
 msgstr "專屬或非專屬授權"
 
@@ -541,11 +541,11 @@ msgstr "審查委員區域"
 msgid "External reviewer already selected."
 msgstr "重複選取審查委員"
 
-#: ./article.py:202
+#: ./article.py:152
 msgid "External reviewer comment"
 msgstr "審查意見"
 
-#: ./article.py:209
+#: ./article.py:158
 msgid "External reviewer comment attached file"
 msgstr "上傳審查意見附檔"
 
@@ -653,7 +653,7 @@ msgstr "人文、藝術、舞蹈"
 msgid "Hungary"
 msgstr "匈牙利"
 
-#: ./article.py:224
+#: ./article.py:297
 msgid "I am submitting from"
 msgstr "投稿地點"
 
@@ -685,11 +685,11 @@ msgstr "所屬機關(英文名稱):"
 msgid "Invalid email address."
 msgstr "無效的電子郵件格式"
 
-#: ./article.py:122
+#: ./article.py:128
 msgid "Invit email"
 msgstr "邀請email"
 
-#: ./browser/template/inviteReivew.pt:14
+#: ./browser/template/inviteReview.pt:14
 msgid "Invited review"
 msgstr "審查邀請"
 
@@ -741,7 +741,7 @@ msgstr "哈薩克"
 msgid "Kenya"
 msgstr "肯亞"
 
-#: ./article.py:269
+#: ./article.py:342
 #: ./article_templates/sampleview.pt:34
 #: ./journal.py:64
 msgid "Keywords"
@@ -771,7 +771,7 @@ msgstr "科威特"
 msgid "Kyrgyzstan"
 msgstr "吉爾吉斯坦"
 
-#: ./article.py:232
+#: ./article.py:305
 #: ./article_templates/sampleview.pt:49
 #: ./journal.py:42
 msgid "Language"
@@ -849,7 +849,7 @@ msgstr "馬利"
 msgid "Malta"
 msgstr "馬爾他"
 
-#: ./article.py:215
+#: ./article.py:288
 msgid "Manuscript Metadata"
 msgstr "投稿資料"
 
@@ -869,7 +869,7 @@ msgstr "茅利塔尼亞"
 msgid "Mauritius"
 msgstr "模里西斯"
 
-#: ./article.py:270
+#: ./article.py:343
 msgid "Maximum 5 keywords, separated with commas."
 msgstr "最多5個關鍵字，並請以半型逗號分隔"
 
@@ -977,7 +977,7 @@ msgstr "挪威"
 msgid "Oman"
 msgstr "阿曼"
 
-#: ./article.py:242
+#: ./article.py:315
 #: ./config.py:52
 msgid "Original paper"
 msgstr "原創論文"
@@ -1042,7 +1042,7 @@ msgstr "電話號碼"
 msgid "Phone:"
 msgstr "電話:"
 
-#: ./article.py:286
+#: ./article.py:359
 msgid "Please limit the number of words in 500 words or less"
 msgstr "請限制在500字以內"
 
@@ -1050,7 +1050,7 @@ msgstr "請限制在500字以內"
 msgid "Please select"
 msgstr "請選擇"
 
-#: ./article.py:333
+#: ./article.py:406
 msgid "Please select authors"
 msgstr "請選擇作者"
 
@@ -1078,7 +1078,7 @@ msgstr "個人資訊"
 msgid "Qatar"
 msgstr "卡達"
 
-#: ./article.py:93
+#: ./article.py:99
 msgid "Recommend using double-blind review"
 msgstr "建議採用雙盲審查"
 
@@ -1094,7 +1094,7 @@ msgstr "研究領域與專業"
 msgid "Research note"
 msgstr "研究概要"
 
-#: ./article.py:192
+#: ./article.py:144
 msgid "Result of Review"
 msgstr "審查結果"
 
@@ -1131,7 +1131,7 @@ msgstr "羅馬尼亞"
 msgid "Running Title"
 msgstr "短標題(Running Title)"
 
-#: ./article.py:262
+#: ./article.py:335
 msgid "Running title"
 msgstr "短標題(Running Title)"
 
@@ -1171,7 +1171,7 @@ msgstr "聖多美及普林西比"
 msgid "Saudi Arabia"
 msgstr "沙烏地阿拉伯"
 
-#: ./article.py:346
+#: ./article.py:419
 msgid "Select at least one corresponding author."
 msgstr "請選擇至少一位通訊作者"
 
@@ -1259,11 +1259,11 @@ msgstr "運動醫學"
 msgid "Sri Lanka"
 msgstr "斯里蘭卡"
 
-#: ./article.py:218
+#: ./article.py:291
 msgid "Submit a new manuscript(fields in RED DOT are Required)"
 msgstr "提交一份新的稿件 (有紅點欄位為必填)<br>若您尚未新增作者資訊，您應該先至少<a target='_blank' href='++add++ntpu.content.author'>新增一位作者.</a>"
 
-#: ./article.py:223
+#: ./article.py:296
 msgid "Submitting from"
 msgstr "投稿人所在地點"
 
@@ -1299,7 +1299,7 @@ msgstr "系統目錄"
 msgid "SystemFolder"
 msgstr "系統目錄"
 
-#: ./article.py:226
+#: ./article.py:299
 #: ./config.py:236
 #: ./profile.py:125
 msgid "Taiwan"
@@ -1321,7 +1321,7 @@ msgstr "文字內容"
 msgid "Thailand"
 msgstr "泰國"
 
-#: ./article.py:395
+#: ./article.py:468
 msgid "This External reviewer already selected."
 msgstr "重複選取審查委員"
 
@@ -1330,12 +1330,12 @@ msgid "Title"
 msgstr "稱謂"
 
 #: ./article_templates/sampleview.pt:112
-#: ./browser/template/inviteReivew.pt:18
+#: ./browser/template/inviteReview.pt:18
 msgid "Title(Chinese):"
 msgstr "標題(中文):"
 
 #: ./article_templates/sampleview.pt:117
-#: ./browser/template/inviteReivew.pt:19
+#: ./browser/template/inviteReview.pt:19
 msgid "Title(English):"
 msgstr "標題(英文):"
 
@@ -1427,7 +1427,7 @@ msgstr "辛巴威"
 msgid "Zip"
 msgstr "郵遞區號"
 
-#: ./browser/template/inviteReivew.pt:26
+#: ./browser/template/inviteReview.pt:29
 msgid "accept"
 msgstr "同意"
 
@@ -1444,30 +1444,30 @@ msgid "for eg. Dr, Prof, Mr, Ms..."
 msgstr "例:博士/教授/女士/先生..."
 
 #. Default: "I confirm this manuscript has not been accepted                           for publication elsewhere, is not being considered                           for publication elsewhere and does not duplicate material                           already published. I confirm all authors consent to                           publication of this manuscript."
-#: ./article.py:359
+#: ./article.py:432
 msgid "help_allAuthorConsent"
 msgstr "所有作者同意事項:<br>確認本稿件過去從未在其他刊物接受後出版，且沒有複製已出版的資料。同時也確認本稿件所有作者均已同意本稿件的發表."
 
 #. Default: "Select authors and order, first is main author,                                second is 2'nd author...<br>                                 Note: Before submitting, you mustbe agree 'All author consent'                                 , 'Exclusive or non-exclusive license' and check them."
-#: ./article.py:323
+#: ./article.py:396
 msgid "help_authors"
 msgstr "選擇作者並排序，第一位為主要作者，第二位為第二作者，依此類推.<br>若您尚未新增作者資訊，您應該先至少<a target='_blank' href='++add++ntpu.content.author'>新增一位作者.</a><br>注意: 提交稿件前，您必需確認 「所有作者同意」 及 「專屬或非專屬授權」 二項敘述並勾選同意，才能提交稿件"
 
 #. Default: "Enter your cover letter here.                       DO NOT include your cover letter                       in the manuscript file that you                       will upload.The word limit of this                       column is 1024 characters."
-#: ./article.py:309
+#: ./article.py:382
 msgid "help_coverLetter"
 msgstr "請在此填寫您的封面信函，並請勿將封面信函寫在您的提交手稿內容中，字數限制1024個字。"
 
 #. Default: "I have read and agreed with the following statements:                           1. I am authorized by all co-author(s) to submit this article                           on their behalf and as the contact for the Editorial process.                           I am responsible for communicating with the other authors about                           progress, submissions of revisions and final approval of proofs.                           2. All authors agree with the Personal Information Collection                           Statement , and the staff of the journal will be using the                           personal information that I provided in the APSERS system for                           the sole purpose of contacting me concerning the publishing of                           the Article.                           3. The article I have submitted to the journal for review is                           original, has been written by the stated authors and has not been                           published elsewhere. Also, the Article is not currently being                           considered for publication by any other journal and will not be                           submitted for such review while under review by this journal."
-#: ./article.py:372
+#: ./article.py:445
 msgid "help_license"
 msgstr "我已閱讀並同意下列事項:<br>1.本稿件所有作者皆同意授權由本人進行此稿件之提交，及後續投審稿期間所有連絡事項。<br>2.在本系統保證不將作者之個人資料外流或做其他用途之前提下，本稿件所有作者皆已閱讀本系統之個資聲明 ，並同意本人將作者之個人資料填寫於本系統中作為期刊審稿及聯絡之用。<br>3.本稿件所有作者皆保證此稿件並未於其他期刊出版或正進行出版程序，且保證此論文並非抄襲之作。"
 
-#: ./article.py:214
+#: ./article.py:287
 msgid "manuscript metadata"
 msgstr "稿件資料"
 
-#: ./article.py:335
+#: ./article.py:408
 msgid "name"
 msgstr "姓名"
 
@@ -1475,7 +1475,7 @@ msgstr "姓名"
 msgid "other"
 msgstr "其它"
 
-#: ./browser/template/inviteReivew.pt:31
+#: ./browser/template/inviteReview.pt:35
 msgid "reject"
 msgstr "拒絕"
 
@@ -1483,7 +1483,7 @@ msgstr "拒絕"
 msgid "zh-cn"
 msgstr "简体中文"
 
-#: ./article.py:234
+#: ./article.py:307
 #: ./config.py:46
 #: ./journal.py:44
 msgid "zh-tw"
