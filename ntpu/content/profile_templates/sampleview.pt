@@ -7,15 +7,16 @@
       i18n:domain="ntpu.content">
 <body>
 
-<metal:main fill-slot="content-core">
+<metal:main fill-slot="main">
   <metal:content-core define-macro="content-core">
 
 <tal:isowner condition="context/@@is_owner">
 
     <h2 i18n:translate="">Personal informat</h2>
     <div>
-      <p><strong i18n:translate="">Name:</strong><span tal:replace="context/Title" /></p>
+<!--      <p><strong i18n:translate="">Name:</strong><span tal:replace="context/Title" /></p>
       <p><strong i18n:translate="">Email:</strong><span tal:replace="context/email" /></p>
+-->
       <form tal:attributes="action string:${context/absolute_url}/@@edit">
           <input type="submit" value="Edit profile" i18n:attributes="value"/>
       </form>
@@ -27,21 +28,16 @@
              condition="python:'Site Administrator' in roles or 'Manager' in roles">
 
     <h2 i18n:translate="">New submitted article</h2>
-    <div tal:define="brain view/newSubmitted" tal:repeat="item brain">
+    <div tal:define="catalog python:context.portal_catalog;
+                     brain python:catalog({'Type':'Article',
+                                           'review_state':['accepted', 'afterModifyAgree',
+                                           'inReview', 'internalAssigned', 'modifyThenReview', 'rejected']})"
+         tal:repeat="item brain">
         <p><strong i18n:translate="">Article title(Chinese):</strong>
            <span tal:replace="item/articleTitleC" />
         </p>
         <p tal:condition="item/articleTitleE"><strong i18n:translate="">Article title(English):</strong>
            <span tal:replace="item/articleTitleE" />
-        </p>
-        <p tal:condition="item/abstract"><strong i18n:translate="">Abstract(Chinese):</strong>
-           <span tal:replace="item/abstract" />
-        </p>
-        <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
-           <span tal:replace="item/engAbstract" />
-        </p>
-        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
-           <span tal:replace="python:item.category.values()[0]" />
         </p>
       <form tal:attributes="action string:${item/getURL}">
           <input type="submit" value="Detail" i18n:attributes="value"/>
@@ -55,25 +51,22 @@
 <tal:super_editor define="roles context/@@get_roles"
              condition="python:'Super Editor' in roles">
 
-    <h2 i18n:translate="">New In Review article</h2>
-    <div tal:define="brain view/newInReview" tal:repeat="item brain">
+    <h2 i18n:translate="">Review Article</h2>
+    <div tal:define="catalog python:context.portal_catalog;
+                     brain python:catalog({'Type':'Article',
+                                           'review_state':['accepted', 'afterModifyAgree',
+                                           'inReview', 'internalAssigned', 'modifyThenReview', 'rejected']})"
+         tal:repeat="item brain">
+
         <p><strong i18n:translate="">Article title(Chinese):</strong>
            <span tal:replace="item/articleTitleC" />
         </p>
         <p tal:condition="item/articleTitleE"><strong i18n:translate="">Article title(English):</strong>
            <span tal:replace="item/articleTitleE" />
         </p>
-        <p tal:condition="item/abstract"><strong i18n:translate="">Abstract(Chinese):</strong>
-           <span tal:replace="item/abstract" />
+        <p tal:condition="item/review_state"><strong i18n:translate="">Review state:</strong>
+           <span tal:replace="item/review_state" />
         </p>
-        <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
-           <span tal:replace="item/engAbstract" />
-        </p>
-
-        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
-           <span tal:replace="python:item.category.values()[0]" />
-        </p>
-
       <form tal:attributes="action string:${item/getURL}">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
@@ -81,32 +74,6 @@
     </div>
     <br/><hr/>
 
-    <h2 i18n:translate="">Waitting for Review Article</h2>
-    <div tal:define="brain view/internalAssigned" tal:repeat="item brain">
-        <p><strong i18n:translate="">Article title(Chinese):</strong>
-           <span tal:replace="item/articleTitleC" />
-        </p>
-        <p tal:condition="item/articleTitleE"><strong i18n:translate="">Article title(English):</strong>
-           <span tal:replace="item/articleTitleE" />
-        </p>
-        <p tal:condition="item/abstract"><strong i18n:translate="">Abstract(Chinese):</strong>
-           <span tal:replace="item/abstract" />
-        </p>
-        <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
-           <span tal:replace="item/engAbstract" />
-        </p>
-
-        <p tal:condition="item/category"><strong i18n:translate="">Category:</strong>
-           <span tal:replace="python:item.category.values()[0]" />
-        </p>
-
-      <form tal:attributes="action string:${item/getURL}">
-          <input type="submit" value="Detail" i18n:attributes="value"/>
-      </form>
-
-      <br/>
-    </div>
-    <br/><hr/>
 </tal:super_editor>
 
 <!-- 責任編輯桌面 -->
@@ -114,9 +81,12 @@
              condition="python:'Internal Reviewer' in roles or 'Manager' in roles">
 
     <h2 i18n:translate="">Waitting for Review Article</h2>
-    <div tal:define="brain view/internalAssigned;
-                               currentUserId context/@@getCurrentUserId"
-            tal:repeat="item brain">
+    <div tal:define="catalog python:context.portal_catalog;
+                     brain python:catalog({'Type':'Article',
+                                           'review_state':['accepted', 'afterModifyAgree',
+                                           'inReview', 'internalAssigned', 'modifyThenReview', 'rejected']})"
+         tal:repeat="item brain">
+
       <tal:check condition="python:item.assignInternalReviewer == currentUserId">
         <p><strong i18n:translate="">Article title(Chinese):</strong>
            <span tal:replace="item/articleTitleC" />
