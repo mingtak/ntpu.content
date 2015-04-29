@@ -19,6 +19,27 @@ def addedOrModifiedArticle(obj, event):
     if ownerId != currentUserId:
         return
 
+    reviewResults = 0
+    if obj.acceptOrReject1 is not None:
+        reviewResults += 1
+    if obj.acceptOrReject2 is not None:
+        reviewResults += 1
+    if obj.acceptOrReject3 is not None:
+        reviewResults += 1
+    if reviewResults > 1:
+        attachFile, obj.attachFile = obj.attachFile, None
+        with api.env.adopt_roles(['Manager']):
+            import pdb; pdb.set_trace()
+            if attachFile is None:
+                return
+            fileObj = api.content.create(
+                container=obj,
+                type='File',
+                title='AttachFile%s' % DateTime().strftime('%Y%m%d'),
+                file=attachFile,
+            )
+        return
+
     if api.content.get_state(obj) != 'draft':
         api.portal.show_message(
             message=_(u"Can not modify the contents of the period for review"),
@@ -31,6 +52,8 @@ def addedOrModifiedArticle(obj, event):
 
     attachFile, obj.attachFile = obj.attachFile, None
     with api.env.adopt_roles(['Manager']):
+        if attachFile is None:
+            return
         fileObj = api.content.create(
             container=obj,
             type='File',

@@ -56,6 +56,21 @@ class ArticleEditForm(DefaultEditForm):
                     if key in keys:
                         group.fields[key].mode = mode
 
+    def hiddenModifySubmission(self, articleItem):
+        reviewResults = 0
+        if articleItem.acceptOrReject1 is not None:
+            reviewResults += 1
+        if articleItem.acceptOrReject2 is not None:
+            reviewResults += 1
+        if articleItem.acceptOrReject3 is not None:
+            reviewResults += 1
+        if reviewResults > 1:
+            for group in self.groups:
+                if group.label == 'Manuscript file':
+                    for key in group.fields.keys():
+                        if key in ['modifySubmission']:
+                            group.fields[key].mode = None
+
     def update(self):
         DefaultEditForm.update(self)
 
@@ -113,6 +128,8 @@ class ArticleEditForm(DefaultEditForm):
                     'externalReviewerComment3',
                     'reviewCommentAttached3',]
             self.hiddenFields(label=label, mode="hidden", keys=keys)
+
+        self.hiddenModifySubmission(articleItem)
 
 
 class ArticleEditView(DefaultEditView):

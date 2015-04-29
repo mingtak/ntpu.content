@@ -256,33 +256,6 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required = False,
     )
 
-#    form.mode(acceptOrReject='hidden')
-    """
-    dexterity.write_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
-    dexterity.read_permission(acceptOrReject='ntpu.content.IsExternalReviewer')
-    acceptOrReject = schema.Choice(
-        title=_(u'Result of Review'),
-        vocabulary=AcceptOrReject,
-        default=None,
-        required=True,
-    )
-
-
-    dexterity.write_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
-    dexterity.read_permission(externalReviewerComment='ntpu.content.IsExternalReviewer')
-    externalReviewerComment = schema.Text(
-        title=_(u'External reviewer comment'),
-        required=False,
-    )
-
-    dexterity.write_permission(reviewCommentAttached='ntpu.content.IsExternalReviewer')
-    dexterity.read_permission(reviewCommentAttached='ntpu.content.IsExternalReviewer')
-    reviewCommentAttached = NamedBlobFile(
-        title=_(u'External reviewer comment attached file'),
-        required = False,
-    )
-    """
-
     form.fieldset(
         _(u'manuscript metadata'),
         label=_(u"Manuscript Metadata"),
@@ -462,6 +435,22 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    form.fieldset(
+        _(u'Manuscript file'),
+        label=_(u"Manuscript file"),
+        fields=['modifySubmission'],
+        description=_(u'Please upload Manuscript file, and you can upload images after submitting.'),
+    )
+
+    dexterity.write_permission(modifySubmission='ntpu.content.IsOwner')
+    form.mode(modifySubmission='hidden')
+    modifySubmission = NamedBlobFile(
+        title=_(u'Modify submission'),
+        required=False
+    )
+
+
+
     @invariant
     def validateExternalReviewer(data):
         if data.assignExternalReviewer1 == data.assignExternalReviewer2 and data.assignExternalReviewer1 is not None:
@@ -483,19 +472,6 @@ class SampleView(dexterity.DisplayForm):
     grok.require('zope2.View')
     grok.name('view')
 
-#    def idIsInRw(self):
-#        """ Check current id is internal reviewer """
-#        if api.user.is_anonymous():
-#            return False
-
-#        roles = api.user.get_roles()
-#        context = self.context
-#        if 'Internal Reviewer' not in roles:
-#            return False
-#        import pdb; pdb.set_trace()
-#        elif api.user.get_current() == context.assignInternalReviewer.to_object
-
-### waiting for modify
     def checkIdInReviewerList(self):
         roles = api.user.get_roles()
         context = self.context

@@ -27,7 +27,7 @@ msgid "Modify and then review"
 msgstr "修改後再審"
 
 msgid "Accept"
-msstr "同意推薦"
+msgstr "同意推薦"
 
 msgid "Super Editor"
 msgstr "主編"

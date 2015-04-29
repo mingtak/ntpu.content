@@ -13,6 +13,8 @@ def userLoggedIn(event):
     currentUser = api.user.get_current()
     currentUserFullName = currentUser.getProperty('fullname')
     currentUserEmail = currentUser.getProperty('email')
+    currentUserInstitution = currentUser.getProperty('institution')
+    currentUserPosition = currentUser.getProperty('position')
 #    currentUserId = currentUser.getId()
 #    import pdb; pdb.set_trace()
     profileId = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
@@ -24,5 +26,7 @@ def userLoggedIn(event):
             title=currentUserFullName,
             myName=currentUserFullName,
             email=currentUserEmail,
+            institution=currentUserInstitution,
+            position=currentUserPosition
         )
         profile.reindexObject()
