@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-28 09:16+0000\n"
+"POT-Creation-Date: 2015-04-29 05:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,1477 +16,1540 @@ msgstr ""
 
 #: ./jbot_template/plone.app.layout.viewlets.footer.pt:3
 msgid "2015 University of Taipei. All Rights Reserved."
-msgstr ""
+msgstr "© 2015 University of Taipei. All Rights Reserved."
 
-#: ./article.py:358
+#: ./article.py:331
 #: ./article_templates/sampleview.pt:24
 #: ./journal.py:54
 msgid "Abstract"
-msgstr ""
+msgstr "摘要"
 
 #: ./browser/template/inviteReview.pt:20
-#: ./profile_templates/sampleview.pt:37
 msgid "Abstract(Chinese):"
-msgstr ""
+msgstr "中文摘要:"
 
 #: ./browser/template/inviteReview.pt:21
-#: ./profile_templates/sampleview.pt:40
 msgid "Abstract(English):"
+msgstr "英文摘要:"
+
+#: ./journal_templates/sampleview.pt:24
+msgid "Abstract(chinese):"
+msgstr ""
+
+#: ./journal_templates/sampleview.pt:25
+msgid "Abstract(english):"
 msgstr ""
 
 #: ./article.py:136
 msgid "Accept invitation"
-msgstr ""
+msgstr "接受邀请"
 
 #: ./article.py:137
 msgid "Accept the invitation to review"
-msgstr ""
+msgstr "接受审查邀请"
 
-#: ./article_templates/sampleview.pt:142
-msgid "Accpect or Reject:"
+#: ./article_templates/sampleview.pt:192
+msgid "Add Image"
 msgstr ""
 
 #: ./profile.py:135
 msgid "Address"
-msgstr ""
+msgstr "地址"
 
 #: ./config.py:58
 msgid "Afghanistan"
-msgstr ""
+msgstr "阿富汗"
 
 #: ./config.py:27
 msgid "After the modification agreed to recommend"
-msgstr ""
+msgstr "修改后同意推荐"
 
 #: ./config.py:26
 msgid "Agreed to recommend"
-msgstr ""
+msgstr "同意推荐"
 
 #: ./config.py:59
 msgid "Albania"
-msgstr ""
+msgstr "阿尔巴尼亚"
 
 #: ./config.py:60
 msgid "Algeria"
-msgstr ""
+msgstr "阿尔及利亚"
 
-#: ./article.py:431
+#: ./article.py:404
 msgid "All author consent"
-msgstr ""
+msgstr "所有作者同意"
 
 #: ./profile.py:107
 msgid "Alternative Email"
-msgstr ""
+msgstr "备用email"
 
 #: ./config.py:61
 msgid "Andorra"
-msgstr ""
+msgstr "安道尔"
 
 #: ./config.py:62
 msgid "Angola"
-msgstr ""
+msgstr "安哥拉"
 
 #: ./config.py:63
 msgid "Antigua and Barbuda"
-msgstr ""
+msgstr "安提瓜和巴布达"
 
 #: ./config.py:64
 msgid "Argentina"
-msgstr ""
+msgstr "阿根廷"
 
 #: ./config.py:65
 msgid "Armenia"
-msgstr ""
+msgstr "亚美尼亚"
 
 #: ./profiles/default/types/ntpu.content.article.xml
 msgid "Article"
-msgstr ""
+msgstr "投稿"
 
-#: ./article.py:322
+#: ./article.py:295
 msgid "Article title"
-msgstr ""
+msgstr "稿件标题"
 
-#: ./profile_templates/sampleview.pt:31
+#: ./profile_templates/sampleview.pt:36
 msgid "Article title(Chinese):"
-msgstr ""
+msgstr "中文标题:"
 
-#: ./profile_templates/sampleview.pt:34
+#: ./profile_templates/sampleview.pt:39
 msgid "Article title(English):"
-msgstr ""
+msgstr "英文标题:"
 
-#: ./article.py:313
+#: ./article.py:286
 #: ./article_templates/sampleview.pt:44
 msgid "Article type"
-msgstr ""
+msgstr "文章型态"
 
 #: ./config.py:66
 msgid "Aruba"
-msgstr ""
+msgstr "阿路巴"
 
 #: ./article.py:120
 msgid "Assign first external reviewer"
-msgstr ""
+msgstr "指定第一位审查委员"
 
 #: ./article.py:109
 msgid "Assign internal reviewer"
-msgstr ""
+msgstr "指定责任编辑"
 
 #: ./article.py:169
 msgid "Assign second external reviewer"
-msgstr ""
+msgstr "指定第二位审查委员"
 
 #: ./article.py:217
 msgid "Assign third external reviewer"
+msgstr "指定第三位审查委员"
+
+#: ./journal_templates/sampleview.pt:28
+msgid "Attach File:"
 msgstr ""
 
 #: ./journal.py:74
 #: ./pagewithfile.py:35
 msgid "Attach file"
-msgstr ""
+msgstr "附加档案"
 
-#: ./article_templates/sampleview.pt:56
-msgid "Attached file"
-msgstr ""
+#: ./article_templates/sampleview.pt:57
+msgid "Attached file:"
+msgstr "附加档案"
 
 #: ./config.py:67
 msgid "Australia"
-msgstr ""
+msgstr "澳大利亚"
 
 #: ./config.py:68
 msgid "Austria"
-msgstr ""
+msgstr "奥地利"
 
 #: ./profiles/default/types/ntpu.content.author.xml
 msgid "Author"
-msgstr ""
+msgstr "作者"
 
-#: ./article_templates/sampleview.pt:85
+#: ./article_templates/sampleview.pt:90
 msgid "Author Information"
-msgstr ""
+msgstr "作者资讯"
 
 #: ./profiles/default/types/ntpu.content.author.xml
 msgid "Author information"
-msgstr ""
+msgstr "作者资讯"
 
-#: ./article.py:393
+#: ./article.py:366
 #: ./journal.py:32
 msgid "Authors"
+msgstr "作者"
+
+#: ./journal_templates/sampleview.pt:18
+msgid "Authors:"
 msgstr ""
 
 #: ./config.py:69
 msgid "Azerbaijan"
-msgstr ""
+msgstr "亚塞拜然"
 
 #: ./config.py:33
 #: ./profile.py:169
 msgid "Bachelor's degree"
-msgstr ""
+msgstr "学士"
 
 #: ./config.py:70
 msgid "Bahamas"
-msgstr ""
+msgstr "巴哈马"
 
 #: ./config.py:71
 msgid "Bahrain"
-msgstr ""
+msgstr "巴林"
 
 #: ./config.py:72
 msgid "Bangladesh"
-msgstr ""
+msgstr "孟加拉"
 
 #: ./config.py:73
 msgid "Barbados"
-msgstr ""
+msgstr "巴贝多"
 
 #: ./profile.py:69
 msgid "Basic"
-msgstr ""
+msgstr "基本"
 
 #: ./profile.py:70
 msgid "Basic persional info"
-msgstr ""
+msgstr "基本个人资讯"
 
 #: ./profile.py:72
 msgid "Basic persional infomation (fields in RED DOT are Required)"
-msgstr ""
+msgstr "基本个人资讯(有红点栏位为必填)"
 
 #: ./config.py:74
 msgid "Belarus"
-msgstr ""
+msgstr "白俄罗斯"
 
 #: ./config.py:75
 msgid "Belgium"
-msgstr ""
+msgstr "比利时"
 
 #: ./config.py:76
 msgid "Belize"
-msgstr ""
+msgstr "贝里斯"
 
 #: ./config.py:77
 msgid "Benin"
-msgstr ""
+msgstr "贝南"
 
 #: ./config.py:78
 msgid "Bhutan"
-msgstr ""
+msgstr "不丹"
 
 #: ./config.py:14
 msgid "Biochemistry of Exercise, Nutrition of Exercise"
-msgstr ""
+msgstr "运动生化学/运动营养学"
 
 #: ./article.py:98
 msgid "Blind setup"
-msgstr ""
+msgstr "单双盲审查设定"
 
 #: ./config.py:79
 msgid "Bolivia"
-msgstr ""
+msgstr "玻利维亚"
 
 #: ./config.py:80
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "波希尼亚及赫塞哥维那"
 
 #: ./config.py:81
 msgid "Botswana"
-msgstr ""
+msgstr "波札那"
 
 #: ./config.py:82
 msgid "Brazil"
-msgstr ""
+msgstr "巴西"
 
 #: ./config.py:83
 msgid "Brunei"
-msgstr ""
+msgstr "汶莱"
 
 #: ./config.py:84
 msgid "Bulgaria"
-msgstr ""
+msgstr "保加利亚"
 
 #: ./config.py:85
 msgid "Burkina Faso"
-msgstr ""
+msgstr "有吉纳法索"
 
 #: ./config.py:86
 msgid "Burma"
-msgstr ""
+msgstr "缅甸"
 
 #: ./config.py:87
 msgid "Burundi"
-msgstr ""
+msgstr "蒲隆地"
 
 #: ./config.py:88
 msgid "Cambodia"
-msgstr ""
+msgstr "柬埔寨"
 
 #: ./config.py:89
 msgid "Cameroon"
-msgstr ""
+msgstr "喀麦隆"
 
-#: ./event/addedOrModifiedArticle.py:24
+#: ./event/addedOrModifiedArticle.py:45
 msgid "Can not modify the contents of the period for review"
-msgstr ""
+msgstr "稿件送审期间无法修改稿件内容"
 
 #: ./config.py:90
 msgid "Canada"
-msgstr ""
+msgstr "加拿大"
 
 #: ./config.py:91
 msgid "Cape Verde"
-msgstr ""
+msgstr "维德角岛"
 
-#: ./article.py:372
+#: ./article.py:345
 msgid "Category"
-msgstr ""
+msgstr "分类"
 
 #: ./browser/template/inviteReview.pt:22
-#: ./profile_templates/sampleview.pt:43
 msgid "Category:"
-msgstr ""
+msgstr "分类:"
 
 #: ./config.py:92
 msgid "Central African Republic"
-msgstr ""
+msgstr "中非共和国"
 
 #: ./config.py:93
 msgid "Chad"
-msgstr ""
+msgstr "查德"
 
 #: ./config.py:94
 msgid "Chile"
-msgstr ""
+msgstr "知利"
 
 #: ./config.py:95
 msgid "China"
-msgstr ""
+msgstr "中华人民共和国"
 
 #: ./config.py:11
 msgid "Coaching and Training"
-msgstr ""
+msgstr "运动训练学"
 
 #: ./config.py:96
 msgid "Colombia"
-msgstr ""
+msgstr "哥伦比亚"
 
-#: ./article_templates/sampleview.pt:143
+#: ./article_templates/sampleview.pt:154
 msgid "Comment:"
-msgstr ""
+msgstr "意见:"
 
 #: ./profiles/default/types/ntpu.content.commentfile.xml
 msgid "CommentFile"
-msgstr ""
+msgstr "审查意见附档"
 
 #: ./config.py:97
 msgid "Comoros"
-msgstr ""
+msgstr "科摩罗"
 
 #: ./config.py:98
 msgid "Congo"
-msgstr ""
+msgstr "刚果"
 
 #: ./profile.py:94
 msgid "Contact"
-msgstr ""
+msgstr "联络人"
 
 #: ./profile.py:95
 msgid "Contact Information"
-msgstr ""
+msgstr "联络人资讯"
 
 #: ./profile.py:97
 msgid "Contact Information (fields in RED DOT are Required)"
-msgstr ""
+msgstr "联络人资讯 (有红点为必填栏位)"
 
 #: ./profiles/default/types/ntpu.content.article.xml
 msgid "Contribute article"
-msgstr ""
+msgstr "投稿期刊"
 
-#: ./article.py:418
+#: ./article.py:391
 msgid "Corresponding authors"
-msgstr ""
+msgstr "通讯作者"
 
 #: ./config.py:99
 msgid "Costa Rica"
-msgstr ""
+msgstr "哥斯大黎加"
 
 #: ./config.py:100
 msgid "Cote d'Ivoire"
-msgstr ""
+msgstr "象牙海岸"
 
 #: ./profile.py:123
 msgid "Country"
-msgstr ""
+msgstr "国家"
 
-#: ./article.py:381
+#: ./article.py:354
 msgid "Cover letter"
-msgstr ""
+msgstr "封面信函"
 
 #: ./config.py:101
 msgid "Croatia"
-msgstr ""
+msgstr "克罗埃西亚"
 
 #: ./config.py:102
 msgid "Cuba"
-msgstr ""
+msgstr "古巴"
 
 #: ./config.py:103
 msgid "Curacao"
-msgstr ""
+msgstr "古拉索"
 
 #: ./config.py:104
 msgid "Cyprus"
-msgstr ""
+msgstr "塞浦路斯"
 
 #: ./config.py:105
 msgid "Czech Republic"
-msgstr ""
+msgstr "捷克"
 
 #: ./journal.py:37
 msgid "DOI"
+msgstr "DOI"
+
+#: ./journal_templates/sampleview.pt:19
+msgid "DOI:"
 msgstr ""
 
 #: ./browser/template/inviteReview.pt:15
 msgid "Dear Professor"
-msgstr ""
+msgstr "敬爱的教授"
 
 #: ./profile.py:167
 msgid "Degree"
-msgstr ""
+msgstr "学位"
 
 #: ./config.py:106
 msgid "Denmark"
-msgstr ""
+msgstr "丹麦"
 
-#: ./profile_templates/sampleview.pt:47
+#: ./profile_templates/sampleview.pt:43
 msgid "Detail"
-msgstr ""
+msgstr "详细内容"
 
 #: ./config.py:107
 msgid "Djibouti"
-msgstr ""
+msgstr "吉布提"
 
 #: ./config.py:35
 msgid "Doctor"
-msgstr ""
+msgstr "博士"
 
 #: ./config.py:108
 msgid "Dominica"
-msgstr ""
+msgstr "多米尼克"
 
 #: ./config.py:109
 msgid "Dominican Republic"
-msgstr ""
+msgstr "多明尼加"
 
 #: ./config.py:20
 msgid "Double-blind"
+msgstr "双盲"
+
+#: ./journal.py:79
+msgid "Download count"
+msgstr ""
+
+#: ./journal_templates/sampleview.pt:34
+msgid "Download count:"
 msgstr ""
 
 #: ./config.py:110
 msgid "East Timor"
-msgstr ""
+msgstr "东帝汶"
 
 #: ./config.py:111
 msgid "Ecuador"
-msgstr ""
+msgstr "厄瓜多尔"
 
-#: ./article_templates/sampleview.pt:155
+#: ./article_templates/sampleview.pt:191
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
-#: ./profile_templates/sampleview.pt:20
+#: ./profile_templates/sampleview.pt:21
 msgid "Edit profile"
-msgstr ""
+msgstr "编辑个人资料"
 
 #: ./profile.py:162
 msgid "Education"
-msgstr ""
+msgstr "学历"
 
 #: ./profile.py:140
 msgid "Educational & Experience"
-msgstr ""
+msgstr "学经历"
 
 #: ./profile.py:143
 msgid "Educational & Experience (fields in RED DOT are Required)"
-msgstr ""
+msgstr "学经历 (有红点栏位为必填)"
 
 #: ./config.py:112
 msgid "Egypt"
-msgstr ""
+msgstr "埃及"
 
 #: ./config.py:113
 msgid "El Salvador"
-msgstr ""
+msgstr "萨尔瓦多"
 
 #: ./profile.py:101
 msgid "Email"
-msgstr ""
+msgstr "电子邮件"
 
-#: ./article_templates/sampleview.pt:122
-#: ./profile_templates/sampleview.pt:18
+#: ./article_templates/sampleview.pt:127
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
-#: ./article.py:366
+#: ./article.py:339
 #: ./article_templates/sampleview.pt:29
 #: ./journal.py:59
 msgid "English abstract"
-msgstr ""
+msgstr "英文摘要"
 
-#: ./article.py:350
+#: ./article.py:323
 #: ./article_templates/sampleview.pt:39
 #: ./journal.py:69
 msgid "English keywords"
-msgstr ""
+msgstr "英文关键字"
 
-#: ./article.py:329
+#: ./article.py:302
 #: ./journal.py:49
 msgid "English title"
-msgstr ""
+msgstr "英文标题"
 
 #: ./config.py:114
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "几内亚"
 
 #: ./config.py:115
 msgid "Eritrea"
-msgstr ""
+msgstr "厄利垂亚"
 
 #: ./config.py:116
 msgid "Estonia"
-msgstr ""
+msgstr "爱沙尼亚"
 
 #: ./config.py:117
 msgid "Ethiopia"
-msgstr ""
+msgstr "衣索匹亚"
 
-#: ./article.py:444
+#: ./article.py:417
 msgid "Exclusive or non-exclusive license"
-msgstr ""
+msgstr "专属或非专属授权"
 
 #: ./config.py:13
 msgid "Exercise Physiology"
-msgstr ""
+msgstr "运动生理学"
 
 #: ./profile.py:157
 msgid "Experience"
-msgstr ""
+msgstr "经历"
 
 #: ./profile.py:174
 msgid "Expertise"
-msgstr ""
+msgstr "专业领域"
 
-#: ./profile_templates/sampleview.pt:149
+#: ./profile_templates/sampleview.pt:107
 msgid "External Reviewer Region"
-msgstr ""
+msgstr "审查委员区域"
 
 #: ./article.py:61
 msgid "External reviewer already selected."
-msgstr ""
+msgstr "重复选取审查委员"
 
 #: ./article.py:152
 msgid "External reviewer comment"
-msgstr ""
+msgstr "审查意见"
 
 #: ./article.py:158
 msgid "External reviewer comment attached file"
-msgstr ""
+msgstr "上传审查意见附档"
 
 #: ./article.py:57
 msgid "External reviewer still have no select."
-msgstr ""
+msgstr "尚未选取审查委员"
 
 #: ./profile.py:118
 msgid "Fax number"
-msgstr ""
+msgstr "传真号码"
 
 #: ./config.py:42
 msgid "Female"
-msgstr ""
+msgstr "女性"
 
 #: ./config.py:118
 msgid "Fiji"
-msgstr ""
+msgstr "斐济"
 
 #: ./commentfile.py:28
 msgid "File"
-msgstr ""
+msgstr "档案"
 
 #: ./config.py:119
 msgid "Finland"
-msgstr ""
+msgstr "芬兰"
 
 #: ./config.py:120
 msgid "France"
-msgstr ""
+msgstr "法国"
 
 #: ./profile.py:77
 msgid "Full name, include first name and last name"
-msgstr ""
+msgstr "姓名"
 
 #: ./config.py:121
 msgid "Gabon"
-msgstr ""
+msgstr "加彭"
 
 #: ./config.py:122
 msgid "Gambia"
-msgstr ""
+msgstr "冈比亚"
 
-#. Default: "GGGGG"
 #: ./profile.py:82
 msgid "Gender"
-msgstr ""
+msgstr "性别"
 
 #: ./config.py:123
 msgid "Georgia"
-msgstr ""
+msgstr "乔治亚"
 
 #: ./config.py:124
 msgid "Germany"
-msgstr ""
+msgstr "德国"
 
 #: ./config.py:125
 msgid "Ghana"
-msgstr ""
+msgstr "迦纳"
 
 #: ./config.py:126
 msgid "Greece"
-msgstr ""
+msgstr "希腊"
 
 #: ./config.py:127
 msgid "Grenada"
-msgstr ""
+msgstr "格瑞那达"
 
 #: ./config.py:128
 msgid "Guatemala"
-msgstr ""
+msgstr "瓜地马拉"
 
 #: ./config.py:129
 msgid "Guinea"
-msgstr ""
+msgstr "几内亚"
 
 #: ./config.py:130
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "几内亚比索"
 
 #: ./config.py:131
 msgid "Guyana"
-msgstr ""
+msgstr "盖亚那"
 
 #: ./config.py:132
 msgid "Haiti"
-msgstr ""
+msgstr "海地"
 
 #: ./config.py:133
 msgid "Holy See"
-msgstr ""
+msgstr "圣座"
 
 #: ./config.py:134
 msgid "Honduras"
-msgstr ""
+msgstr "宏都拉欺"
 
 #: ./config.py:135
 msgid "Hong Kong"
-msgstr ""
+msgstr "香港"
 
 #: ./config.py:6
 msgid "Humanity, Arts, and Dance"
-msgstr ""
+msgstr "人文、艺术、舞蹈"
 
 #: ./config.py:136
 msgid "Hungary"
-msgstr ""
+msgstr "匈牙利"
 
-#: ./article.py:297
+#: ./article.py:270
 msgid "I am submitting from"
-msgstr ""
+msgstr "投稿地点"
 
 #: ./config.py:137
 msgid "Iceland"
-msgstr ""
+msgstr "冰岛"
 
 #: ./config.py:138
 msgid "India"
-msgstr ""
+msgstr "印度"
 
 #: ./config.py:139
 msgid "Indonesia"
-msgstr ""
+msgstr "印尼"
 
 #: ./profile.py:147
 msgid "Institution"
-msgstr ""
-
-#: ./article_templates/sampleview.pt:102
-msgid "Institution(Chinese):"
-msgstr ""
+msgstr "所属机关"
 
 #: ./article_templates/sampleview.pt:107
+msgid "Institution(Chinese):"
+msgstr "所属机关(中文名称):"
+
+#: ./article_templates/sampleview.pt:112
 msgid "Institution(English):"
-msgstr ""
+msgstr "所属机关(英文名称):"
 
 #: ./profile.py:59
 msgid "Invalid email address."
-msgstr ""
+msgstr "无效的电子邮件格式"
 
 #: ./article.py:128
 msgid "Invit email"
-msgstr ""
+msgstr "邀请email"
 
 #: ./browser/template/inviteReview.pt:14
 msgid "Invited review"
-msgstr ""
+msgstr "审查邀请"
 
 #: ./config.py:140
 msgid "Iran"
-msgstr ""
+msgstr "伊朗"
 
 #: ./config.py:141
 msgid "Iraq"
-msgstr ""
+msgstr "伊位克"
 
 #: ./config.py:142
 msgid "Ireland"
-msgstr ""
+msgstr "爱尔兰"
 
 #: ./config.py:143
 msgid "Israel"
-msgstr ""
+msgstr "以色列"
 
 #: ./config.py:144
 msgid "Italy"
-msgstr ""
+msgstr "义大利"
 
 #: ./config.py:145
 msgid "Jamaica"
-msgstr ""
+msgstr "牙买加"
 
 #: ./config.py:146
 msgid "Japan"
-msgstr ""
+msgstr "日本"
 
 #: ./config.py:147
 msgid "Jordan"
-msgstr ""
+msgstr "约旦"
 
 #: ./profiles/default/types/ntpu.content.journal.xml
 msgid "Journal"
-msgstr ""
+msgstr "期刊"
 
 #: ./profiles/default/types/ntpu.content.journal.xml
 msgid "Journal content type"
-msgstr ""
+msgstr "期刊类别"
 
 #: ./config.py:148
 msgid "Kazakhstan"
-msgstr ""
+msgstr "哈萨克"
 
 #: ./config.py:149
 msgid "Kenya"
-msgstr ""
+msgstr "肯亚"
 
-#: ./article.py:342
+#: ./article.py:315
 #: ./article_templates/sampleview.pt:34
 #: ./journal.py:64
 msgid "Keywords"
+msgstr "关键字"
+
+#: ./journal_templates/sampleview.pt:26
+msgid "Keywords(chinese):"
+msgstr ""
+
+#: ./journal_templates/sampleview.pt:27
+msgid "Keywords(english):"
 msgstr ""
 
 #: ./config.py:150
 msgid "Kiribati"
-msgstr ""
+msgstr "基里巴斯"
 
 #: ./config.py:151
 msgid "Korea, North"
-msgstr ""
+msgstr "北韩"
 
 #: ./config.py:152
 msgid "Korea, South"
-msgstr ""
+msgstr "南韩"
 
 #: ./config.py:153
 msgid "Kosovo"
-msgstr ""
+msgstr "科索沃"
 
 #: ./config.py:154
 msgid "Kuwait"
-msgstr ""
+msgstr "科威特"
 
 #: ./config.py:155
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "吉尔吉斯坦"
 
-#: ./article.py:305
+#: ./article.py:278
 #: ./article_templates/sampleview.pt:49
 #: ./journal.py:42
 msgid "Language"
+msgstr "语言"
+
+#: ./journal_templates/sampleview.pt:21
+msgid "Language:"
 msgstr ""
 
 #: ./config.py:156
 msgid "Laos"
-msgstr ""
+msgstr "寮国"
 
 #: ./config.py:157
 msgid "Latvia"
-msgstr ""
+msgstr "拉脱维亚"
 
 #: ./config.py:158
 msgid "Lebanon"
-msgstr ""
+msgstr "黎巴嫩"
 
 #: ./config.py:159
 msgid "Lesotho"
-msgstr ""
+msgstr "赖索托"
 
 #: ./config.py:160
 msgid "Liberia"
-msgstr ""
+msgstr "赖比瑞亚"
 
 #: ./config.py:161
 msgid "Libya"
-msgstr ""
+msgstr "利比亚"
 
 #: ./config.py:162
 msgid "Liechtenstein"
-msgstr ""
+msgstr "列支敦士登"
 
 #: ./config.py:163
 msgid "Lithuania"
-msgstr ""
+msgstr "立陶宛"
 
 #: ./config.py:164
 msgid "Luxembourg"
-msgstr ""
+msgstr "卢森堡"
 
 #: ./config.py:165
 msgid "Macau"
-msgstr ""
+msgstr "澳门"
 
 #: ./config.py:166
 msgid "Macedonia"
-msgstr ""
+msgstr "马其顿"
 
 #: ./config.py:167
 msgid "Madagascar"
-msgstr ""
+msgstr "马达加斯加"
 
 #: ./config.py:168
 msgid "Malawi"
-msgstr ""
+msgstr "马拉威"
 
 #: ./config.py:169
 msgid "Malaysia"
-msgstr ""
+msgstr "马来西亚"
 
 #: ./config.py:170
 msgid "Maldives"
-msgstr ""
+msgstr "马尔地夫"
 
 #: ./config.py:41
 msgid "Male"
-msgstr ""
+msgstr "男性"
 
 #: ./config.py:171
 msgid "Mali"
-msgstr ""
+msgstr "马利"
 
 #: ./config.py:172
 msgid "Malta"
-msgstr ""
+msgstr "马尔他"
 
-#: ./article.py:288
+#: ./article.py:261
 msgid "Manuscript Metadata"
-msgstr ""
+msgstr "投稿资料"
+
+#: ./article.py:439
+msgid "Manuscript file"
+msgstr "投稿稿件"
 
 #: ./config.py:173
 msgid "Marshall Islands"
-msgstr ""
+msgstr "马绍尔群岛"
 
 #: ./config.py:34
 msgid "Master's degree"
-msgstr ""
+msgstr "硕士"
 
 #: ./config.py:174
 msgid "Mauritania"
-msgstr ""
+msgstr "茅利塔尼亚"
 
 #: ./config.py:175
 msgid "Mauritius"
-msgstr ""
+msgstr "模里西斯"
 
-#: ./article.py:343
+#: ./article.py:316
 msgid "Maximum 5 keywords, separated with commas."
-msgstr ""
+msgstr "最多5个关键字，并请以半型逗号分隔"
 
 #: ./config.py:176
 msgid "Mexico"
-msgstr ""
+msgstr "墨西哥"
 
 #: ./config.py:177
 msgid "Micronesia"
-msgstr ""
+msgstr "密克罗尼西亚"
 
 #: ./config.py:28
 msgid "Modify and then review"
-msgstr ""
+msgstr "修改后再审"
+
+#: ./article.py:448
+msgid "Modify submission"
+msgstr "提交修改"
 
 #: ./config.py:178
 msgid "Moldova"
-msgstr ""
+msgstr "摩尔多瓦"
 
 #: ./config.py:179
 msgid "Monaco"
-msgstr ""
+msgstr "摩纳哥"
 
 #: ./config.py:180
 msgid "Mongolia"
-msgstr ""
+msgstr "蒙古"
 
 #: ./config.py:181
 msgid "Montenegro"
-msgstr ""
+msgstr "蒙特内哥罗"
 
 #: ./config.py:182
 msgid "Morocco"
-msgstr ""
+msgstr "摩洛哥"
 
 #: ./config.py:183
 msgid "Mozambique"
-msgstr ""
+msgstr "莫山比克"
 
 #: ./profile.py:76
 msgid "Name"
-msgstr ""
-
-#: ./article_templates/sampleview.pt:92
-msgid "Name(Chinese):"
-msgstr ""
+msgstr "姓名"
 
 #: ./article_templates/sampleview.pt:97
-msgid "Name(English):"
-msgstr ""
+msgid "Name(Chinese):"
+msgstr "姓名(中文):"
 
-#: ./profile_templates/sampleview.pt:17
-msgid "Name:"
-msgstr ""
+#: ./article_templates/sampleview.pt:102
+msgid "Name(English):"
+msgstr "姓名(英文):"
 
 #: ./config.py:184
 msgid "Namibia"
-msgstr ""
+msgstr "纳米比亚"
 
 #: ./config.py:185
 msgid "Nauru"
-msgstr ""
+msgstr "诺鲁"
 
 #: ./config.py:186
 msgid "Nepal"
-msgstr ""
+msgstr "尼泊尔"
 
 #: ./config.py:187
 msgid "Netherlands"
-msgstr ""
+msgstr "荷兰"
 
 #: ./config.py:188
 msgid "Netherlands Antilles"
-msgstr ""
-
-#: ./profile_templates/sampleview.pt:58
-msgid "New In Review article"
-msgstr ""
+msgstr "新喀里多尼亚"
 
 #: ./config.py:189
 msgid "New Zealand"
-msgstr ""
+msgstr "纽西兰"
 
-#: ./profile_templates/sampleview.pt:29
+#: ./profile_templates/sampleview.pt:30
 msgid "New submitted article"
-msgstr ""
+msgstr "新进「投稿」稿件"
 
 #: ./config.py:190
 msgid "Nicaragua"
-msgstr ""
+msgstr "尼加拉瓜"
 
 #: ./config.py:191
 msgid "Niger"
-msgstr ""
+msgstr "尼日"
 
 #: ./config.py:192
 msgid "Nigeria"
-msgstr ""
+msgstr "奈及利亚"
+
+#: ./article_templates/sampleview.pt:149
+msgid "No comment yet."
+msgstr "尚无审查意见"
 
 #: ./config.py:193
 msgid "Norway"
-msgstr ""
+msgstr "挪威"
 
 #: ./config.py:194
 msgid "Oman"
-msgstr ""
+msgstr "阿曼"
 
-#: ./article.py:315
+#: ./article.py:288
 #: ./config.py:52
 msgid "Original paper"
-msgstr ""
+msgstr "原创论文"
 
 #: ./config.py:37
 msgid "Other"
-msgstr ""
+msgstr "其它"
 
 #: ./profiles/default/types/ntpu.content.pagewithfile.xml
 msgid "PageWithFile"
-msgstr ""
+msgstr "页面(含附件)"
 
 #: ./profiles/default/types/ntpu.content.pagewithfile.xml
 msgid "PageWithFile content type"
-msgstr ""
+msgstr "页面(含附件)类别"
 
 #: ./config.py:195
 msgid "Pakistan"
-msgstr ""
+msgstr "巴基斯坦"
 
 #: ./config.py:196
 msgid "Palau"
-msgstr ""
+msgstr "帕劳"
 
 #: ./config.py:197
 msgid "Palestinian Territories"
-msgstr ""
+msgstr "巴勒斯坦"
 
 #: ./config.py:198
 msgid "Panama"
-msgstr ""
+msgstr "巴拿马"
 
 #: ./config.py:199
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "巴布亚纽几内亚"
 
 #: ./config.py:200
 msgid "Paraguay"
-msgstr ""
+msgstr "巴拉圭"
+
+#: ./profile_templates/sampleview.pt:130
+msgid "Personal Desktop"
+msgstr "个人桌面"
 
 #: ./profile_templates/sampleview.pt:15
 msgid "Personal informat"
-msgstr ""
+msgstr "个人资讯"
 
 #: ./profiles/default/types/ntpu.content.profile.xml
 msgid "Personal profile"
-msgstr ""
+msgstr "个人资讯"
 
 #: ./config.py:201
 msgid "Peru"
-msgstr ""
+msgstr "秘鲁"
 
 #: ./config.py:202
 msgid "Philippines"
-msgstr ""
+msgstr "菲律宾"
 
 #: ./profile.py:113
 msgid "Phone number"
-msgstr ""
+msgstr "电话号码"
 
-#: ./article_templates/sampleview.pt:127
+#: ./article_templates/sampleview.pt:132
 msgid "Phone:"
-msgstr ""
+msgstr "电话:"
 
-#: ./article.py:359
+#: ./article.py:332
 msgid "Please limit the number of words in 500 words or less"
-msgstr ""
+msgstr "请限制在500字以内"
 
 #: ./config.py:25
 msgid "Please select"
-msgstr ""
+msgstr "请选择"
 
-#: ./article.py:406
+#: ./article.py:379
 msgid "Please select authors"
-msgstr ""
+msgstr "请选择作者"
+
+#: ./article.py:442
+msgid "Please upload Manuscript file, and you can upload images after submitting."
+msgstr "请上传投稿稿件，您可以在存档后增加其他图档"
+
+#: ./defaultForms.py:73
+msgid "Please upload modify submission and modified article."
+msgstr "请上传修改意见回复及修改过的稿件"
 
 #: ./config.py:203
 msgid "Poland"
-msgstr ""
+msgstr "波兰"
 
 #: ./config.py:204
 msgid "Portugal"
-msgstr ""
+msgstr "葡萄牙"
 
 #: ./profile.py:152
 msgid "Position"
-msgstr ""
+msgstr "职级"
 
 #: ./config.py:36
 msgid "Postdoc Research"
-msgstr ""
+msgstr "博士后研究"
 
 #: ./profiles/default/types/ntpu.content.profile.xml
 msgid "Profile"
-msgstr ""
+msgstr "个人资讯"
 
 #: ./config.py:205
 msgid "Qatar"
-msgstr ""
+msgstr "卡达"
 
 #: ./article.py:99
 msgid "Recommend using double-blind review"
-msgstr ""
+msgstr "建议采用双盲审查"
 
 #: ./config.py:29
 msgid "Reject"
-msgstr ""
+msgstr "不予同意"
 
 #: ./profile.py:175
 msgid "Research area & Expertise"
-msgstr ""
+msgstr "研究领域与专业"
 
 #: ./config.py:54
 msgid "Research note"
-msgstr ""
+msgstr "研究概要"
 
 #: ./article.py:144
 msgid "Result of Review"
-msgstr ""
+msgstr "审查结果"
 
-#: ./article_templates/sampleview.pt:151
+#: ./article_templates/sampleview.pt:153
+msgid "Result:"
+msgstr "结果:"
+
+#: ./article_templates/sampleview.pt:187
 msgid "Review"
-msgstr ""
+msgstr "审查"
 
-#: ./article_templates/sampleview.pt:139
+#: ./profile_templates/sampleview.pt:54
+msgid "Review Article"
+msgstr "审查稿件"
+
+#: ./article_templates/sampleview.pt:146
 msgid "Review Comments"
-msgstr ""
+msgstr "审查意见"
 
 #: ./article.py:70
 msgid "Review State"
-msgstr ""
+msgstr "审查状态"
 
 #: ./config.py:53
 msgid "Review article"
-msgstr ""
+msgstr "综论性论文"
 
 #: ./commentfile.py:29
 #: ./profiles/default/types/ntpu.content.commentfile.xml
 msgid "Review comment attached file"
-msgstr ""
+msgstr "审查意见书附档"
 
-#: ./article_templates/sampleview.pt:141
-msgid "Review time:"
-msgstr ""
+#: ./profile_templates/sampleview.pt:67
+msgid "Review state:"
+msgstr "审查状态:"
 
 #: ./config.py:206
 msgid "Romania"
-msgstr ""
+msgstr "罗马尼亚"
 
 #: ./article_templates/sampleview.pt:19
 msgid "Running Title"
-msgstr ""
+msgstr "短标题(Running Title)"
 
-#: ./article.py:335
+#: ./article.py:308
 msgid "Running title"
-msgstr ""
+msgstr "短标题(Running Title)"
 
 #: ./config.py:207
 msgid "Russia"
-msgstr ""
+msgstr "俄罗斯"
 
 #: ./config.py:208
 msgid "Rwanda"
-msgstr ""
+msgstr "卢安达"
 
 #: ./config.py:209
 msgid "Saint Kitts and Nevis"
-msgstr ""
+msgstr "圣克里斯多福及尼维斯"
 
 #: ./config.py:210
 msgid "Saint Lucia"
-msgstr ""
+msgstr "圣露西亚"
 
 #: ./config.py:211
 msgid "Saint Vincent and the Grenadines"
-msgstr ""
+msgstr "圣文森及格瑞那丁"
 
 #: ./config.py:212
 msgid "Samoa"
-msgstr ""
+msgstr "萨摩亚"
 
 #: ./config.py:213
 msgid "San Marino"
-msgstr ""
+msgstr "圣马力诺"
 
 #: ./config.py:214
 msgid "Sao Tome and Principe"
-msgstr ""
+msgstr "圣多美及普林西比"
 
 #: ./config.py:215
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "沙乌地阿拉伯"
 
-#: ./article.py:419
+#: ./article.py:392
 msgid "Select at least one corresponding author."
-msgstr ""
+msgstr "请选择至少一位通讯作者"
 
 #: ./config.py:216
 msgid "Senegal"
-msgstr ""
+msgstr "塞内加尔"
 
 #: ./config.py:217
 msgid "Serbia"
-msgstr ""
+msgstr "塞尔维亚"
 
 #: ./config.py:218
 msgid "Seychelles"
-msgstr ""
+msgstr "塞席尔"
 
 #: ./config.py:219
 msgid "Sierra Leone"
-msgstr ""
+msgstr "狮子山"
 
 #: ./config.py:220
 msgid "Singapore"
-msgstr ""
+msgstr "新加坡"
 
 #: ./config.py:21
 msgid "Single-blind"
-msgstr ""
+msgstr "单盲"
 
 #: ./config.py:221
 msgid "Sint Maarten"
-msgstr ""
+msgstr "荷属圣马丁"
 
 #: ./config.py:222
 msgid "Slovakia"
-msgstr ""
+msgstr "斯洛代克"
 
 #: ./config.py:223
 msgid "Slovenia"
-msgstr ""
+msgstr "斯洛维尼亚"
 
 #: ./config.py:224
 msgid "Solomon Islands"
-msgstr ""
+msgstr "索罗门群岛"
 
 #: ./config.py:225
 msgid "Somalia"
-msgstr ""
+msgstr "索马利亚"
 
 #: ./config.py:226
 msgid "South Africa"
-msgstr ""
+msgstr "南非"
 
 #: ./config.py:227
 msgid "South Sudan"
-msgstr ""
+msgstr "南苏丹"
 
 #: ./config.py:228
 msgid "Spain"
-msgstr ""
+msgstr "西班牙"
 
 #: ./config.py:12
 msgid "Sport Biomechancis"
-msgstr ""
+msgstr "运动生物力学"
 
 #: ./config.py:9
 msgid "Sport Pedagogy, Motor Behavior"
-msgstr ""
+msgstr "运动教育学、动作行为学"
 
 #: ./config.py:7
 msgid "Sport Siology, Recreation and Leisure Studies"
-msgstr ""
+msgstr "运动社会学、运动休闲学"
 
 #: ./config.py:10
 msgid "Sport and Excercise Psychology"
-msgstr ""
+msgstr "运动心理学"
 
 #: ./config.py:8
 msgid "Sports Administration, Sports Management"
-msgstr ""
+msgstr "体育行政、运动管理学"
 
 #: ./config.py:15
 msgid "Sports Medicine"
-msgstr ""
+msgstr "运动医学"
 
 #: ./config.py:229
 msgid "Sri Lanka"
-msgstr ""
+msgstr "斯里兰卡"
 
-#: ./article.py:291
+#: ./article.py:264
 msgid "Submit a new manuscript(fields in RED DOT are Required)"
-msgstr ""
+msgstr "提交一份新的稿件 (有红点栏位为必填)<br>若您尚未新增作者资讯，您应该先至少<a target='_blank' href='++add++ntpu.content.author'>新增一位作者.</a>"
 
-#: ./article.py:296
+#: ./article.py:269
 msgid "Submitting from"
-msgstr ""
+msgstr "投稿人所在地点"
 
 #: ./config.py:230
 msgid "Sudan"
-msgstr ""
+msgstr "苏丹"
 
 #: ./config.py:231
 msgid "Suriname"
-msgstr ""
+msgstr "苏利南"
 
 #: ./config.py:232
 msgid "Swaziland"
-msgstr ""
+msgstr "史瓦济兰"
 
 #: ./config.py:233
 msgid "Sweden"
-msgstr ""
+msgstr "瑞典"
 
 #: ./config.py:234
 msgid "Switzerland"
-msgstr ""
+msgstr "瑞士"
 
 #: ./config.py:235
 msgid "Syria"
-msgstr ""
+msgstr "叙利亚"
 
 #: ./profiles/default/types/ntpu.content.systemfolder.xml
 msgid "System folder"
-msgstr ""
+msgstr "系统目录"
 
 #: ./profiles/default/types/ntpu.content.systemfolder.xml
 msgid "SystemFolder"
-msgstr ""
+msgstr "系统目录"
 
-#: ./article.py:299
+#: ./article.py:272
 #: ./config.py:236
 #: ./profile.py:125
 msgid "Taiwan"
-msgstr ""
+msgstr "台湾"
 
 #: ./config.py:237
 msgid "Tajikistan"
-msgstr ""
+msgstr "塔吉克斯坦"
 
 #: ./config.py:238
 msgid "Tanzania"
-msgstr ""
+msgstr "坦尚尼亚"
 
 #: ./pagewithfile.py:30
 msgid "Text content"
-msgstr ""
+msgstr "文字内容"
 
 #: ./config.py:239
 msgid "Thailand"
-msgstr ""
+msgstr "泰国"
 
-#: ./article.py:468
+#: ./article.py:457
 msgid "This External reviewer already selected."
-msgstr ""
+msgstr "重复选取审查委员"
 
 #: ./profile.py:88
 msgid "Title"
-msgstr ""
-
-#: ./article_templates/sampleview.pt:112
-#: ./browser/template/inviteReview.pt:18
-msgid "Title(Chinese):"
-msgstr ""
+msgstr "称谓"
 
 #: ./article_templates/sampleview.pt:117
+#: ./browser/template/inviteReview.pt:18
+msgid "Title(Chinese):"
+msgstr "标题(中文):"
+
+#: ./article_templates/sampleview.pt:122
 #: ./browser/template/inviteReview.pt:19
 msgid "Title(English):"
+msgstr "标题(英文):"
+
+#: ./journal_templates/sampleview.pt:22
+msgid "Title(english):"
 msgstr ""
 
 #: ./config.py:240
 msgid "Togo"
-msgstr ""
+msgstr "多哥"
 
 #: ./config.py:241
 msgid "Tonga"
-msgstr ""
+msgstr "东加王国"
 
 #: ./config.py:242
 msgid "Trinidad and Tobago"
-msgstr ""
+msgstr "千里达及托贝哥"
 
 #: ./config.py:243
 msgid "Tunisia"
-msgstr ""
+msgstr "突尼西亚"
 
 #: ./config.py:244
 msgid "Turkey"
-msgstr ""
+msgstr "土耳其"
 
 #: ./config.py:245
 msgid "Turkmenistan"
-msgstr ""
+msgstr "土库曼"
 
 #: ./config.py:246
 msgid "Tuvalu"
-msgstr ""
+msgstr "吐瓦鲁"
 
 #: ./config.py:247
 msgid "Uganda"
-msgstr ""
+msgstr "乌干达"
 
 #: ./config.py:248
 msgid "Ukraine"
-msgstr ""
+msgstr "乌克兰"
 
 #: ./config.py:249
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "阿拉伯联合大公国"
 
 #: ./config.py:250
 msgid "United Kingdom"
-msgstr ""
+msgstr "英国"
 
 #: ./config.py:251
 msgid "United States"
-msgstr ""
+msgstr "美国"
 
 #: ./config.py:252
 msgid "Uruguay"
-msgstr ""
+msgstr "乌拉圭"
 
 #: ./config.py:253
 msgid "Uzbekistan"
-msgstr ""
+msgstr "乌兹别克斯坦"
 
 #: ./config.py:254
 msgid "Vanuatu"
-msgstr ""
+msgstr "瓦努阿图"
 
 #: ./config.py:255
 msgid "Venezuela"
-msgstr ""
+msgstr "委内瑞拉"
 
 #: ./config.py:256
 msgid "Vietnam"
-msgstr ""
+msgstr "越南"
 
-#: ./profile_templates/sampleview.pt:84
+#: ./profile_templates/sampleview.pt:83
 msgid "Waitting for Review Article"
-msgstr ""
+msgstr "审查中"
 
 #: ./config.py:257
 msgid "Yemen"
-msgstr ""
+msgstr "叶门"
 
 #: ./config.py:258
 msgid "Zambia"
-msgstr ""
+msgstr "尚比亚"
 
 #: ./config.py:259
 msgid "Zimbabwe"
-msgstr ""
+msgstr "辛巴威"
 
 #: ./profile.py:130
 msgid "Zip"
-msgstr ""
+msgstr "邮递区号"
 
 #: ./browser/template/inviteReview.pt:29
 msgid "accept"
-msgstr ""
+msgstr "同意"
 
-#: ./article_templates/sampleview.pt:74
+#: ./article_templates/sampleview.pt:79
 msgid "attachFile:"
-msgstr ""
+msgstr "附加档案:"
 
 #: ./config.py:48
 msgid "en-us"
-msgstr ""
+msgstr "English"
 
 #: ./profile.py:89
 msgid "for eg. Dr, Prof, Mr, Ms..."
-msgstr ""
+msgstr "例:博士/教授/女士/先生..."
 
 #. Default: "I confirm this manuscript has not been accepted                           for publication elsewhere, is not being considered                           for publication elsewhere and does not duplicate material                           already published. I confirm all authors consent to                           publication of this manuscript."
-#: ./article.py:432
+#: ./article.py:405
 msgid "help_allAuthorConsent"
-msgstr ""
+msgstr "所有作者同意事项:<br>确认本稿件过去从未在其他刊物接受后出版，且没有复制已出版的资料。同时也确认本稿件所有作者均已同意本稿件的发表."
 
 #. Default: "Select authors and order, first is main author,                                second is 2'nd author...<br>                                 Note: Before submitting, you mustbe agree 'All author consent'                                 , 'Exclusive or non-exclusive license' and check them."
-#: ./article.py:396
+#: ./article.py:369
 msgid "help_authors"
-msgstr ""
+msgstr "选择作者并排序，第一位为主要作者，第二位为第二作者，依此类推.<br>若您尚未新增作者资讯，您应该先至少<a target='_blank' href='++add++ntpu.content.author'>新增一位作者.</a><br>注意: 提交稿件前，您必需确认 「所有作者同意」 及 「专属或非专属授权」 二项叙述并勾选同意，才能提交稿件"
 
 #. Default: "Enter your cover letter here.                       DO NOT include your cover letter                       in the manuscript file that you                       will upload.The word limit of this                       column is 1024 characters."
-#: ./article.py:382
+#: ./article.py:355
 msgid "help_coverLetter"
-msgstr ""
+msgstr "请在此填写您的封面信函，并请勿将封面信函写在您的提交手稿内容中，字数限制1024个字。"
 
 #. Default: "I have read and agreed with the following statements:                           1. I am authorized by all co-author(s) to submit this article                           on their behalf and as the contact for the Editorial process.                           I am responsible for communicating with the other authors about                           progress, submissions of revisions and final approval of proofs.                           2. All authors agree with the Personal Information Collection                           Statement , and the staff of the journal will be using the                           personal information that I provided in the APSERS system for                           the sole purpose of contacting me concerning the publishing of                           the Article.                           3. The article I have submitted to the journal for review is                           original, has been written by the stated authors and has not been                           published elsewhere. Also, the Article is not currently being                           considered for publication by any other journal and will not be                           submitted for such review while under review by this journal."
-#: ./article.py:445
+#: ./article.py:418
 msgid "help_license"
-msgstr ""
+msgstr "我已阅读并同意下列事项:<br>1.本稿件所有作者皆同意授权由本人进行此稿件之提交，及后续投审稿期间所有连络事项。<br>2.在本系统保证不将作者之个人资料外流或做其他用途之前提下，本稿件所有作者皆已阅读本系统之个资声明 ，并同意本人将作者之个人资料填写于本系统中作为期刊审稿及联络之用。<br>3.本稿件所有作者皆保证此稿件并未于其他期刊出版或正进行出版程序，且保证此论文并非抄袭之作。"
 
-#: ./article.py:287
+#: ./article.py:260
 msgid "manuscript metadata"
-msgstr ""
+msgstr "稿件资料"
 
-#: ./article.py:408
+#: ./article.py:381
 msgid "name"
-msgstr ""
+msgstr "姓名"
 
 #: ./config.py:16
 msgid "other"
-msgstr ""
+msgstr "其它"
 
 #: ./browser/template/inviteReview.pt:35
 msgid "reject"
-msgstr ""
+msgstr "拒绝"
 
 #: ./config.py:47
 msgid "zh-cn"
-msgstr ""
+msgstr "简体中文"
 
-#: ./article.py:307
+#: ./article.py:280
 #: ./config.py:46
 #: ./journal.py:44
 msgid "zh-tw"
-msgstr ""
+msgstr "正体中文"
 

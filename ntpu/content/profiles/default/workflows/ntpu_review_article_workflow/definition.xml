@@ -201,7 +201,7 @@
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
-   <guard-role>Super Editor</guard-role>
+   <guard-role>Internal Reviewer</guard-role>
   </guard>
  </transition>
  <transition transition_id="MR" title="Modify and then review" new_state="modifyThenReview" trigger="USER" before_script="" after_script="">
@@ -210,7 +210,7 @@
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
-   <guard-role>Super Editor</guard-role>
+   <guard-role>Internal Reviewer</guard-role>
   </guard>
  </transition>
  <transition transition_id="accept" title="Accept" new_state="accepted" trigger="USER" before_script="" after_script="">
@@ -219,7 +219,7 @@
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
-   <guard-role>Super Editor</guard-role>
+   <guard-role>Internal Reviewer</guard-role>
   </guard>
  </transition>
  <transition transition_id="assignInternal" title="Assign internal reviewer" new_state="internalAssigned" trigger="USER" before_script="" after_script="">
@@ -242,7 +242,7 @@
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
-   <guard-role>Super Editor</guard-role>
+   <guard-role>Internal Reviewer</guard-role>
   </guard>
  </transition>
  <transition transition_id="retract" title="Retract" new_state="draft" trigger="USER" before_script="" after_script="">

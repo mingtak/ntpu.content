@@ -300,7 +300,8 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(engTitle='ntpu.content.IsOwner')
     engTitle = schema.TextLine(
         title=_(u'English title'),
-        required=False,
+        default=u' ',
+        required=True,
     )
 
     dexterity.write_permission(runningTitle='ntpu.content.IsOwner')
@@ -554,6 +555,17 @@ class SampleView(dexterity.DisplayForm):
                 continue
             physicalPath += '%s/' % item
         return physicalPath
+
+    def resultsCount(self):
+        context = self.context
+        count = 0
+        if context.acceptOrReject1 is not None:
+            count += 1
+        if context.acceptOrReject2 is not None:
+            count += 1
+        if context.acceptOrReject3 is not None:
+            count += 1
+        return count
 
 
 @indexer(IArticle)

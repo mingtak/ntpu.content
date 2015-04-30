@@ -197,11 +197,14 @@ class SampleView(dexterity.DisplayForm):
         back2 = back_references(self.context, 'assignExternalReviewer2')
         back3 = back_references(self.context, 'assignExternalReviewer3')
         if bool(back1):
-            externalReviewerList.append(back1[0])
+#            externalReviewerList.append(back1[0])
+           externalReviewerList += back1
         if bool(back2):
-            externalReviewerList.append(back2[0])
+#            externalReviewerList.append(back2[0])
+           externalReviewerList += back2
         if bool(back3):
-            externalReviewerList.append(back3[0])
+#            externalReviewerList.append(back3[0])
+           externalReviewerList += back3
         return externalReviewerList
 
     def newInReview(self):

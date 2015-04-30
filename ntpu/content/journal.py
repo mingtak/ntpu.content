@@ -75,6 +75,11 @@ class IJournal(form.Schema, IImageScaleTraversable):
         required=False,
     )
 
+    downloadCount = schema.Int(
+        title=_(u'Download count'),
+        default=0,
+        required=True,
+    )
 
 class Journal(Container):
     grok.implements(IJournal)
@@ -86,6 +91,6 @@ class SampleView(grok.View):
     grok.context(IJournal)
     grok.require('zope2.View')
 
-    # grok.name('view')
+    grok.name('view')
 
     # Add view methods here

@@ -44,6 +44,10 @@ msgstr "責任編輯"
 msgid "Internal draft"
 msgstr "個人專屬"
 
+#: CMFPlone/profiles/default/types/Image.xml
+msgid "Images can be referenced in pages or displayed in an album."
+msgstr "上傳圖檔"
+
 
 ################
 
@@ -2062,8 +2066,8 @@ msgid "Image handling settings"
 msgstr "圖檔縮放尺寸設定"
 
 #: CMFPlone/profiles/default/types/Image.xml
-msgid "Images can be referenced in pages or displayed in an album."
-msgstr "圖檔可以用於頁面裡，或是顯示在相簿中。"
+#msgid "Images can be referenced in pages or displayed in an album."
+#msgstr "圖檔可以用於頁面裡，或是顯示在相簿中。"
 
 #: plone/app/imaging/profiles/default/actionicons.xml
 msgid "Imaging Handling"

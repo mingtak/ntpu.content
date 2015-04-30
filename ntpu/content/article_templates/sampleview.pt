@@ -53,7 +53,12 @@
 <tal:file define="catalog python:context.portal_catalog;
                   files python:catalog({'Type':'File', 'path':view.getPhysicalPath()},
                                        sort_on='created', sort_order='reverse')">
-  <a tal:attributes="href python:files[0].getURL()" i18n:translate="">Attached file</a>
+  <tal:checkfile tal:condition="python:bool(files)">
+    <strong i18n:translate="">Attached file:</strong>
+    <a tal:define="item python:files[0].getObject()"
+       tal:content="item/file/filename"
+       tal:attributes="href string:${item/absolute_url}/@@download/file/${item/file/filename}"/>
+  </tal:checkfile>
 </tal:file>
 <br/><br/>
 <tal:images define="catalog python:context.portal_catalog;
@@ -62,7 +67,7 @@
             repeat="image images">
 <p>
   <a tal:attributes="href string:${image/getURL}/@@images/image/" target="_blank">
-    <img tal:attributes="src string:${image/getURL}/@@images/image/preview">
+    <img tal:attributes="src string:${image/getURL}/@@images/image/mini">
   </a>
   <br/>
   <span tal:content="string:${image/Title}: ${image/Description}"/>
@@ -134,26 +139,67 @@
 
 </div>
 
-<tal:reviewcomment define="selfBrain python:view.getSelfBrain()">
+
+<tal:reviewcomment define="selfBrain python:view.getSelfBrain()"
+                   condition="view/isOwner">
   <br>
   <h3 i18n:translate="">Review Comments</h3>
-  <div tal:repeat="comment python:selfBrain.reviewResults">
-    <p><strong i18n:translate="">Review time:</strong><span tal:content="python:comment[1]"/></p>
-    <p><strong i18n:translate="">Accpect or Reject:</strong><span tal:content="python:comment[2]"/></p>
-    <p><strong i18n:translate="">Comment:</strong><span tal:content="python:comment[3]"/></p>
+
+  <div tal:condition="python:context.acceptOrReject1 is None and context.acceptOrReject2 is None and context.acceptOrReject3 is None">
+    <span i18n:translate="">No comment yet.</span>
+  </div>
+
+  <div tal:condition="context/assignExternalReviewer1">
+    <p><strong i18n:translate="">Result:</strong><span tal:content="context/acceptOrReject1"/></p>
+    <p><strong i18n:translate="">Comment:</strong><span tal:content="context/externalReviewerComment1"/></p>
+    <p><strong i18n:translate="">Attached file:</strong>
+       <a tal:content="context/reviewCommentAttached1/filename"
+          tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached1/filename}"/>
+    </p>
     <br>
   </div>
+
+  <div tal:condition="context/assignExternalReviewer2">
+    <p><strong i18n:translate="">Result:</strong><span tal:content="context/acceptOrReject2"/></p>
+    <p><strong i18n:translate="">Comment:</strong><span tal:content="context/externalReviewerComment2"/></p>
+    <p><strong i18n:translate="">Attached file:</strong>
+       <a tal:content="context/reviewCommentAttached2/filename"
+          tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached2/${context/reviewCommentAttached2/filename}"/>
+    </p>
+    <br>
+  </div>
+
+  <div tal:condition="context/assignExternalReviewer3">
+    <p><strong i18n:translate="">Result:</strong><span tal:content="context/acceptOrReject3"/></p>
+    <p><strong i18n:translate="">Comment:</strong><span tal:content="context/externalReviewerComment3"/></p>
+    <p><strong i18n:translate="">Attached file:</strong>
+       <a tal:content="context/reviewCommentAttached3/filename"
+          tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached3/${context/reviewCommentAttached3/filename}"/>
+    </p>
+    <br>
+  </div>
+
 <hr>
 </tal:reviewcomment>
 
 
-<h3 atal:condition="python:(not view.alreadyReview()) and (not view.isOwner())" >
+<h3 tal:condition="not:view/isOwner" >
   <a href="./edit" i18n:translate="">Review</a>
 </h3>
 
 <h3 tal:condition="python:view.isOwner() and view.getSelfBrain().review_state == 'draft'" >
   <a href="./edit" i18n:translate="">Edit</a>
+  <a href="./++add++Image" i18n:translate="">Add Image</a>
 </h3>
+
+
+
+<h3 tal:condition="python:view.isOwner() and
+                          view.getSelfBrain().review_state == 'internalAssigned' and
+                          view.resultsCount() > 0" >
+  <a href="./edit" i18n:translate="">Edit</a>
+</h3>
+
 
 </tal:checkId>
   </metal:content-core>

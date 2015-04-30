@@ -70,6 +70,7 @@ class ArticleEditForm(DefaultEditForm):
                     for key in group.fields.keys():
                         if key in ['modifySubmission']:
                             group.fields[key].mode = None
+                            group.description = _(u"Please upload modify submission and modified article.")
 
     def update(self):
         DefaultEditForm.update(self)
@@ -154,6 +155,13 @@ class ArticleAddForm(DefaultAddForm):
                 for key in group.fields.keys():
                     if key in ['engTitle', 'engKeywords', 'engAbstract',]:
                        group.fields[key].mode = 'hidden'
+        for group in self.groups:
+            if group.label == 'Review State':
+#                group.label = ''
+#                group = None
+                for key in group.fields.keys():
+                    group.fields[key].mode = 'hidden'
+
         return
 
 
@@ -201,6 +209,7 @@ class AuthorAddForm(DefaultAddForm):
                 for key in group.fields.keys():
                     if key in ['IAuthorInformation.authorNameC', 'IAuthorInformation.institutionC', 'IAuthorInformation.titleC']:
                        group.fields[key].mode = 'hidden'
+
         return
 
 

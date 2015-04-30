@@ -103,34 +103,49 @@
 <!-- 審查委員桌面 -->
 <tal:ExternalReview define="roles context/@@get_roles"
                     condition="python:'External Reviewer' in roles or 'Manager' in roles">
-<tal:test define="backref view/externalReviewerBackRef" />
 
     <h2 i18n:translate="">External Reviewer Region</h2>
-    <div tal:define="brain view/internalAssigned;
-                     currentUserId context/@@getCurrentUserId"
-         tal:repeat="item brain">
-      <tal:check condition="python:item.assignInternalReviewer == currentUserId">
+    <div tal:define="catalog python:context.portal_catalog;
+                     items view/externalReviewerBackRef"
+         tal:repeat="item items">
+
+        <p><strong i18n:translate="">Article title(Chinese):</strong>
+           <span tal:replace="item/articleTitle" />
+        </p>
+        <p tal:condition="item/engTitle"><strong i18n:translate="">Article title(English):</strong>
+           <span tal:replace="item/engTitle" />
+        </p>
+
+      <form tal:attributes="action string:${item/absolute_url}">
+          <input type="submit" value="Detail" i18n:attributes="value"/>
+      </form>
+      <br/>
+    </div>
+    <br/><hr/>
+</tal:ExternalReview>
+
+
+
+<!-- 個人桌面 -->
+    <h2 i18n:translate="">Personal Desktop</h2>
+    <div tal:define="catalog python:context.portal_catalog;
+                     items python:catalog({'Type':'Article', 'Creator':context.owner_info()['id']})"
+         tal:repeat="item items">
+
         <p><strong i18n:translate="">Article title(Chinese):</strong>
            <span tal:replace="item/articleTitleC" />
         </p>
         <p tal:condition="item/articleTitleE"><strong i18n:translate="">Article title(English):</strong>
            <span tal:replace="item/articleTitleE" />
         </p>
-        <p tal:condition="item/abstract"><strong i18n:translate="">Abstract(Chinese):</strong>
-           <span tal:replace="item/abstract" />
-        </p>
-        <p tal:condition="item/engAbstract"><strong i18n:translate="">Abstract(English):</strong>
-           <span tal:replace="item/engAbstract" />
-        </p>
-
       <form tal:attributes="action string:${item/getURL}">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
       <br/>
-      </tal:check>
     </div>
     <br/><hr/>
-</tal:ExternalReview>
+
+
 
 </tal:isowner>
   </metal:content-core>

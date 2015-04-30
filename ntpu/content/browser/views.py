@@ -5,9 +5,22 @@ from zope.interface import Interface
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from email.mime.text import MIMEText
 #from Products.CMFPlone.utils import safe_unicode
+from ntpu.content.journal import IJournal
 
 
 grok.templatedir('template')
+
+class DownloadFile(grok.View):
+    grok.context(IJournal)
+    grok.name('downloadfile')
+
+    def render(self):
+        context = self.context
+        context.downloadCount += 1
+        response = context.REQUEST.response
+        string = '%s/@@download/attachFile/%s' % (context.absolute_url(), context.attachFile.filename)
+        response.redirect(string)
+
 
 class InviteReview(grok.View):
     grok.context(Interface)
