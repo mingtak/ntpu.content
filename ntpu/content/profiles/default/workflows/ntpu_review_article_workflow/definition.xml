@@ -6,7 +6,6 @@
  <state state_id="accepted" title="Agreed to recommend">
   <description>Agreed to recommend</description>
   <permission-map name="Access contents information" acquired="False">
-   <permission-role>External Reviewer</permission-role>
    <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
@@ -18,27 +17,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>External Reviewer</permission-role>
    <permission-role>Internal Reviewer</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
-  </permission-map>
- </state>
- <state state_id="afterModifyAgree" title="After the modification agreed to recommend">
-  <description>After the modification agreed to recommend</description>
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>Manager</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -61,30 +40,6 @@
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
-  </permission-map>
- </state>
- <state state_id="externalAssigned" title="External assigned">
-  <description>External reviewer assigned</description>
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>External Reviewer</permission-role>
-   <permission-role>Internal Reviewer</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>External Reviewer</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Site Administrator</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>External Reviewer</permission-role>
-   <permission-role>Internal Reviewer</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Owner</permission-role>
-   <permission-role>Site Administrator</permission-role>
-   <permission-role>Super Editor</permission-role>
   </permission-map>
  </state>
  <state state_id="inReview" title="">
@@ -126,7 +81,6 @@
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>External Reviewer</permission-role>
    <permission-role>Internal Reviewer</permission-role>
-   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -141,7 +95,37 @@
  </state>
  <state state_id="modifyThenReview" title="Modify and then review">
   <description>Modify and then review</description>
+  <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="toReSubmitted"/>
   <permission-map name="Access contents information" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Super Editor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Super Editor</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="reSubmitted" title="Re Submitted">
+  <description>Re Submitted</description>
+  <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="toRetrial"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -152,6 +136,8 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -161,6 +147,7 @@
  <state state_id="rejected" title="Reject">
   <description>Reject</description>
   <permission-map name="Access contents information" acquired="False">
+   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -171,6 +158,36 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>Internal Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Super Editor</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="retrial" title="Retrial">
+  <description>Retrial</description>
+  <exit-transition transition_id="MR"/>
+  <exit-transition transition_id="accept"/>
+  <exit-transition transition_id="reject"/>
+  <exit-transition transition_id="retract"/>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Super Editor</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>External Reviewer</permission-role>
+   <permission-role>Internal Reviewer</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
@@ -195,15 +212,6 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <transition transition_id="AMAR" title="After the modification agreed to recommend" new_state="afterModifyAgree" trigger="USER" before_script="" after_script="">
-  <description>After the modification agreed to recommend</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=AMAR" category="workflow" icon="">AMAR</action>
-  <guard>
-   <guard-role>Site Administrator</guard-role>
-   <guard-role>Manager</guard-role>
-   <guard-role>Internal Reviewer</guard-role>
-  </guard>
- </transition>
  <transition transition_id="MR" title="Modify and then review" new_state="modifyThenReview" trigger="USER" before_script="" after_script="">
   <description>Modify and then review</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=MR" category="workflow" icon="">Modify and then review</action>
@@ -267,6 +275,21 @@
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="toReSubmitted" title="To ReSubmitted" new_state="reSubmitted" trigger="USER" before_script="" after_script="">
+  <description>To ReSubmitted</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=toReSubmitted" category="workflow" icon="">To ReSubmitted</action>
+  <guard>
+   <guard-role>Owner</guard-role>
+   <guard-role>Site Administrator</guard-role>
+  </guard>
+ </transition>
+ <transition transition_id="toRetrial" title="To Retrial" new_state="retrial" trigger="USER" before_script="" after_script="">
+  <description>To Retrial</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=toRetrial" category="workflow" icon="">To Retrial</action>
+  <guard>
+   <guard-role>Site Administrator</guard-role>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
