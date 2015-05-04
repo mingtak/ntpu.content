@@ -189,7 +189,6 @@
 
 <h3 tal:condition="python:view.isOwner() and view.getSelfBrain().review_state == 'draft'" >
   <a href="./edit" i18n:translate="">Edit</a>
-  <a href="./++add++Image" i18n:translate="">Add Image</a>
 </h3>
 
 

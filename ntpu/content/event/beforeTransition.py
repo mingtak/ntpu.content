@@ -17,20 +17,19 @@ def retract(item, event):
         item.acceptOrReject1 = None
         item.externalReviewerComment1 = None
         item.reviewCommentAttached1 = None
+        item.reviewConfirm1 = None
         item.assignExternalReviewer2 = None
         item.invitEmail2 = None
         item.acceptInvit2 = None
         item.acceptOrReject2 = None
         item.externalReviewerComment2 = None
         item.reviewCommentAttached2 = None
+        item.reviewConfirm2 = None
         item.assignExternalReviewer3 = None
         item.invitEmail3 = None
         item.acceptInvit3 = None
         item.acceptOrReject3 = None
         item.externalReviewerComment3 = None
         item.reviewCommentAttached3 = None
-#        item.assignExternalReviewer = None
-#        item.assignExtraReviewer = None
-#        item.acceptOrReject = None
-#        item.externalReviewerComment = None
+        item.reviewConfirm3 = None
         item.reindexObject()

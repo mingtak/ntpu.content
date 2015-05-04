@@ -77,18 +77,21 @@ class IArticle(form.Schema, IImageScaleTraversable):
                 'acceptOrReject1',
                 'externalReviewerComment1',
                 'reviewCommentAttached1',
+                'reviewConfirm1',
                 'assignExternalReviewer2',
                 'invitEmail2',
                 'acceptInvit2',
                 'acceptOrReject2',
                 'externalReviewerComment2',
                 'reviewCommentAttached2',
+                'reviewConfirm2',
                 'assignExternalReviewer3',
                 'invitEmail3',
                 'acceptInvit3',
                 'acceptOrReject3',
                 'externalReviewerComment3',
-                'reviewCommentAttached3'],
+                'reviewCommentAttached3',
+                'reviewConfirm3',],
     )
 
 
@@ -156,9 +159,16 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(reviewCommentAttached1='ntpu.content.IsExternalReviewer')
     reviewCommentAttached1 = NamedBlobFile(
         title=_(u'External reviewer comment attached file'),
-        required = False,
+        required=False,
     )
 
+    dexterity.write_permission(reviewConfirm1='ntpu.content.IsExternalReviewer')
+    form.mode(reviewConfirm1='hidden')
+    reviewConfirm1 = schema.Bool(
+        title=_(u'Review confirm'),
+        default=None,
+        required=False,
+    )
 
 
 #### external reviewer 2
@@ -208,6 +218,14 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required = False,
     )
 
+    dexterity.write_permission(reviewConfirm2='ntpu.content.IsExternalReviewer')
+    form.mode(reviewConfirm2='hidden')
+    reviewConfirm2 = schema.Bool(
+        title=_(u'Review confirm'),
+        default=None,
+        required=False,
+    )
+
 
 #### external reviewer 3
     dexterity.write_permission(assignExternalReviewer3='ntpu.content.IsInternalReviewer')
@@ -254,6 +272,14 @@ class IArticle(form.Schema, IImageScaleTraversable):
     reviewCommentAttached3 = NamedBlobFile(
         title=_(u'External reviewer comment attached file'),
         required = False,
+    )
+
+    dexterity.write_permission(reviewConfirm3='ntpu.content.IsExternalReviewer')
+    form.mode(reviewConfirm3='hidden')
+    reviewConfirm3 = schema.Bool(
+        title=_(u'Review confirm'),
+        default=None,
+        required=False,
     )
 
     form.fieldset(
@@ -381,10 +407,10 @@ class IArticle(form.Schema, IImageScaleTraversable):
         value_type=schema.Choice(
             title=_(u'name'),
             source=availableAuthor,
-            required=True,
+            required=False,
         ),
-        min_length=1,
-        required=True,
+#        min_length=1,
+        required=False,
     )
 
     dexterity.write_permission(corresponging='ntpu.content.IsOwner')
@@ -394,10 +420,10 @@ class IArticle(form.Schema, IImageScaleTraversable):
         value_type=schema.Choice(
             title=_(u'name'),
             source=availableAuthor,
-            required=True,
+            required=False,
         ),
-        min_length=1,
-        required=True,
+        max_length=1,
+        required=False,
     )
 
     dexterity.write_permission(allAuthorConsent='ntpu.content.IsOwner')
@@ -436,21 +462,23 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
-    form.fieldset(
-        _(u'Manuscript file'),
-        label=_(u"Manuscript file"),
-        fields=['modifySubmission'],
-        description=_(u'Please upload Manuscript file, and you can upload images after submitting.'),
-    )
+    @invariant
+    def checkAuthor(data):
+        portal = api.portal.get()
+        request = portal.REQUEST
+        message = _(u"Corresponging must select from authors.")
 
-    dexterity.write_permission(modifySubmission='ntpu.content.IsOwner')
-    form.mode(modifySubmission='hidden')
-    modifySubmission = NamedBlobFile(
-        title=_(u'Modify submission'),
-        required=False
-    )
-
-
+        if data.authors is None and data.corresponging is None:
+            return
+        if data.authors and not data.corresponging:
+            api.portal.show_message(message=message, request=request, type='error')
+            raise Invalid(message)
+        if not data.authors and data.corresponging:
+            api.portal.show_message(message=message, request=request, type='error')
+            raise Invalid(message)
+        if data.corresponging[0] not in data.authors:
+            api.portal.show_message(message=message, request=request, type='error')
+            raise Invalid(message)
 
     @invariant
     def validateExternalReviewer(data):
@@ -776,3 +804,21 @@ def authorsInformation_indexer(obj):
         result.append(authorInfo)
     return result
 grok.global_adapter(authorsInformation_indexer, name='authorsInformation')
+
+# reviewConfirm[1,2,3] catalog begin
+@indexer(IArticle)
+def reviewConfirm1_indexer(obj):
+    return obj.reviewConfirm1
+grok.global_adapter(reviewConfirm1_indexer, name='reviewConfirm1')
+
+@indexer(IArticle)
+def reviewConfirm2_indexer(obj):
+    return obj.reviewConfirm2
+grok.global_adapter(reviewConfirm2_indexer, name='reviewConfirm2')
+
+@indexer(IArticle)
+def reviewConfirm3_indexer(obj):
+    return obj.reviewConfirm3
+grok.global_adapter(reviewConfirm3_indexer, name='reviewConfirm3')
+
+# reviewConfirm[1,2,3] catalog begin

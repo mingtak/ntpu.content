@@ -5,7 +5,7 @@ from plone import api
 #from Products.PlonePAS.events import UserInitialLoginInEvent, UserLoggedInEvent
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 from ntpu.content.article import IArticle
-from Products.CMFPlone import utils
+#from Products.CMFPlone import utils
 from email.mime.text import MIMEText
 
 
