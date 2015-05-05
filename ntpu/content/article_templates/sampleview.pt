@@ -83,62 +83,6 @@
 <br>
 <hr>
 
-<div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getRoles()))) > 0
-                           or view.getBlind() == False
-                           or view.getCurrent().getId() == context.owner_info()['id']">
-<br>
-    <h3 i18n:translate="">Author Information</h3>
-<br>
-
-    <div tal:condition="python:context.authors != None">
-      <tal:repeat define="brain view/getSelfBrain"
-                  repeat="author brain/authorsInformation">
-        <p>
-          <strong i18n:translate="">Name(Chinese): </strong>
-          <span tal:content="python:author['authorNameC']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Name(English): </strong>
-          <span tal:content="python:author['authorNameE']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Institution(Chinese): </strong>
-          <span tal:content="python:author['institutionC']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Institution(English): </strong>
-          <span tal:content="python:author['institutionE']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Title(Chinese): </strong>
-          <span tal:content="python:author['titleC']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Title(English): </strong>
-          <span tal:content="python:author['titleE']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Email: </strong>
-          <span tal:content="python:author['email']" />
-        </p>
-
-        <p>
-          <strong i18n:translate="">Phone: </strong>
-          <span tal:content="python:author['phone']" />
-        </p>
-<hr>
-
-      </tal:repeat>
-    </div>
-
-</div>
-
 
 <tal:reviewcomment define="selfBrain python:view.getSelfBrain()"
                    condition="view/isOwner">
