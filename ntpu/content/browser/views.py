@@ -6,9 +6,67 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from email.mime.text import MIMEText
 #from Products.CMFPlone.utils import safe_unicode
 from ntpu.content.journal import IJournal
+from ntpu.content.article import IArticle
+
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
+
+from ntpu.content import MessageFactory as _
 
 
 grok.templatedir('template')
+
+
+class ReviewConfirm(grok.View):
+    grok.context(IArticle)
+    grok.name('reviewConfirm')
+
+    def render(self):
+        context = self.context
+        request = context.REQUEST
+        redirect = request.response.redirect
+        currentUserId = api.user.get_current().getId()
+        if context.assignExternalReviewer1 is not None:
+            externalReviewer1_Id = context.assignExternalReviewer1.to_object.owner_info()['id']
+            if currentUserId == externalReviewer1_Id:
+                if context.acceptOrReject1 is None:
+                    api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
+                    context.reviewConfirm1 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
+                context.reviewConfirm1 = True
+                api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
+
+        if context.assignExternalReviewer2 is not None:
+            externalReviewer2_Id = context.assignExternalReviewer2.to_object.owner_info()['id']
+            if currentUserId == externalReviewer2_Id:
+                if context.acceptOrReject2 is None:
+                    api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
+                    context.reviewConfirm2 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
+                context.reviewConfirm2 = True
+                api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
+
+        if context.assignExternalReviewer3 is not None:
+            externalReviewer3_Id = context.assignExternalReviewer3.to_object.owner_info()['id']
+            if currentUserId == externalReviewer3_Id:
+                if context.acceptOrReject3 is None:
+                    api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
+                    context.reviewConfirm3 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
+                context.reviewConfirm3 = True
+                api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
+
+        notify(ObjectModifiedEvent(context))
+        context.reindexObject()
+        redirect(context.absolute_url())
+        return
+
 
 class DownloadFile(grok.View):
     grok.context(IJournal)

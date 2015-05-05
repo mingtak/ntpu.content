@@ -21,7 +21,7 @@ from collective import dexteritytextindexer
 from plone.indexer import indexer
 from DateTime import DateTime
 
-from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject, BlindSetup, Category
+from ntpu.content.config import CountryList, ArticleLanguage, ArticleType, AcceptOrReject, BlindSetup, Category, ReviewConfirm
 from ntpu.content import defaultForms
 from ntpu.content.profile import IProfile
 
@@ -164,8 +164,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(reviewConfirm1='ntpu.content.IsExternalReviewer')
     form.mode(reviewConfirm1='hidden')
-    reviewConfirm1 = schema.Bool(
+    reviewConfirm1 = schema.Choice(
         title=_(u'Review confirm'),
+        vocabulary=ReviewConfirm,
         default=None,
         required=False,
     )
@@ -220,8 +221,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(reviewConfirm2='ntpu.content.IsExternalReviewer')
     form.mode(reviewConfirm2='hidden')
-    reviewConfirm2 = schema.Bool(
+    reviewConfirm2 = schema.Choice(
         title=_(u'Review confirm'),
+        vocabulary=ReviewConfirm,
         default=None,
         required=False,
     )
@@ -276,8 +278,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(reviewConfirm3='ntpu.content.IsExternalReviewer')
     form.mode(reviewConfirm3='hidden')
-    reviewConfirm3 = schema.Bool(
+    reviewConfirm3 = schema.Choice(
         title=_(u'Review confirm'),
+        vocabulary=ReviewConfirm,
         default=None,
         required=False,
     )
@@ -512,12 +515,13 @@ class SampleView(dexterity.DisplayForm):
             if context.assignInternalReviewer is not None:
                 if currentUserId == context.assignInternalReviewer.to_object.owner_info()['id']:
                     return True
-                if currentUserId == context.assignExternalReviewer1.to_object.owner_info()['id']:
+                if context.assignExternalReviewer1 is not None and currentUserId == context.assignExternalReviewer1.to_object.owner_info()['id']:
                     return True
-                if currentUserId == context.assignExternalReviewer2.to_object.owner_info()['id']:
+                if context.assignExternalReviewer2 is not None and currentUserId == context.assignExternalReviewer2.to_object.owner_info()['id']:
                     return True
-                if currentUserId == context.assignExternalReviewer3.to_object.owner_info()['id']:
+                if context.assignExternalReviewer3 is not None and currentUserId == context.assignExternalReviewer3.to_object.owner_info()['id']:
                     return True
+                return False
             else:
                 return False
         else:

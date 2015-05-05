@@ -9,6 +9,7 @@ from Products.CMFPlone import utils
 import random
 import string
 from email.mime.text import MIMEText
+from Products.CMFPlone.utils import safe_unicode
 
 
 def creatPara():
@@ -79,3 +80,73 @@ def sendInvitEmail(obj, event):
         sendMail(obj=obj,url=url, email=email)
 
     obj.reindexObject()
+
+
+def notifyInternalReviewer(emailList=[], article=None, event=None):
+#    newState = event.new_state.getId()
+#    oldState = event.old_state.getId()
+    urlTag = u"<p>稿件連結: <a href='%s'>%s</a></p>" % (article.absolute_url(), article.absolute_url())
+    stateTag = u"<p>狀態變更: 由 %s 變更為 %s</p>" % (StateZh_TW[oldState], StateZh_TW[newState])
+    head = """
+           <html><body><p>
+             <strong>您好:</strong><br>
+               這裏是運動研究期刊編輯部, 有一份關於稿件新的狀態更新通知您:<br>
+             <p>
+           """
+    tail = """
+           <hr>
+           <p>本郵件由系統直接發出，請勿直接回覆本信件.</p>
+           </body></html>
+           """
+    head = safe_unicode(head)
+    tail = safe_unicode(tail)
+    mailBody = MIMEText("%s%s%s%s" % (head, urlTag, stateTag, tail), 'html', 'utf-8')
+    for siteAdmin in emailList:
+        api.portal.send_email(
+            recipient=siteAdmin[1],
+            subject='%s 您好，運動研究期刊:投搞狀態更新通知' % siteAdmin[0],
+            body='%s' % mailBody.as_string(),
+        )
+
+
+@grok.subscribe(IArticle, IObjectModifiedEvent)
+def reviewConfirm(obj, event):
+    state = api.content.get_state(obj=obj)
+    if state not in ['internalAssigned', 'retrial']:
+        return
+
+    reviewConfirmCount = 0
+    if obj.reviewConfirm1:
+        reviewConfirmCount += 1
+    if obj.reviewConfirm2:
+        reviewConfirmCount += 1
+    if obj.reviewConfirm3:
+        reviewConfirmCount += 1
+
+    if reviewConfirmCount < 2:
+        return
+
+    urlTag = u"<p>稿件連結: <a href='%s'>%s</a></p>" % (obj.absolute_url(), obj.absolute_url())
+    stateTag = u"<p>狀態:有新的審查結果</p>"
+    head = """
+           <html><body><p>
+             <strong>您好:</strong><br>
+               這裏是運動研究期刊編輯部, 有一份關於稿件新的狀態更新通知您:<br>
+             <p>
+           """
+    tail = """
+           <hr>
+           <p>本郵件由系統直接發出，請勿直接回覆本信件.</p>
+           </body></html>
+           """
+    head = safe_unicode(head)
+    tail = safe_unicode(tail)
+    mailBody = MIMEText("%s%s%s%s" % (head, urlTag, stateTag, tail), 'html', 'utf-8')
+    recipient = obj.assignInternalReviewer.to_object.email
+
+    api.portal.send_email(
+        recipient=recipient,
+        subject='%s 您好，運動研究期刊:投搞狀態更新通知' % obj.assignInternalReviewer.to_object.Title(),
+        body='%s' % mailBody.as_string(),
+    )
+

@@ -219,6 +219,7 @@
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
    <guard-role>Internal Reviewer</guard-role>
+   <guard-expression>here/@@view/checkIdInReviewerList</guard-expression>
   </guard>
  </transition>
  <transition transition_id="accept" title="Accept" new_state="accepted" trigger="USER" before_script="" after_script="">
@@ -228,6 +229,7 @@
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
    <guard-role>Internal Reviewer</guard-role>
+   <guard-expression>here/@@view/checkIdInReviewerList</guard-expression>
   </guard>
  </transition>
  <transition transition_id="assignInternal" title="Assign internal reviewer" new_state="internalAssigned" trigger="USER" before_script="" after_script="">
@@ -251,6 +253,7 @@
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
    <guard-role>Internal Reviewer</guard-role>
+   <guard-expression>here/@@view/checkIdInReviewerList</guard-expression>
   </guard>
  </transition>
  <transition transition_id="retract" title="Retract" new_state="draft" trigger="USER" before_script="" after_script="">
@@ -290,6 +293,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=toRetrial" category="workflow" icon="">To Retrial</action>
   <guard>
    <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">

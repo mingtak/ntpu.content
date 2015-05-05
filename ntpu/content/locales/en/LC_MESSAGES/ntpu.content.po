@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-04-29 05:30+0000\n"
+"POT-Creation-Date: 2015-05-04 06:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "2015 University of Taipei. All Rights Reserved."
 msgstr ""
 
-#: ./article.py:331
+#: ./article.py:358
 #: ./article_templates/sampleview.pt:24
 #: ./journal.py:54
 msgid "Abstract"
@@ -40,43 +40,39 @@ msgstr ""
 msgid "Abstract(english):"
 msgstr ""
 
-#: ./article.py:136
+#: ./article.py:139
 msgid "Accept invitation"
 msgstr ""
 
-#: ./article.py:137
+#: ./article.py:140
 msgid "Accept the invitation to review"
-msgstr ""
-
-#: ./article_templates/sampleview.pt:192
-msgid "Add Image"
 msgstr ""
 
 #: ./profile.py:135
 msgid "Address"
 msgstr ""
 
-#: ./config.py:58
+#: ./config.py:70
 msgid "Afghanistan"
 msgstr ""
 
-#: ./config.py:27
+#: ./config.py:39
 msgid "After the modification agreed to recommend"
 msgstr ""
 
-#: ./config.py:26
+#: ./config.py:38
 msgid "Agreed to recommend"
 msgstr ""
 
-#: ./config.py:59
+#: ./config.py:71
 msgid "Albania"
 msgstr ""
 
-#: ./config.py:60
+#: ./config.py:72
 msgid "Algeria"
 msgstr ""
 
-#: ./article.py:404
+#: ./article.py:431
 msgid "All author consent"
 msgstr ""
 
@@ -84,23 +80,23 @@ msgstr ""
 msgid "Alternative Email"
 msgstr ""
 
-#: ./config.py:61
+#: ./config.py:73
 msgid "Andorra"
 msgstr ""
 
-#: ./config.py:62
+#: ./config.py:74
 msgid "Angola"
 msgstr ""
 
-#: ./config.py:63
+#: ./config.py:75
 msgid "Antigua and Barbuda"
 msgstr ""
 
-#: ./config.py:64
+#: ./config.py:76
 msgid "Argentina"
 msgstr ""
 
-#: ./config.py:65
+#: ./config.py:77
 msgid "Armenia"
 msgstr ""
 
@@ -108,7 +104,7 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
-#: ./article.py:295
+#: ./article.py:321
 msgid "Article title"
 msgstr ""
 
@@ -120,28 +116,28 @@ msgstr ""
 msgid "Article title(English):"
 msgstr ""
 
-#: ./article.py:286
+#: ./article.py:312
 #: ./article_templates/sampleview.pt:44
 msgid "Article type"
 msgstr ""
 
-#: ./config.py:66
+#: ./config.py:78
 msgid "Aruba"
 msgstr ""
 
-#: ./article.py:120
+#: ./article.py:123
 msgid "Assign first external reviewer"
 msgstr ""
 
-#: ./article.py:109
+#: ./article.py:112
 msgid "Assign internal reviewer"
 msgstr ""
 
-#: ./article.py:169
+#: ./article.py:179
 msgid "Assign second external reviewer"
 msgstr ""
 
-#: ./article.py:217
+#: ./article.py:235
 msgid "Assign third external reviewer"
 msgstr ""
 
@@ -158,11 +154,11 @@ msgstr ""
 msgid "Attached file:"
 msgstr ""
 
-#: ./config.py:67
+#: ./config.py:79
 msgid "Australia"
 msgstr ""
 
-#: ./config.py:68
+#: ./config.py:80
 msgid "Austria"
 msgstr ""
 
@@ -178,7 +174,7 @@ msgstr ""
 msgid "Author information"
 msgstr ""
 
-#: ./article.py:366
+#: ./article.py:393
 #: ./journal.py:32
 msgid "Authors"
 msgstr ""
@@ -187,28 +183,28 @@ msgstr ""
 msgid "Authors:"
 msgstr ""
 
-#: ./config.py:69
+#: ./config.py:81
 msgid "Azerbaijan"
 msgstr ""
 
-#: ./config.py:33
+#: ./config.py:45
 #: ./profile.py:169
 msgid "Bachelor's degree"
 msgstr ""
 
-#: ./config.py:70
+#: ./config.py:82
 msgid "Bahamas"
 msgstr ""
 
-#: ./config.py:71
+#: ./config.py:83
 msgid "Bahrain"
 msgstr ""
 
-#: ./config.py:72
+#: ./config.py:84
 msgid "Bangladesh"
 msgstr ""
 
-#: ./config.py:73
+#: ./config.py:85
 msgid "Barbados"
 msgstr ""
 
@@ -224,75 +220,75 @@ msgstr ""
 msgid "Basic persional infomation (fields in RED DOT are Required)"
 msgstr ""
 
-#: ./config.py:74
+#: ./config.py:86
 msgid "Belarus"
 msgstr ""
 
-#: ./config.py:75
+#: ./config.py:87
 msgid "Belgium"
 msgstr ""
 
-#: ./config.py:76
+#: ./config.py:88
 msgid "Belize"
 msgstr ""
 
-#: ./config.py:77
+#: ./config.py:89
 msgid "Benin"
 msgstr ""
 
-#: ./config.py:78
+#: ./config.py:90
 msgid "Bhutan"
 msgstr ""
 
-#: ./config.py:14
+#: ./config.py:26
 msgid "Biochemistry of Exercise, Nutrition of Exercise"
 msgstr ""
 
-#: ./article.py:98
+#: ./article.py:101
 msgid "Blind setup"
 msgstr ""
 
-#: ./config.py:79
+#: ./config.py:91
 msgid "Bolivia"
 msgstr ""
 
-#: ./config.py:80
+#: ./config.py:92
 msgid "Bosnia and Herzegovina"
 msgstr ""
 
-#: ./config.py:81
+#: ./config.py:93
 msgid "Botswana"
 msgstr ""
 
-#: ./config.py:82
+#: ./config.py:94
 msgid "Brazil"
 msgstr ""
 
-#: ./config.py:83
+#: ./config.py:95
 msgid "Brunei"
 msgstr ""
 
-#: ./config.py:84
+#: ./config.py:96
 msgid "Bulgaria"
 msgstr ""
 
-#: ./config.py:85
+#: ./config.py:97
 msgid "Burkina Faso"
 msgstr ""
 
-#: ./config.py:86
+#: ./config.py:98
 msgid "Burma"
 msgstr ""
 
-#: ./config.py:87
+#: ./config.py:99
 msgid "Burundi"
 msgstr ""
 
-#: ./config.py:88
+#: ./config.py:100
 msgid "Cambodia"
 msgstr ""
 
-#: ./config.py:89
+#: ./config.py:101
 msgid "Cameroon"
 msgstr ""
 
@@ -300,15 +296,15 @@ msgstr ""
 msgid "Can not modify the contents of the period for review"
 msgstr ""
 
-#: ./config.py:90
+#: ./config.py:102
 msgid "Canada"
 msgstr ""
 
-#: ./config.py:91
+#: ./config.py:103
 msgid "Cape Verde"
 msgstr ""
 
-#: ./article.py:345
+#: ./article.py:372
 msgid "Category"
 msgstr ""
 
@@ -316,27 +312,27 @@ msgstr ""
 msgid "Category:"
 msgstr ""
 
-#: ./config.py:92
+#: ./config.py:104
 msgid "Central African Republic"
 msgstr ""
 
-#: ./config.py:93
+#: ./config.py:105
 msgid "Chad"
 msgstr ""
 
-#: ./config.py:94
+#: ./config.py:106
 msgid "Chile"
 msgstr ""
 
-#: ./config.py:95
+#: ./config.py:107
 msgid "China"
 msgstr ""
 
-#: ./config.py:11
+#: ./config.py:23
 msgid "Coaching and Training"
 msgstr ""
 
-#: ./config.py:96
+#: ./config.py:108
 msgid "Colombia"
 msgstr ""
 
@@ -348,11 +344,11 @@ msgstr ""
 msgid "CommentFile"
 msgstr ""
 
-#: ./config.py:97
+#: ./config.py:109
 msgid "Comoros"
 msgstr ""
 
-#: ./config.py:98
+#: ./config.py:110
 msgid "Congo"
 msgstr ""
 
@@ -372,15 +368,19 @@ msgstr ""
 msgid "Contribute article"
 msgstr ""
 
-#: ./article.py:391
+#: ./article.py:418
 msgid "Corresponding authors"
 msgstr ""
 
-#: ./config.py:99
+#: ./article.py:469
+msgid "Corresponging must select from authors."
+msgstr ""
+
+#: ./config.py:111
 msgid "Costa Rica"
 msgstr ""
 
-#: ./config.py:100
+#: ./config.py:112
 msgid "Cote d'Ivoire"
 msgstr ""
 
@@ -388,27 +388,27 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: ./article.py:354
+#: ./article.py:381
 msgid "Cover letter"
 msgstr ""
 
-#: ./config.py:101
+#: ./config.py:113
 msgid "Croatia"
 msgstr ""
 
-#: ./config.py:102
+#: ./config.py:114
 msgid "Cuba"
 msgstr ""
 
-#: ./config.py:103
+#: ./config.py:115
 msgid "Curacao"
 msgstr ""
 
-#: ./config.py:104
+#: ./config.py:116
 msgid "Cyprus"
 msgstr ""
 
-#: ./config.py:105
+#: ./config.py:117
 msgid "Czech Republic"
 msgstr ""
 
@@ -428,7 +428,7 @@ msgstr ""
 msgid "Degree"
 msgstr ""
 
-#: ./config.py:106
+#: ./config.py:118
 msgid "Denmark"
 msgstr ""
 
@@ -436,23 +436,23 @@ msgstr ""
 msgid "Detail"
 msgstr ""
 
-#: ./config.py:107
+#: ./config.py:119
 msgid "Djibouti"
 msgstr ""
 
-#: ./config.py:35
+#: ./config.py:47
 msgid "Doctor"
 msgstr ""
 
-#: ./config.py:108
+#: ./config.py:120
 msgid "Dominica"
 msgstr ""
 
-#: ./config.py:109
+#: ./config.py:121
 msgid "Dominican Republic"
 msgstr ""
 
-#: ./config.py:20
+#: ./config.py:32
 msgid "Double-blind"
 msgstr ""
 
@@ -464,11 +464,11 @@ msgstr ""
 msgid "Download count:"
 msgstr ""
 
-#: ./config.py:110
+#: ./config.py:122
 msgid "East Timor"
 msgstr ""
 
-#: ./config.py:111
+#: ./config.py:123
 msgid "Ecuador"
 msgstr ""
 
@@ -492,11 +492,11 @@ msgstr ""
 msgid "Educational & Experience (fields in RED DOT are Required)"
 msgstr ""
 
-#: ./config.py:112
+#: ./config.py:124
 msgid "Egypt"
 msgstr ""
 
-#: ./config.py:113
+#: ./config.py:125
 msgid "El Salvador"
 msgstr ""
 
@@ -508,44 +508,44 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: ./article.py:339
+#: ./article.py:366
 #: ./article_templates/sampleview.pt:29
 #: ./journal.py:59
 msgid "English abstract"
 msgstr ""
 
-#: ./article.py:323
+#: ./article.py:350
 #: ./article_templates/sampleview.pt:39
 #: ./journal.py:69
 msgid "English keywords"
 msgstr ""
 
-#: ./article.py:302
+#: ./article.py:328
 #: ./journal.py:49
 msgid "English title"
 msgstr ""
 
-#: ./config.py:114
+#: ./config.py:126
 msgid "Equatorial Guinea"
 msgstr ""
 
-#: ./config.py:115
+#: ./config.py:127
 msgid "Eritrea"
 msgstr ""
 
-#: ./config.py:116
+#: ./config.py:128
 msgid "Estonia"
 msgstr ""
 
-#: ./config.py:117
+#: ./config.py:129
 msgid "Ethiopia"
 msgstr ""
 
-#: ./article.py:417
+#: ./article.py:444
 msgid "Exclusive or non-exclusive license"
 msgstr ""
 
-#: ./config.py:13
+#: ./config.py:25
 msgid "Exercise Physiology"
 msgstr ""
 
@@ -565,11 +565,13 @@ msgstr ""
 msgid "External reviewer already selected."
 msgstr ""
 
-#: ./article.py:152
+#: ./article.py:155
+#: ./commentfile.py:51
 msgid "External reviewer comment"
 msgstr ""
 
-#: ./article.py:158
+#: ./article.py:161
+#: ./commentfile.py:56
 msgid "External reviewer comment attached file"
 msgstr ""
 
@@ -581,23 +583,19 @@ msgstr ""
 msgid "Fax number"
 msgstr ""
 
-#: ./config.py:42
+#: ./config.py:54
 msgid "Female"
 msgstr ""
 
-#: ./config.py:118
+#: ./config.py:130
 msgid "Fiji"
 msgstr ""
 
-#: ./commentfile.py:28
-msgid "File"
-msgstr ""
-
-#: ./config.py:119
+#: ./config.py:131
 msgid "Finland"
 msgstr ""
 
-#: ./config.py:120
+#: ./config.py:132
 msgid "France"
 msgstr ""
 
@@ -605,11 +603,11 @@ msgstr ""
 msgid "Full name, include first name and last name"
 msgstr ""
 
-#: ./config.py:121
+#: ./config.py:133
 msgid "Gabon"
 msgstr ""
 
-#: ./config.py:122
+#: ./config.py:134
 msgid "Gambia"
 msgstr ""
 
@@ -618,79 +616,79 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: ./config.py:123
+#: ./config.py:135
 msgid "Georgia"
 msgstr ""
 
-#: ./config.py:124
+#: ./config.py:136
 msgid "Germany"
 msgstr ""
 
-#: ./config.py:125
+#: ./config.py:137
 msgid "Ghana"
 msgstr ""
 
-#: ./config.py:126
+#: ./config.py:138
 msgid "Greece"
 msgstr ""
 
-#: ./config.py:127
+#: ./config.py:139
 msgid "Grenada"
 msgstr ""
 
-#: ./config.py:128
+#: ./config.py:140
 msgid "Guatemala"
 msgstr ""
 
-#: ./config.py:129
+#: ./config.py:141
 msgid "Guinea"
 msgstr ""
 
-#: ./config.py:130
+#: ./config.py:142
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: ./config.py:131
+#: ./config.py:143
 msgid "Guyana"
 msgstr ""
 
-#: ./config.py:132
+#: ./config.py:144
 msgid "Haiti"
 msgstr ""
 
-#: ./config.py:133
+#: ./config.py:145
 msgid "Holy See"
 msgstr ""
 
-#: ./config.py:134
+#: ./config.py:146
 msgid "Honduras"
 msgstr ""
 
-#: ./config.py:135
+#: ./config.py:147
 msgid "Hong Kong"
 msgstr ""
 
-#: ./config.py:6
+#: ./config.py:18
 msgid "Humanity, Arts, and Dance"
 msgstr ""
 
-#: ./config.py:136
+#: ./config.py:148
 msgid "Hungary"
 msgstr ""
 
-#: ./article.py:270
+#: ./article.py:296
 msgid "I am submitting from"
 msgstr ""
 
-#: ./config.py:137
+#: ./config.py:149
 msgid "Iceland"
 msgstr ""
 
-#: ./config.py:138
+#: ./config.py:150
 msgid "India"
 msgstr ""
 
-#: ./config.py:139
+#: ./config.py:151
 msgid "Indonesia"
 msgstr ""
 
@@ -710,7 +708,7 @@ msgstr ""
 msgid "Invalid email address."
 msgstr ""
 
-#: ./article.py:128
+#: ./article.py:131
 msgid "Invit email"
 msgstr ""
 
@@ -718,35 +716,35 @@ msgstr ""
 msgid "Invited review"
 msgstr ""
 
-#: ./config.py:140
+#: ./config.py:152
 msgid "Iran"
 msgstr ""
 
-#: ./config.py:141
+#: ./config.py:153
 msgid "Iraq"
 msgstr ""
 
-#: ./config.py:142
+#: ./config.py:154
 msgid "Ireland"
 msgstr ""
 
-#: ./config.py:143
+#: ./config.py:155
 msgid "Israel"
 msgstr ""
 
-#: ./config.py:144
+#: ./config.py:156
 msgid "Italy"
 msgstr ""
 
-#: ./config.py:145
+#: ./config.py:157
 msgid "Jamaica"
 msgstr ""
 
-#: ./config.py:146
+#: ./config.py:158
 msgid "Japan"
 msgstr ""
 
-#: ./config.py:147
+#: ./config.py:159
 msgid "Jordan"
 msgstr ""
 
@@ -758,15 +756,15 @@ msgstr ""
 msgid "Journal content type"
 msgstr ""
 
-#: ./config.py:148
+#: ./config.py:160
 msgid "Kazakhstan"
 msgstr ""
 
-#: ./config.py:149
+#: ./config.py:161
 msgid "Kenya"
 msgstr ""
 
-#: ./article.py:315
+#: ./article.py:342
 #: ./article_templates/sampleview.pt:34
 #: ./journal.py:64
 msgid "Keywords"
@@ -780,31 +778,31 @@ msgstr ""
 msgid "Keywords(english):"
 msgstr ""
 
-#: ./config.py:150
+#: ./config.py:162
 msgid "Kiribati"
 msgstr ""
 
-#: ./config.py:151
+#: ./config.py:163
 msgid "Korea, North"
 msgstr ""
 
-#: ./config.py:152
+#: ./config.py:164
 msgid "Korea, South"
 msgstr ""
 
-#: ./config.py:153
+#: ./config.py:165
 msgid "Kosovo"
 msgstr ""
 
-#: ./config.py:154
+#: ./config.py:166
 msgid "Kuwait"
 msgstr ""
 
-#: ./config.py:155
+#: ./config.py:167
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: ./article.py:278
+#: ./article.py:304
 #: ./article_templates/sampleview.pt:49
 #: ./journal.py:42
 msgid "Language"
@@ -814,143 +812,135 @@ msgstr ""
 msgid "Language:"
 msgstr ""
 
-#: ./config.py:156
+#: ./config.py:168
 msgid "Laos"
 msgstr ""
 
-#: ./config.py:157
+#: ./config.py:169
 msgid "Latvia"
 msgstr ""
 
-#: ./config.py:158
+#: ./config.py:170
 msgid "Lebanon"
 msgstr ""
 
-#: ./config.py:159
+#: ./config.py:171
 msgid "Lesotho"
 msgstr ""
 
-#: ./config.py:160
+#: ./config.py:172
 msgid "Liberia"
 msgstr ""
 
-#: ./config.py:161
+#: ./config.py:173
 msgid "Libya"
 msgstr ""
 
-#: ./config.py:162
+#: ./config.py:174
 msgid "Liechtenstein"
 msgstr ""
 
-#: ./config.py:163
+#: ./config.py:175
 msgid "Lithuania"
 msgstr ""
 
-#: ./config.py:164
+#: ./config.py:176
 msgid "Luxembourg"
 msgstr ""
 
-#: ./config.py:165
+#: ./config.py:177
 msgid "Macau"
 msgstr ""
 
-#: ./config.py:166
+#: ./config.py:178
 msgid "Macedonia"
 msgstr ""
 
-#: ./config.py:167
+#: ./config.py:179
 msgid "Madagascar"
 msgstr ""
 
-#: ./config.py:168
+#: ./config.py:180
 msgid "Malawi"
 msgstr ""
 
-#: ./config.py:169
+#: ./config.py:181
 msgid "Malaysia"
 msgstr ""
 
-#: ./config.py:170
+#: ./config.py:182
 msgid "Maldives"
 msgstr ""
 
-#: ./config.py:41
+#: ./config.py:53
 msgid "Male"
 msgstr ""
 
-#: ./config.py:171
+#: ./config.py:183
 msgid "Mali"
 msgstr ""
 
-#: ./config.py:172
+#: ./config.py:184
 msgid "Malta"
 msgstr ""
 
-#: ./article.py:261
+#: ./article.py:287
 msgid "Manuscript Metadata"
 msgstr ""
 
-#: ./article.py:439
-msgid "Manuscript file"
-msgstr ""
-
-#: ./config.py:173
+#: ./config.py:185
 msgid "Marshall Islands"
 msgstr ""
 
-#: ./config.py:34
+#: ./config.py:46
 msgid "Master's degree"
 msgstr ""
 
-#: ./config.py:174
+#: ./config.py:186
 msgid "Mauritania"
 msgstr ""
 
-#: ./config.py:175
+#: ./config.py:187
 msgid "Mauritius"
 msgstr ""
 
-#: ./article.py:316
+#: ./article.py:343
 msgid "Maximum 5 keywords, separated with commas."
 msgstr ""
 
-#: ./config.py:176
+#: ./config.py:188
 msgid "Mexico"
 msgstr ""
 
-#: ./config.py:177
+#: ./config.py:189
 msgid "Micronesia"
 msgstr ""
 
-#: ./config.py:28
+#: ./config.py:40
 msgid "Modify and then review"
 msgstr ""
 
-#: ./article.py:448
-msgid "Modify submission"
-msgstr ""
-
-#: ./config.py:178
+#: ./config.py:190
 msgid "Moldova"
 msgstr ""
 
-#: ./config.py:179
+#: ./config.py:191
 msgid "Monaco"
 msgstr ""
 
-#: ./config.py:180
+#: ./config.py:192
 msgid "Mongolia"
 msgstr ""
 
-#: ./config.py:181
+#: ./config.py:193
 msgid "Montenegro"
 msgstr ""
 
-#: ./config.py:182
+#: ./config.py:194
 msgid "Morocco"
 msgstr ""
 
-#: ./config.py:183
+#: ./config.py:195
 msgid "Mozambique"
 msgstr ""
 
@@ -966,27 +956,27 @@ msgstr ""
 msgid "Name(English):"
 msgstr ""
 
-#: ./config.py:184
+#: ./config.py:196
 msgid "Namibia"
 msgstr ""
 
-#: ./config.py:185
+#: ./config.py:197
 msgid "Nauru"
 msgstr ""
 
-#: ./config.py:186
+#: ./config.py:198
 msgid "Nepal"
 msgstr ""
 
-#: ./config.py:187
+#: ./config.py:199
 msgid "Netherlands"
 msgstr ""
 
-#: ./config.py:188
+#: ./config.py:200
 msgid "Netherlands Antilles"
 msgstr ""
 
-#: ./config.py:189
+#: ./config.py:201
 msgid "New Zealand"
 msgstr ""
 
@@ -994,15 +984,15 @@ msgstr ""
 msgid "New submitted article"
 msgstr ""
 
-#: ./config.py:190
+#: ./config.py:202
 msgid "Nicaragua"
 msgstr ""
 
-#: ./config.py:191
+#: ./config.py:203
 msgid "Niger"
 msgstr ""
 
-#: ./config.py:192
+#: ./config.py:204
 msgid "Nigeria"
 msgstr ""
 
@@ -1010,20 +1000,20 @@ msgstr ""
 msgid "No comment yet."
 msgstr ""
 
-#: ./config.py:193
+#: ./config.py:205
 msgid "Norway"
 msgstr ""
 
-#: ./config.py:194
+#: ./config.py:206
 msgid "Oman"
 msgstr ""
 
-#: ./article.py:288
-#: ./config.py:52
+#: ./article.py:314
+#: ./config.py:64
 msgid "Original paper"
 msgstr ""
 
-#: ./config.py:37
+#: ./config.py:49
 msgid "Other"
 msgstr ""
 
@@ -1035,27 +1025,27 @@ msgstr ""
 msgid "PageWithFile content type"
 msgstr ""
 
-#: ./config.py:195
+#: ./config.py:207
 msgid "Pakistan"
 msgstr ""
 
-#: ./config.py:196
+#: ./config.py:208
 msgid "Palau"
 msgstr ""
 
-#: ./config.py:197
+#: ./config.py:209
 msgid "Palestinian Territories"
 msgstr ""
 
-#: ./config.py:198
+#: ./config.py:210
 msgid "Panama"
 msgstr ""
 
-#: ./config.py:199
+#: ./config.py:211
 msgid "Papua New Guinea"
 msgstr ""
 
-#: ./config.py:200
+#: ./config.py:212
 msgid "Paraguay"
 msgstr ""
 
@@ -1071,11 +1061,11 @@ msgstr ""
 msgid "Personal profile"
 msgstr ""
 
-#: ./config.py:201
+#: ./config.py:213
 msgid "Peru"
 msgstr ""
 
-#: ./config.py:202
+#: ./config.py:214
 msgid "Philippines"
 msgstr ""
 
@@ -1087,31 +1077,27 @@ msgstr ""
 msgid "Phone:"
 msgstr ""
 
-#: ./article.py:332
+#: ./article.py:359
 msgid "Please limit the number of words in 500 words or less"
 msgstr ""
 
-#: ./config.py:25
+#: ./config.py:37
 msgid "Please select"
 msgstr ""
 
-#: ./article.py:379
+#: ./article.py:406
 msgid "Please select authors"
-msgstr ""
-
-#: ./article.py:442
-msgid "Please upload Manuscript file, and you can upload images after submitting."
 msgstr ""
 
 #: ./defaultForms.py:73
 msgid "Please upload modify submission and modified article."
 msgstr ""
 
-#: ./config.py:203
+#: ./config.py:215
 msgid "Poland"
 msgstr ""
 
-#: ./config.py:204
+#: ./config.py:216
 msgid "Portugal"
 msgstr ""
 
@@ -1119,7 +1105,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: ./config.py:36
+#: ./config.py:48
 msgid "Postdoc Research"
 msgstr ""
 
@@ -1127,15 +1113,15 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ./config.py:205
+#: ./config.py:217
 msgid "Qatar"
 msgstr ""
 
-#: ./article.py:99
+#: ./article.py:102
 msgid "Recommend using double-blind review"
 msgstr ""
 
-#: ./config.py:29
+#: ./config.py:41
 msgid "Reject"
 msgstr ""
 
@@ -1143,11 +1129,12 @@ msgstr ""
 msgid "Research area & Expertise"
 msgstr ""
 
-#: ./config.py:54
+#: ./config.py:66
 msgid "Research note"
 msgstr ""
 
-#: ./article.py:144
+#: ./article.py:147
+#: ./commentfile.py:44
 msgid "Result of Review"
 msgstr ""
 
@@ -1171,20 +1158,27 @@ msgstr ""
 msgid "Review State"
 msgstr ""
 
-#: ./config.py:53
+#: ./config.py:65
 msgid "Review article"
 msgstr ""
 
-#: ./commentfile.py:29
 #: ./profiles/default/types/ntpu.content.commentfile.xml
 msgid "Review comment attached file"
+msgstr ""
+
+#: ./article.py:168
+msgid "Review confirm"
 msgstr ""
 
 #: ./profile_templates/sampleview.pt:67
 msgid "Review state:"
 msgstr ""
 
-#: ./config.py:206
+#: ./commentfile.py:38
+msgid "Reviewer"
+msgstr ""
+
+#: ./config.py:218
 msgid "Romania"
 msgstr ""
 
@@ -1192,163 +1186,163 @@ msgstr ""
 msgid "Running Title"
 msgstr ""
 
-#: ./article.py:308
+#: ./article.py:335
 msgid "Running title"
 msgstr ""
 
-#: ./config.py:207
+#: ./config.py:219
 msgid "Russia"
 msgstr ""
 
-#: ./config.py:208
+#: ./config.py:220
 msgid "Rwanda"
 msgstr ""
 
-#: ./config.py:209
+#: ./config.py:221
 msgid "Saint Kitts and Nevis"
 msgstr ""
 
-#: ./config.py:210
+#: ./config.py:222
 msgid "Saint Lucia"
 msgstr ""
 
-#: ./config.py:211
+#: ./config.py:223
 msgid "Saint Vincent and the Grenadines"
 msgstr ""
 
-#: ./config.py:212
+#: ./config.py:224
 msgid "Samoa"
 msgstr ""
 
-#: ./config.py:213
+#: ./config.py:225
 msgid "San Marino"
 msgstr ""
 
-#: ./config.py:214
+#: ./config.py:226
 msgid "Sao Tome and Principe"
 msgstr ""
 
-#: ./config.py:215
+#: ./config.py:227
 msgid "Saudi Arabia"
 msgstr ""
 
-#: ./article.py:392
+#: ./article.py:419
 msgid "Select at least one corresponding author."
 msgstr ""
 
-#: ./config.py:216
+#: ./config.py:228
 msgid "Senegal"
 msgstr ""
 
-#: ./config.py:217
+#: ./config.py:229
 msgid "Serbia"
 msgstr ""
 
-#: ./config.py:218
+#: ./config.py:230
 msgid "Seychelles"
 msgstr ""
 
-#: ./config.py:219
+#: ./config.py:231
 msgid "Sierra Leone"
 msgstr ""
 
-#: ./config.py:220
+#: ./config.py:232
 msgid "Singapore"
 msgstr ""
 
-#: ./config.py:21
+#: ./config.py:33
 msgid "Single-blind"
 msgstr ""
 
-#: ./config.py:221
+#: ./config.py:233
 msgid "Sint Maarten"
 msgstr ""
 
-#: ./config.py:222
+#: ./config.py:234
 msgid "Slovakia"
 msgstr ""
 
-#: ./config.py:223
+#: ./config.py:235
 msgid "Slovenia"
 msgstr ""
 
-#: ./config.py:224
+#: ./config.py:236
 msgid "Solomon Islands"
 msgstr ""
 
-#: ./config.py:225
+#: ./config.py:237
 msgid "Somalia"
 msgstr ""
 
-#: ./config.py:226
+#: ./config.py:238
 msgid "South Africa"
 msgstr ""
 
-#: ./config.py:227
+#: ./config.py:239
 msgid "South Sudan"
 msgstr ""
 
-#: ./config.py:228
+#: ./config.py:240
 msgid "Spain"
 msgstr ""
 
-#: ./config.py:12
+#: ./config.py:24
 msgid "Sport Biomechancis"
 msgstr ""
 
-#: ./config.py:9
+#: ./config.py:21
 msgid "Sport Pedagogy, Motor Behavior"
 msgstr ""
 
-#: ./config.py:7
+#: ./config.py:19
 msgid "Sport Siology, Recreation and Leisure Studies"
 msgstr ""
 
-#: ./config.py:10
+#: ./config.py:22
 msgid "Sport and Excercise Psychology"
 msgstr ""
 
-#: ./config.py:8
+#: ./config.py:20
 msgid "Sports Administration, Sports Management"
 msgstr ""
 
-#: ./config.py:15
+#: ./config.py:27
 msgid "Sports Medicine"
 msgstr ""
 
-#: ./config.py:229
+#: ./config.py:241
 msgid "Sri Lanka"
 msgstr ""
 
-#: ./article.py:264
+#: ./article.py:290
 msgid "Submit a new manuscript(fields in RED DOT are Required)"
 msgstr ""
 
-#: ./article.py:269
+#: ./article.py:295
 msgid "Submitting from"
 msgstr ""
 
-#: ./config.py:230
+#: ./config.py:242
 msgid "Sudan"
 msgstr ""
 
-#: ./config.py:231
+#: ./config.py:243
 msgid "Suriname"
 msgstr ""
 
-#: ./config.py:232
+#: ./config.py:244
 msgid "Swaziland"
 msgstr ""
 
-#: ./config.py:233
+#: ./config.py:245
 msgid "Sweden"
 msgstr ""
 
-#: ./config.py:234
+#: ./config.py:246
 msgid "Switzerland"
 msgstr ""
 
-#: ./config.py:235
+#: ./config.py:247
 msgid "Syria"
 msgstr ""
 
@@ -1360,17 +1354,17 @@ msgstr ""
 msgid "SystemFolder"
 msgstr ""
 
-#: ./article.py:272
-#: ./config.py:236
+#: ./article.py:298
+#: ./config.py:248
 #: ./profile.py:125
 msgid "Taiwan"
 msgstr ""
 
-#: ./config.py:237
+#: ./config.py:249
 msgid "Tajikistan"
 msgstr ""
 
-#: ./config.py:238
+#: ./config.py:250
 msgid "Tanzania"
 msgstr ""
 
@@ -1378,11 +1372,11 @@ msgstr ""
 msgid "Text content"
 msgstr ""
 
-#: ./config.py:239
+#: ./config.py:251
 msgid "Thailand"
 msgstr ""
 
-#: ./article.py:457
+#: ./article.py:486
 msgid "This External reviewer already selected."
 msgstr ""
 
@@ -1404,71 +1398,71 @@ msgstr ""
 msgid "Title(english):"
 msgstr ""
 
-#: ./config.py:240
+#: ./config.py:252
 msgid "Togo"
 msgstr ""
 
-#: ./config.py:241
+#: ./config.py:253
 msgid "Tonga"
 msgstr ""
 
-#: ./config.py:242
+#: ./config.py:254
 msgid "Trinidad and Tobago"
 msgstr ""
 
-#: ./config.py:243
+#: ./config.py:255
 msgid "Tunisia"
 msgstr ""
 
-#: ./config.py:244
+#: ./config.py:256
 msgid "Turkey"
 msgstr ""
 
-#: ./config.py:245
+#: ./config.py:257
 msgid "Turkmenistan"
 msgstr ""
 
-#: ./config.py:246
+#: ./config.py:258
 msgid "Tuvalu"
 msgstr ""
 
-#: ./config.py:247
+#: ./config.py:259
 msgid "Uganda"
 msgstr ""
 
-#: ./config.py:248
+#: ./config.py:260
 msgid "Ukraine"
 msgstr ""
 
-#: ./config.py:249
+#: ./config.py:261
 msgid "United Arab Emirates"
 msgstr ""
 
-#: ./config.py:250
+#: ./config.py:262
 msgid "United Kingdom"
 msgstr ""
 
-#: ./config.py:251
+#: ./config.py:263
 msgid "United States"
 msgstr ""
 
-#: ./config.py:252
+#: ./config.py:264
 msgid "Uruguay"
 msgstr ""
 
-#: ./config.py:253
+#: ./config.py:265
 msgid "Uzbekistan"
 msgstr ""
 
-#: ./config.py:254
+#: ./config.py:266
 msgid "Vanuatu"
 msgstr ""
 
-#: ./config.py:255
+#: ./config.py:267
 msgid "Venezuela"
 msgstr ""
 
-#: ./config.py:256
+#: ./config.py:268
 msgid "Vietnam"
 msgstr ""
 
@@ -1476,15 +1470,15 @@ msgstr ""
 msgid "Waitting for Review Article"
 msgstr ""
 
-#: ./config.py:257
+#: ./config.py:269
 msgid "Yemen"
 msgstr ""
 
-#: ./config.py:258
+#: ./config.py:270
 msgid "Zambia"
 msgstr ""
 
-#: ./config.py:259
+#: ./config.py:271
 msgid "Zimbabwe"
 msgstr ""
 
@@ -1496,11 +1490,19 @@ msgstr ""
 msgid "accept"
 msgstr ""
 
+#: ./config.py:8
+msgid "accepted"
+msgstr ""
+
 #: ./article_templates/sampleview.pt:79
 msgid "attachFile:"
 msgstr ""
 
-#: ./config.py:48
+#: ./config.py:6
+msgid "draft"
+msgstr ""
+
+#: ./config.py:60
 msgid "en-us"
 msgstr ""
 
@@ -1509,47 +1511,75 @@ msgid "for eg. Dr, Prof, Mr, Ms..."
 msgstr ""
 
 #. Default: "I confirm this manuscript has not been accepted                           for publication elsewhere, is not being considered                           for publication elsewhere and does not duplicate material                           already published. I confirm all authors consent to                           publication of this manuscript."
-#: ./article.py:405
+#: ./article.py:432
 msgid "help_allAuthorConsent"
 msgstr ""
 
 #. Default: "Select authors and order, first is main author,                                second is 2'nd author...<br>                                 Note: Before submitting, you mustbe agree 'All author consent'                                 , 'Exclusive or non-exclusive license' and check them."
-#: ./article.py:369
+#: ./article.py:396
 msgid "help_authors"
 msgstr ""
 
 #. Default: "Enter your cover letter here.                       DO NOT include your cover letter                       in the manuscript file that you                       will upload.The word limit of this                       column is 1024 characters."
-#: ./article.py:355
+#: ./article.py:382
 msgid "help_coverLetter"
 msgstr ""
 
 #. Default: "I have read and agreed with the following statements:                           1. I am authorized by all co-author(s) to submit this article                           on their behalf and as the contact for the Editorial process.                           I am responsible for communicating with the other authors about                           progress, submissions of revisions and final approval of proofs.                           2. All authors agree with the Personal Information Collection                           Statement , and the staff of the journal will be using the                           personal information that I provided in the APSERS system for                           the sole purpose of contacting me concerning the publishing of                           the Article.                           3. The article I have submitted to the journal for review is                           original, has been written by the stated authors and has not been                           published elsewhere. Also, the Article is not currently being                           considered for publication by any other journal and will not be                           submitted for such review while under review by this journal."
-#: ./article.py:418
+#: ./article.py:445
 msgid "help_license"
 msgstr ""
 
-#: ./article.py:260
+#: ./config.py:9
+msgid "inReview"
+msgstr ""
+
+#: ./config.py:10
+msgid "internalAssigned"
+msgstr ""
+
+#: ./article.py:286
 msgid "manuscript metadata"
 msgstr ""
 
-#: ./article.py:381
+#: ./config.py:11
+msgid "modifyThenReview"
+msgstr ""
+
+#: ./article.py:408
 msgid "name"
 msgstr ""
 
-#: ./config.py:16
+#: ./config.py:28
 msgid "other"
+msgstr ""
+
+#: ./config.py:12
+msgid "reSubmitted"
 msgstr ""
 
 #: ./browser/template/inviteReview.pt:35
 msgid "reject"
 msgstr ""
 
-#: ./config.py:47
+#: ./config.py:13
+msgid "rejected"
+msgstr ""
+
+#: ./config.py:14
+msgid "retrial"
+msgstr ""
+
+#: ./config.py:7
+msgid "submitted"
+msgstr ""
+
+#: ./config.py:59
 msgid "zh-cn"
 msgstr ""
 
-#: ./article.py:280
-#: ./config.py:46
+#: ./article.py:306
+#: ./config.py:58
 #: ./journal.py:44
 msgid "zh-tw"
 msgstr ""
