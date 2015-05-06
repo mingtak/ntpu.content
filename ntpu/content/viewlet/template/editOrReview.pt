@@ -29,9 +29,10 @@
 <tal:edit condition="python:not view.getView.isOwner() and view.getView.getSelfBrain().review_state in ['submitted', 'reSubmitted']" >
 ||  <a href="./edit" >型式審</a>
 ||  <a href="./content_status_modify?workflow_action=toInReview">送至主編</a>
+||  <a href="./content_status_modify?workflow_action=retract">退稿</a>
 </tal:edit>
 
-<tal:edit condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state == 'draft'" >
+<tal:edit condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state in ['draft', 'modifyThenReview']" >
 ||  <a href="./edit" i18n:translate="">Edit</a>
 ||  <a href="./content_status_modify?workflow_action=submitting">提交稿件</a>
 </tal:edit>

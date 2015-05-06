@@ -1,7 +1,8 @@
 
 <tal:blind condition="python:bool(context.blindSetup) or
                              view.getView.getCurrent().getId() == context.owner_info()['id'] or
-                             'Site Administrator' in view.getView.getRoles()"
+                             'Site Administrator' in view.getView.getRoles() or
+                             'Super Editor' in view.getView.getRoles()"
  i18n:domain="ntpu.content">
 
 <div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
