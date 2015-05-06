@@ -1,5 +1,7 @@
 
-<tal:blind condition="python:bool(context.blindSetup) or view.getView.getCurrent().getId() == context.owner_info()['id']"
+<tal:blind condition="python:bool(context.blindSetup) or
+                             view.getView.getCurrent().getId() == context.owner_info()['id'] or
+                             'Site Administrator' in view.getView.getRoles()"
  i18n:domain="ntpu.content">
 
 <div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
@@ -10,7 +12,7 @@
     <h3 i18n:translate="">Cover Letter</h3>
 <br>
 <p tal:content="context/coverLetter">
-</p>
+</p><hr>
 
 <br>
     <h3 i18n:translate="">Author Information</h3>

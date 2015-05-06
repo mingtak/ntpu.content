@@ -2,12 +2,38 @@
 <br><br>
 
 <tal:checkEdit condition="python:'@@edit' not in context.REQUEST['URL']">
-<tal:review condition="not:view/getView/isOwner" >
+<tal:review condition="python:'Super Editor' in view.getView.getRoles() and
+                              view.getView.getReviewState() == 'inReview'" >
   <a href="./edit" i18n:translate="">Review</a>
 </tal:review>
 
+<!-- 責編 -->
+<tal:review condition="python:'Internal Reviewer' in view.getView.getRoles() and
+                              view.getView.getReviewState() == 'internalAssigned'" >
+  <a href="./edit" i18n:translate="">Review</a>
+</tal:review>
+
+<!-- 委員 -->
+<tal:review condition="python:'External Reviewer' in view.getView.getRoles() and
+                              view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
+                              not bool(view.getView.checkReviewConfirm())">
+  <a href="./edit" i18n:translate="">Review</a>
+</tal:review>
+
+<tal:review condition="python:'External Reviewer' in view.getView.getRoles() and
+                              view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
+                              not bool(view.getView.checkReviewConfirm())" >
+  <a tal:attributes="href string:${context/absolute_url}/@@reviewConfirm" i18n:translate="">Review Confirm</a>
+</tal:review>
+
+<tal:edit condition="python:not view.getView.isOwner() and view.getView.getSelfBrain().review_state in ['submitted', 'reSubmitted']" >
+||  <a href="./edit" >型式審</a>
+||  <a href="./content_status_modify?workflow_action=toInReview">送至主編</a>
+</tal:edit>
+
 <tal:edit condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state == 'draft'" >
 ||  <a href="./edit" i18n:translate="">Edit</a>
+||  <a href="./content_status_modify?workflow_action=submitting">提交稿件</a>
 </tal:edit>
 
 <tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
@@ -17,5 +43,33 @@
   </a>
 </tal:assignInternal>
 
+
+
+
+
+<tal:review_result condition="python:bool(context.reviewFeedback) and
+                                     view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
+                                     'Internal Reviewer' in view.getView.getRoles()">
+<hr>
+<h5>確認審查結果</h5>
+<tal:assignInternal>
+  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=accept">
+    建議推薦
+  </a>
+  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=MR">
+    修改後審查
+  </a>
+  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=reject">
+    不予推薦
+  </a>
+
+
+</tal:assignInternal>
+</tal:review_result>
+
+
+
+
 </tal:checkEdit>
+
 </div>

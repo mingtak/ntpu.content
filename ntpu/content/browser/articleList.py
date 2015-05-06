@@ -28,6 +28,7 @@ class ArticleList(grok.View):
         catalog = context.portal_catalog
         state = getattr(request, 'state', None)
         if state is None:
-            return request.respnse.redirect('/')
+            return request.response.redirect('/')
         self.brain = catalog({'Type':'Article', 'review_state':state}, sort_on='created', sort_order='reverse')
+#        import pdb;pdb.set_trace()
         return

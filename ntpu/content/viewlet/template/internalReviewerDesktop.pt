@@ -16,7 +16,8 @@
         <tal:submitted define="brain python:catalog({'Type':'Article', 'review_state':state[0], 'assignInternalReviewer':currentUserId})">
             <p><strong tal:content="python:'%s 稿件數量:' % state[1]" ></strong>
                <span tal:replace="python:len(brain)" />
-               <a tal:condition="python:len(brain)>0" href="" i18n:translate="">...Detail</a>
+               <a tal:condition="python:len(brain)>0"
+                  tal:attributes="href python:'/@@articleList?state=%s' % state[0]" i18n:translate="">...Detail</a>
             </p>
         </tal:submitted>
     </tal:repeat>

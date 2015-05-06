@@ -564,6 +564,9 @@ class SampleView(dexterity.DisplayForm):
     def getRoles(self):
         return api.user.get_roles()
 
+    def getReviewState(self):
+        return api.content.get_state(obj=self.context)
+
     def isAnonymous(self):
         return api.user.is_anonymous()
 
@@ -587,6 +590,17 @@ class SampleView(dexterity.DisplayForm):
         if len(brain) == 0:
             return brain
         return brain[0]
+
+    def checkReviewConfirm(self):
+        context = self.context
+        currentUserId = api.user.get_current().getId()
+#        import pdb; pdb.set_trace()
+        if context.assignExternalReviewer1 is not None and context.assignExternalReviewer1.to_object.owner_info()['id'] == currentUserId:
+            return context.reviewConfirm1
+        if context.assignExternalReviewer2 is not None and context.assignExternalReviewer2.to_object.owner_info()['id'] == currentUserId:
+            return context.reviewConfirm2
+        if context.assignExternalReviewer3 is not None and context.assignExternalReviewer3.to_object.owner_info()['id'] == currentUserId:
+            return context.reviewConfirm3
 
     def getPhysicalPath(self):
         context = self.context

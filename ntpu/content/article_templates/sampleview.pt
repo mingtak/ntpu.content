@@ -80,10 +80,30 @@
       <a tal:attributes="href string:${context/absolute_url}/@@download/attachFile/${context/attachFile/filename}"
          tal:content="context/attachFile/filename" />
 </div>
+
+
+
+<div>
+      <strong i18n:translate="">Image:</strong><br>
+      <tal:image repeat="image python:range(10)">
+        <a tal:define="fieldName python:'attachImage%s' % repeat['image'].number();
+                       imageObj python:getattr(context, fieldName, None)"
+           tal:condition="python:imageObj is not None"
+           tal:attributes="href string:${context/absolute_url}/@@images/${fieldName}"
+           target="_blank">
+          <img tal:attributes="src string:${context/absolute_url}/@@images/${fieldName}/mini"/>
+        </a>
+      </tal:image>
+</div>
+
+
 <br>
 <hr>
 
 
+
+
+<!-- 要處理掉 -->
 <h3 tal:condition="python:view.isOwner() and
                           view.getSelfBrain().review_state == 'internalAssigned' and
                           view.resultsCount() > 0" >

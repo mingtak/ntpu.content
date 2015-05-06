@@ -52,7 +52,7 @@ class SuperEditorDesktop_IBelowContent_IProfile(grok.Viewlet):
         )
         return self.template()
 
-
+"""
 class InternalReviewerDesktop_IBelowContent_IProfile(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IProfile)
@@ -65,7 +65,7 @@ class InternalReviewerDesktop_IBelowContent_IProfile(grok.Viewlet):
             request=self.context.REQUEST,
         )
         return self.template()
-
+"""
 
 class ReviewState_IBelowContent_IArticle(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
@@ -94,3 +94,16 @@ class EditOrReview_IBelowContent_IArticle(grok.Viewlet):
         )
         return self.template()
 
+
+class ReviewResultForInternalReviewer_IBelowContent_IArticle(grok.Viewlet):
+    grok.viewletmanager(IBelowContent)
+    grok.context(IArticle)
+    template = ViewPageTemplateFile('template/reviewResultForInternalReviewer.pt')
+
+    def render(self):
+        self.getView = api.content.get_view(
+            name='view',
+            context=self.context,
+            request=self.context.REQUEST,
+        )
+        return self.template()

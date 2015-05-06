@@ -9,15 +9,19 @@
   </div>
 
   <div tal:condition="context/assignExternalReviewer1">
-    <p><strong i18n:translate="">Result:</strong><span tal:content="context/acceptOrReject1"/></p>
-    <p><strong i18n:translate="">Comment:</strong><span tal:content="context/externalReviewerComment1"/></p>
-    <p><strong i18n:translate="">Attached file:</strong>
-       <a tal:content="context/reviewCommentAttached1/filename"
-          tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached1/filename}"/>
+    <p><strong>審查進度/結果:</strong><span tal:content="selfBrain/review_state"/></p>
+    <p><strong>附加檔案:</strong>
+       <a tal:content="context/reviewFeedback/filename"
+          tal:attributes="href string:${context/absolute_url}/@@download/reviewFeedback/${context/reviewFeedback/filename}"/>
+
     </p>
     <br>
   </div>
 
+
+
+
+<!--
   <div tal:condition="context/assignExternalReviewer2">
     <p><strong i18n:translate="">Result:</strong><span tal:content="context/acceptOrReject2"/></p>
     <p><strong i18n:translate="">Comment:</strong><span tal:content="context/externalReviewerComment2"/></p>
@@ -37,6 +41,9 @@
     </p>
     <br>
   </div>
+-->
+
+
 
 <hr>
 </tal:reviewcomment>
