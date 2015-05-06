@@ -1,11 +1,21 @@
 <div i18n:domain="ntpu.content">
 <br><br>
-<h5 tal:condition="not:view/getView/isOwner" >
+
+<tal:checkEdit condition="python:'@@edit' not in context.REQUEST['URL']">
+<tal:review condition="not:view/getView/isOwner" >
   <a href="./edit" i18n:translate="">Review</a>
-</h5>
+</tal:review>
 
-<h5 tal:condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state == 'draft'" >
-  <a href="./edit" i18n:translate="">Edit</a>
-</h5>
+<tal:edit condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state == 'draft'" >
+||  <a href="./edit" i18n:translate="">Edit</a>
+</tal:edit>
 
+<tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
+                                      view.getView.getReviewState() == 'inReview'">
+||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=assignInternal">
+  確認提交
+  </a>
+</tal:assignInternal>
+
+</tal:checkEdit>
 </div>
