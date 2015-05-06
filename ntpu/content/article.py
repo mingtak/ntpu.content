@@ -71,6 +71,8 @@ class IArticle(form.Schema, IImageScaleTraversable):
         label=_(u"Review State"),
         fields=['blindSetup',
                 'assignInternalReviewer',
+#
+                'reviewFeedback',
                 'assignExternalReviewer1',
                 'invitEmail1',
                 'acceptInvit1',
@@ -113,6 +115,14 @@ class IArticle(form.Schema, IImageScaleTraversable):
         source=availableInternalReviewer,
         default=None,
         required=True,
+    )
+
+    dexterity.write_permission(reviewFeedback='ntpu.content.IsInternalReviewer')
+#    dexterity.read_permission(assignExternalReviewer1='ntpu.content.IsInternalReviewer')
+#    form.mode(reviewFeedback='hidden')
+    reviewFeedback = NamedBlobFile(
+        title=_(u'Review comment file'),
+        required=False,
     )
 
 #### external reviewer 1
@@ -471,7 +481,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         request = portal.REQUEST
         message = _(u"Corresponging must select from authors.")
 
-        if data.authors is None and data.corresponging is None:
+        if data.authors == [] and data.corresponging == []:
             return
         if data.authors and not data.corresponging:
             api.portal.show_message(message=message, request=request, type='error')

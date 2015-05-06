@@ -1,16 +1,17 @@
-<tal:blind condition="context/blindSetup"
+
+<tal:blind condition="python:bool(context.blindSetup) or view.getView.getCurrent().getId() == context.owner_info()['id']"
  i18n:domain="ntpu.content">
 
-<div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getRoles()))) > 0
-                           or view.getBlind() == False
-                           or view.getCurrent().getId() == context.owner_info()['id']">
+<div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
+                           or view.getView.getBlind() == False
+                           or view.getView.getCurrent().getId() == context.owner_info()['id']">
 <br>
     <h3 i18n:translate="">Author Information</h3>
 <br>
 
 
     <div tal:condition="python:context.authors != None">
-      <tal:repeat define="brain view/getSelfBrain"
+      <tal:repeat define="brain view/getView/getSelfBrain"
                   repeat="author brain/authorsInformation">
         <p>
           <strong i18n:translate="">Name(Chinese): </strong>

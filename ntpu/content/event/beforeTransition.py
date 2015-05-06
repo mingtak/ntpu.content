@@ -7,6 +7,23 @@ from ntpu.content import MessageFactory as _
 
 
 @grok.subscribe(IArticle, IBeforeTransitionEvent)
+def checkReviewFeedback(item, event):
+    if event.new_state.getId() != 'modifyThenReview':
+        return
+
+    if item.reviewFeedback is not None:
+        return
+
+    message = _(u"must be upload review feedback comment file")
+    api.portal.show_message(
+        message=message,
+        request=obj.REQUEST,
+        type='error'
+    )
+    raise Invalid(message)
+
+
+@grok.subscribe(IArticle, IBeforeTransitionEvent)
 def retract(item, event):
     if event.new_state.getId() == 'draft':
         item.blindSetup = None
