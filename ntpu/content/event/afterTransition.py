@@ -58,7 +58,7 @@ def mailToSiteAdministrator(item, event):
 
 @grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToSuperEditor(item, event):
-    if event.new_state.getId() not in ['accepted', 'rejected']:
+    if event.new_state.getId() not in ['accepted', 'rejected', 'inReview']:
         return
     emailList = getEmailList(item, event, 'SuperEditor')
     if emailList == []:
@@ -115,5 +115,13 @@ def mailToExternalReviewer(item, event):
 @grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToOwner(item, event):
     #要寄的條件寫在這裏
-    if True:
+    if event.new_state.getId() not in ['draft', 'modifyThenReview']:
         return
+    catalog = item.portal_catalog
+    profileBrain = catalog({'Type':'Profile', 'Creator':item.owner_info()['id']})
+    if len(profileBrain) == 0:
+        return
+    profile = profileBrain[0]
+    emailList = [[profile.Title, profile.email],]
+    notifyChangeReviewState(emailList=emailList, article=item, event=event)
+    return
