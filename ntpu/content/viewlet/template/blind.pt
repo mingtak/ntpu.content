@@ -5,6 +5,13 @@
 <div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
                            or view.getView.getBlind() == False
                            or view.getView.getCurrent().getId() == context.owner_info()['id']">
+
+<br>
+    <h3 i18n:translate="">Cover Letter</h3>
+<br>
+<p tal:content="context/coverLetter">
+</p>
+
 <br>
     <h3 i18n:translate="">Author Information</h3>
 <br>
