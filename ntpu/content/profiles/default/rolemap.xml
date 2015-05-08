@@ -31,5 +31,10 @@
       <role name="Owner"/>
     </permission>
 
+    <permission name="ntpu.content: Is Site Administrator" acquire="False">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+    </permission>
+
   </permissions>
 </rolemap>

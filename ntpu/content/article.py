@@ -65,13 +65,12 @@ class IArticle(form.Schema, IImageScaleTraversable):
     """
     Contribute article
     """
-
     form.fieldset(
         _(u'Review State'),
         label=_(u"Review State"),
         fields=['blindSetup',
                 'assignInternalReviewer',
-#
+                'retractReason',
                 'reviewFeedback',
                 'assignExternalReviewer1',
                 'invitEmail1',
@@ -122,6 +121,14 @@ class IArticle(form.Schema, IImageScaleTraversable):
 #    form.mode(reviewFeedback='hidden')
     reviewFeedback = NamedBlobFile(
         title=_(u'Review comment file'),
+        required=False,
+    )
+
+    dexterity.write_permission(retractReason='ntpu.content.IsSiteAdministrator')
+    dexterity.read_permission(retractReason='ntpu.content.IsOwner')
+    form.mode(retractReason='input')
+    retractReason = schema.Text(
+        title=_(u'Retract Reason'),
         required=False,
     )
 

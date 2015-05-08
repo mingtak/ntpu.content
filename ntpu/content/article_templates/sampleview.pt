@@ -9,7 +9,6 @@
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
-
 <tal:checkId condition="python:view.checkIdInReviewerList() or view.getCurrent().getId() == context.owner_info()['id']">
 
       <h2 tal:content="context/articleTitle"/>

@@ -25,6 +25,12 @@
       title="ntpu.content: Is Owner"
       />
 
+    <permission
+      id="ntpu.content.IsSiteAdministrator"
+      title="ntpu.content: Is Site Administrator"
+      />
+
+
   </configure>
 
 </configure>

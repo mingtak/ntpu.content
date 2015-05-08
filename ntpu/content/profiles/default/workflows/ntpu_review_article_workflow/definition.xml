@@ -121,6 +121,7 @@
  </state>
  <state state_id="reSubmitted" title="Re Submitted">
   <description>Re Submitted</description>
+  <exit-transition transition_id="MR"/>
   <exit-transition transition_id="retract"/>
   <exit-transition transition_id="toRetrial"/>
   <permission-map name="Access contents information" acquired="False">
