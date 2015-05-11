@@ -305,8 +305,18 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.fieldset(
         _(u'manuscript metadata'),
         label=_(u"Manuscript Metadata"),
-        fields=['submittingFrom', 'articleLanguage', 'articleType', 'articleTitle', 'engTitle',
-                'runningTitle', 'keywords', 'engKeywords', 'abstract', 'engAbstract', 'category', 'coverLetter'],
+        fields=['submittingFrom',
+                'articleLanguage',
+                'articleType',
+                'articleTitle',
+                'engTitle',
+                'runningTitle',
+                'keywords',
+                'engKeywords',
+                'abstract',
+                'engAbstract',
+                'category',
+                'coverLetter'],
         description=_(u"Submit a new manuscript(fields in RED DOT are Required)"),
     )
 
@@ -384,7 +394,8 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(engAbstract='ntpu.content.IsOwner')
     engAbstract = schema.Text(
         title=_(u'English abstract'),
-        required=False,
+        default=u' ',
+        required=True,
     )
 
     dexterity.write_permission(category='ntpu.content.IsOwner')

@@ -29,19 +29,20 @@ class ReviewConfirm(grok.View):
         if context.assignExternalReviewer1 is not None:
             externalReviewer1_Id = context.assignExternalReviewer1.to_object.owner_info()['id']
             if currentUserId == externalReviewer1_Id:
-                if context.acceptOrReject1 is None:
+                if context.acceptOrReject1 is None or (context.externalReviewerComment1 is None and context.reviewCommentAttached1 is None):
                     api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
                     context.reviewConfirm1 = None
                     context.reindexObject()
                     redirect(context.absolute_url())
                     return
+
                 context.reviewConfirm1 = True
                 api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
 
         if context.assignExternalReviewer2 is not None:
             externalReviewer2_Id = context.assignExternalReviewer2.to_object.owner_info()['id']
             if currentUserId == externalReviewer2_Id:
-                if context.acceptOrReject2 is None:
+                if context.acceptOrReject2 is None or (context.externalReviewerComment2 is None and context.reviewCommentAttached2 is None):
                     api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
                     context.reviewConfirm2 = None
                     context.reindexObject()
@@ -53,7 +54,7 @@ class ReviewConfirm(grok.View):
         if context.assignExternalReviewer3 is not None:
             externalReviewer3_Id = context.assignExternalReviewer3.to_object.owner_info()['id']
             if currentUserId == externalReviewer3_Id:
-                if context.acceptOrReject3 is None:
+                if context.acceptOrReject3 is None or (context.externalReviewerComment3 is None and context.reviewCommentAttached3 is None):
                     api.portal.show_message(message=_(u'No Review result yet.'), request=request, type='error')
                     context.reviewConfirm3 = None
                     context.reindexObject()
@@ -112,7 +113,8 @@ class InviteReview(grok.View):
         context = self.context
         request = context.REQUEST
         catalog = context.portal_catalog
-        adminId = api.user.get_users(groupname='Site Administrators')[0].getId()
+#        import pdb; pdb.set_trace()
+        adminId = api.user.get_users(groupname='Site Administrators')[0].getProperty('email')
         with api.env.adopt_user(username=adminId):
             while True:
                 brain = catalog(invitEmail1=request['para'])
@@ -120,6 +122,7 @@ class InviteReview(grok.View):
                     article = brain[0].getObject()
                     profile = article.assignExternalReviewer1.to_object
                     userId = profile.email
+#                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
                         article.acceptInvit1 = True
                         article.invitEmail1 = None
@@ -141,10 +144,12 @@ class InviteReview(grok.View):
                     article = brain[0].getObject()
                     profile = article.assignExternalReviewer2.to_object
                     userId = profile.email
+#                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
                         article.acceptInvit2 = True
                         article.invitEmail2 = None
                         article.reindexObject()
+#                        import pdb; pdb.set_trace()
                         request.response.redirect(brain[0].getURL())
                         return
                     elif request.has_key('reject'):
@@ -162,11 +167,13 @@ class InviteReview(grok.View):
                     article = brain[0].getObject()
                     profile = article.assignExternalReviewer3.to_object
                     userId = profile.email
+#                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
                         article.acceptInvit3 = True
                         article.invitEmail3 = None
                         article.reindexObject()
                         request.response.redirect(brain[0].getURL())
+#                        break
                         return
                     elif request.has_key('reject'):
                         rejecter = article.assignExternalReviewer3.to_object.myName
@@ -180,7 +187,7 @@ class InviteReview(grok.View):
                     break
                 request.response.redirect('/')
                 return
-
+#        import pdb; pdb.set_trace()
         self.profile = profile
         self.brain = brain
         context.acl_users.session._setupSession(userId.encode("utf-8"), self.context.REQUEST.RESPONSE)

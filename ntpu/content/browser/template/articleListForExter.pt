@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ntpu.content">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="content-core">
+
+<h3>稿件列表</h3>
+
+<tal:check condition="python:getattr(context.REQUEST, 'state', None) == 'waitingForReview'">
+<div tal:define="brain view/waitingForReview" tal:repeat="item brain">
+<strong>案名(中文):</strong><span tal:content="item/articleTitle"/><br>
+<strong>案名(En):</strong><span tal:content="item/engTitle"/><br>
+<a tal:attributes="href item/absolute_url">...Detail</a><br>
+<br>
+</div>
+</tal:check>
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

@@ -1,6 +1,7 @@
 <tal:reviewcomment define="selfBrain python:view.getView.getSelfBrain();
-                           results python:{'modifyThenReview':'修改後再審', 'accapted':'建議推薦', 'rejected':'不予推薦'}"
-                   condition="view/getView/isOwner"
+                           results python:{'modifyThenReview':'修改後再審', 'accepted':'建議推薦', 'rejected':'不予推薦',
+                                           'reSubmitted':'重新送審'}"
+                   condition="python:'Super Editor' in view.getView.getRoles()"
  i18n:domain="ntpu.content">
   <br>
   <h4 i18n:translate="">Review Comments</h4>

@@ -129,40 +129,15 @@ def mailToOwner(item, event):
 
 @grok.subscribe(IArticle, IAfterTransitionEvent)
 def retractToOwner(item, event):
-    #退件寄信給作者
-    if event.transition is None:
+    # k
+    if event.new_state.getId() not in ['draft', 'modifyThenReview']:
         return
-    if event.transition.getId() != 'retract':
-        return
-
-    urlTag = u"<p>稿件連結: <a href='%s'>%s</a></p>" % (item.absolute_url(), item.absolute_url())
-    reasonTag = u"<p>退稿理由: %s</p>" % (item.retractReason)
-    head = """
-           <html><body><p>
-             <strong>您好:</strong><br>
-               這裏是運動研究期刊編輯部, 有一份關於稿件的退稿通知:<br>
-             <p>
-           """
-    tail = """
-           <hr>
-           <p>本郵件由系統直接發出，請勿直接回覆本信件.</p>
-           </body></html>
-           """
-    head = safe_unicode(head)
-    tail = safe_unicode(tail)
-    mailBody = MIMEText("%s%s%s%s" % (head, urlTag, reasonTag, tail), 'html', 'utf-8')
-
     catalog = item.portal_catalog
     profileBrain = catalog({'Type':'Profile', 'Creator':item.owner_info()['id']})
     if len(profileBrain) == 0:
         return
-    profile = profileBrain[0].getObject()
-
-    api.portal.send_email(
-        recipient=profile.email,
-        subject=u'%s 您好，運動研究期刊:投搞狀態更新通知' % profile.myName,
-        body='%s' % mailBody.as_string(),
-    )
-
+    profile = profileBrain[0]
+    emailList = [[profile.Title, profile.email],]
+    notifyChangeReviewState(emailList=emailList, article=item, event=event)
     return
 

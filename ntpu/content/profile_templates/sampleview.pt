@@ -25,7 +25,7 @@
 
 
 <!-- 責任編輯桌面 -->
-<tal:internalReview define="roles context/@@get_roles"
+<!--<tal:internalReview define="roles context/@@get_roles"
              condition="python:'Internal Reviewer' in roles or 'Manager' in roles">
 
     <h2 i18n:translate="">Waitting for Review Article</h2>
@@ -46,10 +46,10 @@
     </div>
     <br/><hr/>
 </tal:internalReview>
-
+-->
 
 <!-- 審查委員桌面 -->
-<tal:ExternalReview define="roles context/@@get_roles"
+<!--<tal:ExternalReview define="roles context/@@get_roles"
                     condition="python:'External Reviewer' in roles or 'Manager' in roles">
 
     <h2 i18n:translate="">External Reviewer Region</h2>
@@ -71,7 +71,7 @@
     </div>
     <br/><hr/>
 </tal:ExternalReview>
-
+-->
 
 
 <!-- 個人桌面 -->

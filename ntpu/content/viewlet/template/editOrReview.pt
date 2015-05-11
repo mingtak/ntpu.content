@@ -10,7 +10,7 @@
 
 <!-- 責編 -->
 <tal:review condition="python:'Internal Reviewer' in view.getView.getRoles() and
-                              view.getView.getReviewState() == 'internalAssigned'" >
+                              view.getView.getReviewState() in ['internalAssigned', 'retrial']" >
   <a href="./edit" i18n:translate="">Review</a>
 </tal:review>
 
@@ -27,10 +27,15 @@
   <a tal:attributes="href string:${context/absolute_url}/@@reviewConfirm" i18n:translate="">Review Confirm</a>
 </tal:review>
 
-<tal:edit condition="python:not view.getView.isOwner() and view.getView.getSelfBrain().review_state in ['submitted', 'reSubmitted']" >
-||  <a href="./edit" >型式審</a>
+<tal:edit condition="python:'Site Administrator' in view.getView.getRoles()" >
+<tal:check condition="python:view.getView.getSelfBrain().review_state in ['submitted']">
+||  <a href="./edit">型式審</a>
 ||  <a href="./content_status_modify?workflow_action=toInReview">送至主編</a>
-
+</tal:check>
+<tal:check condition="python:view.getView.getSelfBrain().review_state in ['reSubmitted']">
+||  <a href="./edit">型式審</a>
+||  <a href="./content_status_modify?workflow_action=toRetrial">重送審查委員審查</a>
+</tal:check>
 <!-- 用form的型式配合event處理退稿 -->
 ||  <a href="./@@retractArticle">退稿</a>
 <!--  <a href="./content_status_modify?workflow_action=retract">退稿</a> -->
@@ -39,7 +44,12 @@
 
 <tal:edit condition="python:view.getView.isOwner() and view.getView.getSelfBrain().review_state in ['draft', 'modifyThenReview']" >
 ||  <a href="./edit" i18n:translate="">Edit</a>
+<tal:check condition="python:context.allAuthorConsent and context.license and view.getView.getSelfBrain().review_state == 'draft'">
 ||  <a href="./content_status_modify?workflow_action=submitting">提交稿件</a>
+</tal:check>
+<tal:check condition="python:context.allAuthorConsent and context.license and view.getView.getSelfBrain().review_state == 'modifyThenReview'">
+||  <a href="./content_status_modify?workflow_action=toReSubmitted">重新提交</a>
+</tal:check>
 </tal:edit>
 
 <tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
@@ -59,13 +69,13 @@
 <hr>
 <h5>確認審查結果</h5>
 <tal:assignInternal>
-  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=accept">
-    建議推薦
-  </a>
   <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=MR">
     修改後審查
   </a>
-  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=reject">
+||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=accept">
+    建議推薦
+  </a>
+||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=reject">
     不予推薦
   </a>
 

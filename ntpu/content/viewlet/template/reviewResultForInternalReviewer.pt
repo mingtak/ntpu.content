@@ -7,21 +7,22 @@
 <p>審查委員: <span tal:content="python:reviewer.to_object.myName"/></p>
 <p>審查意見: <span tal:content="context/externalReviewerComment1"/></p>
 <p>意見附檔:
-  <a tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached1/filename}">下載</a>
+  <a tal:condition="exists:context/reviewCommentAttached1/filename" tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached1/filename}">下載</a>
 </p>
-<p>審查結果: <span tal:content="python:results[context.acceptOrReject1]"/></p>
+<p>審查結果: <span tal:content="python:results[context.acceptOrReject1]" tal:on-error="nothing"/></p>
 </tal:result>
 
 <br>
+
 
 <tal:result define="reviewer python:context.assignExternalReviewer2" 
             condition="python:bool(reviewer)">
 <p>審查委員: <span tal:content="python:reviewer.to_object.myName"/></p>
 <p>審查意見: <span tal:content="context/externalReviewerComment2"/></p>
 <p>意見附檔:
-  <a tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached2/${context/reviewCommentAttached2/filename}">下載</a>
+  <a tal:condition="exists:context/reviewCommentAttached1/filename" tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached2/${context/reviewCommentAttached2/filename}">下載</a>
 </p>
-<p>審查結果: <span tal:content="python:results[context.acceptOrReject2]"/></p>
+<p>審查結果: <span tal:content="python:results[context.acceptOrReject2]" tal:on-error="nothing"/></p>
 </tal:result>
 
 <br>
@@ -31,9 +32,9 @@
 <p>審查委員: <span tal:content="python:reviewer.to_object.myName"/></p>
 <p>審查意見: <span tal:content="context/externalReviewerComment3"/></p>
 <p>意見附檔:
-  <a tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached3/filename}">下載</a>
+  <a tal:condition="exists:context/reviewCommentAttached1/filename" tal:attributes="href string:${context/absolute_url}/@@download/reviewCommentAttached1/${context/reviewCommentAttached3/filename}">下載</a>
 </p>
-<p>審查結果: <span tal:content="python:results[context.acceptOrReject3]"/></p>
+<p>審查結果: <span tal:content="python:results[context.acceptOrReject3]" tal:on-error="nothing"/></p>
 </tal:result>
 
 <hr>

@@ -5,9 +5,10 @@
                              'Super Editor' in view.getView.getRoles()"
  i18n:domain="ntpu.content">
 
-<div tal:condition="python:len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
+<div tal:condition="python:view.getView.getRoles() != 'External Reviewer'
+                           and (len(list(set(['Site Administrator', 'Super Editor']) & set(view.getView.getRoles()))) > 0
                            or view.getView.getBlind() == False
-                           or view.getView.getCurrent().getId() == context.owner_info()['id']">
+                           or view.getView.getCurrent().getId() == context.owner_info()['id'])">
 
 <br>
     <h3 i18n:translate="">Cover Letter</h3>

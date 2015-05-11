@@ -1,0 +1,20 @@
+<!-- 審查委員桌面 -->
+<tal:admin define="roles context/@@get_roles;
+                   currentUserId context/getCurrentUserId;
+                   catalog python:context.portal_catalog"
+           condition="python:'External Reviewer' in roles"
+ i18n:domain="ntpu.content">
+
+    <h3 i18n:translate="">Article Statistics</h3>
+
+
+    <p>
+       <strong>待審查稿件: </strong>
+       <span tal:replace="python:len(view.waitingForReview)" />
+       <a tal:condition="python:view.waitingForReview > 0"
+          tal:attributes="href python:'%s/@@articleListForExter?state=waitingForReview' % (context.absolute_url())" i18n:translate="">...Detail</a>
+    </p>
+
+
+<br><hr>
+</tal:admin>

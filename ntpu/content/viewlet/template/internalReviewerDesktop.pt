@@ -7,19 +7,28 @@
 
     <h3 i18n:translate="">Article Statistics</h3>
 
-    <tal:repeat repeat="state python:[['internalAssigned','已指定責任編輯'],
-                                      ['modifyThenReview','修改後重新審查'],
-                                      ['reSubmitted','已重新提交'],
-                                      ['retrial','重審中'],
-                                      ['rejected','不予推薦'],
-                                      ['accepted','建議推薦'],]">
-        <tal:submitted define="brain python:catalog({'Type':'Article', 'review_state':state[0], 'assignInternalReviewer':currentUserId})">
-            <p><strong tal:content="python:'%s 稿件數量:' % state[1]" ></strong>
-               <span tal:replace="python:len(brain)" />
-               <a tal:condition="python:len(brain)>0"
-                  tal:attributes="href python:'/@@articleList?state=%s' % state[0]" i18n:translate="">...Detail</a>
-            </p>
-        </tal:submitted>
-    </tal:repeat>
+
+    <p>
+       <strong>待指定審查委員: </strong>
+       <span tal:replace="view/waitingAssignEx" />
+       <a tal:condition="python:view.waitingAssignEx > 0"
+          tal:attributes="href python:'%s/@@articleListForInter?state=waitingAssignEx' % (context.absolute_url())" i18n:translate="">...Detail</a>
+    </p>
+
+    <p>
+       <strong>委員審查中: </strong>
+       <span tal:replace="view/waitingForReview" />
+       <a tal:condition="python:view.waitingForReview > 0"
+          tal:attributes="href python:'%s/@@articleListForInter?state=waitingForReview' % (context.absolute_url())" i18n:translate="">...Detail</a>
+    </p>
+
+    <p>
+       <strong>委員審查完成: </strong>
+       <span tal:replace="view/endReview" />
+       <a tal:condition="python:view.endReview > 0"
+          tal:attributes="href python:'%s/@@articleListForInter?state=endReview' % (context.absolute_url())" i18n:translate="">...Detail</a>
+    </p>
+
+
 <br><hr>
 </tal:admin>
