@@ -130,6 +130,17 @@ class ArticleEditForm(DefaultEditForm):
                     'reviewCommentAttached3',]
             self.hiddenFields(label=label, mode="hidden", keys=keys)
 
+        if articleItem.reviewConfirm1 is None or articleItem.reviewConfirm2 is None:
+            label = "Review State"
+            keys = ['assignExternalReviewer3', 'reviewFeedback']
+            self.hiddenFields(label=label, mode="hidden", keys=keys)
+
+        if 'modifyThenReview' == api.content.get_state(obj=articleItem):
+            label = "Manuscript file"
+            keys = ['IAttachedFile.commentReply']
+            self.hiddenFields(label=label, mode=None, keys=keys)
+
+
         self.hiddenModifySubmission(articleItem)
 
 

@@ -11,7 +11,7 @@
     <p>
        <strong>待審查稿件: </strong>
        <span tal:replace="python:len(view.waitingForReview)" />
-       <a tal:condition="python:view.waitingForReview > 0"
+       <a tal:condition="python:view.waitingForReview"
           tal:attributes="href python:'%s/@@articleListForExter?state=waitingForReview' % (context.absolute_url())" i18n:translate="">...Detail</a>
     </p>
 

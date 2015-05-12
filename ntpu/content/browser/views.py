@@ -86,6 +86,35 @@ class InviteReview(grok.View):
     grok.name('inviteReview')
     grok.template('inviteReview')
 
+    def notifyAcceptMail(self, article, rejecter):
+#        catalog = salf.context.portal_catalog
+#        brain = catalog({'Type':'Profile', 'groups':'Site Administrators'})
+#        if len(brain) == 0:
+#            return
+#        email = []
+#        for item in brain:
+#            email.append(item.email)
+        email = article.assignInternalReviewer.to_object.email
+        urlTag = "<p>稿件連結: <a href='%s'>%s</a></p>" % (article.absolute_url(), article.absolute_url())
+        rejecter="<p>委員姓名: %s</p>" % rejecter.encode('utf-8')
+        head = """
+               <html><body><p>
+                 <strong>敬愛的教授</strong>您好:<br>
+                   這裏是運動研究期刊編輯部, 有一份關接受擔任審查委員的邀請通知如下:<br>
+                 <p>
+               """
+        tail = """
+               <hr>
+               <p>本郵件由系統直接發出，請勿直接回覆本信件，若有相關疑問，請與本刊聯絡，電話:02-XXXXXXXX</p>
+               </body></html>
+               """
+        mailBody = MIMEText("%s%s%s%s" % (head, urlTag,rejecter, tail), 'html', 'utf-8')
+        api.portal.send_email(
+            recipient=email,
+            subject='運動研究期刊編輯部:接受擔任審查委員通知信件',
+            body='%s' % mailBody.as_string()
+        )
+
     def notifyRejectMail(self, article, rejecter):
         email = article.assignInternalReviewer.to_object.email
         urlTag = "<p>稿件連結: <a href='%s'>%s</a></p>" % (article.absolute_url(), article.absolute_url())
@@ -124,6 +153,8 @@ class InviteReview(grok.View):
                     userId = profile.email
 #                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
+                        accepter = article.assignExternalReviewer1.to_object.myName
+                        self.notifyAcceptMail(article=article, accepter=accepter)
                         article.acceptInvit1 = True
                         article.invitEmail1 = None
                         article.reindexObject()
@@ -146,6 +177,8 @@ class InviteReview(grok.View):
                     userId = profile.email
 #                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
+                        accepter = article.assignExternalReviewer2.to_object.myName
+                        self.notifyAcceptMail(article=article, accepter=accepter)
                         article.acceptInvit2 = True
                         article.invitEmail2 = None
                         article.reindexObject()
@@ -169,6 +202,8 @@ class InviteReview(grok.View):
                     userId = profile.email
 #                    import pdb; pdb.set_trace()
                     if request.has_key('accept'):
+                        accepter = article.assignExternalReviewer3.to_object.myName
+                        self.notifyAcceptMail(article=article, accepter=accepter)
                         article.acceptInvit3 = True
                         article.invitEmail3 = None
                         article.reindexObject()

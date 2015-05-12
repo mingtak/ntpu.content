@@ -7,6 +7,23 @@ from ntpu.content import MessageFactory as _
 
 
 @grok.subscribe(IArticle, IBeforeTransitionEvent)
+def checkCommentReply(item, event):
+    if event.new_state.getId() != 'retria':
+        return
+
+    if item.commentReply is not None:
+        return
+
+    message = _(u"Must be upload comment replay file.")
+    api.portal.show_message(
+        message=message,
+        request=obj.REQUEST,
+        type='error'
+    )
+    raise Invalid(message)
+
+
+@grok.subscribe(IArticle, IBeforeTransitionEvent)
 def checkReviewFeedback(item, event):
     if event.new_state.getId() != 'modifyThenReview':
         return
