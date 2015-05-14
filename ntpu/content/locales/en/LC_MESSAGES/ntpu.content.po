@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-05-11 02:26+0000\n"
+"POT-Creation-Date: 2015-05-14 11:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "2015 University of Taipei. All Rights Reserved."
 msgstr ""
 
-#: ./article.py:388
+#: ./article.py:392
 #: ./article_templates/sampleview.pt:23
 #: ./journal.py:54
 msgid "Abstract"
@@ -46,11 +46,11 @@ msgstr ""
 msgid "Abstract(english):"
 msgstr ""
 
-#: ./article.py:156
+#: ./article.py:158
 msgid "Accept invitation"
 msgstr ""
 
-#: ./article.py:157
+#: ./article.py:159
 msgid "Accept the invitation to review"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Algeria"
 msgstr ""
 
-#: ./article.py:461
+#: ./article.py:466
 msgid "All author consent"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Article Statistics"
 msgstr ""
 
-#: ./article.py:351
+#: ./article.py:355
 msgid "Article title"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Article title(English):"
 msgstr ""
 
-#: ./article.py:342
+#: ./article.py:346
 #: ./article_templates/sampleview.pt:43
 msgid "Article type"
 msgstr ""
@@ -137,19 +137,19 @@ msgstr ""
 msgid "Aruba"
 msgstr ""
 
-#: ./article.py:140
+#: ./article.py:141
 msgid "Assign first external reviewer"
 msgstr ""
 
-#: ./article.py:113
+#: ./article.py:112
 msgid "Assign internal reviewer"
 msgstr ""
 
-#: ./article.py:197
+#: ./article.py:199
 msgid "Assign second external reviewer"
 msgstr ""
 
-#: ./article.py:254
+#: ./article.py:257
 msgid "Assign third external reviewer"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:19
+#: ./viewlet/template/blind.pt:20
 msgid "Author Information"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Author information"
 msgstr ""
 
-#: ./article.py:423
+#: ./article.py:428
 #: ./journal.py:32
 msgid "Authors"
 msgstr ""
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Biochemistry of Exercise, Nutrition of Exercise"
 msgstr ""
 
-#: ./article.py:102
+#: ./article.py:101
 msgid "Blind setup"
 msgstr ""
 
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Cape Verde"
 msgstr ""
 
-#: ./article.py:402
+#: ./article.py:407
 msgid "Category"
 msgstr ""
 
@@ -380,11 +380,11 @@ msgstr ""
 msgid "Contribute article"
 msgstr ""
 
-#: ./article.py:448
+#: ./article.py:453
 msgid "Corresponding authors"
 msgstr ""
 
-#: ./article.py:499
+#: ./article.py:504
 msgid "Corresponging must select from authors."
 msgstr ""
 
@@ -400,11 +400,11 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:13
+#: ./viewlet/template/blind.pt:14
 msgid "Cover Letter"
 msgstr ""
 
-#: ./article.py:411
+#: ./article.py:416
 msgid "Cover letter"
 msgstr ""
 
@@ -468,6 +468,10 @@ msgstr ""
 msgid "Dominican Republic"
 msgstr ""
 
+#: ./article.py:113
+msgid "Double click or press down key to show selection, or input user name."
+msgstr ""
+
 #: ./config.py:38
 msgid "Double-blind"
 msgstr ""
@@ -521,23 +525,23 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:57
+#: ./viewlet/template/blind.pt:58
 msgid "Email:"
 msgstr ""
 
-#: ./article.py:396
+#: ./article.py:400
 #: ./article_templates/sampleview.pt:28
 #: ./journal.py:59
 msgid "English abstract"
 msgstr ""
 
-#: ./article.py:380
+#: ./article.py:384
 #: ./article_templates/sampleview.pt:38
 #: ./journal.py:69
 msgid "English keywords"
 msgstr ""
 
-#: ./article.py:358
+#: ./article.py:362
 #: ./journal.py:49
 msgid "English title"
 msgstr ""
@@ -558,7 +562,7 @@ msgstr ""
 msgid "Ethiopia"
 msgstr ""
 
-#: ./article.py:474
+#: ./article.py:479
 msgid "Exclusive or non-exclusive license"
 msgstr ""
 
@@ -578,12 +582,12 @@ msgstr ""
 msgid "External reviewer already selected."
 msgstr ""
 
-#: ./article.py:172
+#: ./article.py:174
 #: ./commentfile.py:51
 msgid "External reviewer comment"
 msgstr ""
 
-#: ./article.py:178
+#: ./article.py:180
 #: ./commentfile.py:56
 msgid "External reviewer comment attached file"
 msgstr ""
@@ -693,7 +697,7 @@ msgstr ""
 msgid "Hungary"
 msgstr ""
 
-#: ./article.py:326
+#: ./article.py:330
 msgid "I am submitting from"
 msgstr ""
 
@@ -717,11 +721,11 @@ msgstr ""
 msgid "Institution"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:37
+#: ./viewlet/template/blind.pt:38
 msgid "Institution(Chinese):"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:42
+#: ./viewlet/template/blind.pt:43
 msgid "Institution(English):"
 msgstr ""
 
@@ -729,7 +733,7 @@ msgstr ""
 msgid "Invalid email address."
 msgstr ""
 
-#: ./article.py:148
+#: ./article.py:150
 msgid "Invit email"
 msgstr ""
 
@@ -785,7 +789,7 @@ msgstr ""
 msgid "Kenya"
 msgstr ""
 
-#: ./article.py:372
+#: ./article.py:376
 #: ./article_templates/sampleview.pt:33
 #: ./journal.py:64
 msgid "Keywords"
@@ -823,7 +827,7 @@ msgstr ""
 msgid "Kyrgyzstan"
 msgstr ""
 
-#: ./article.py:334
+#: ./article.py:338
 #: ./article_templates/sampleview.pt:48
 #: ./journal.py:42
 msgid "Language"
@@ -905,7 +909,7 @@ msgstr ""
 msgid "Malta"
 msgstr ""
 
-#: ./article.py:307
+#: ./article.py:311
 msgid "Manuscript Metadata"
 msgstr ""
 
@@ -925,7 +929,7 @@ msgstr ""
 msgid "Mauritius"
 msgstr ""
 
-#: ./article.py:373
+#: ./article.py:377
 msgid "Maximum 5 keywords, separated with commas."
 msgstr ""
 
@@ -965,15 +969,19 @@ msgstr ""
 msgid "Mozambique"
 msgstr ""
 
+#: ./event/beforeTransition.py:17
+msgid "Must be upload comment replay file."
+msgstr ""
+
 #: ./profile.py:76
 msgid "Name"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:27
+#: ./viewlet/template/blind.pt:28
 msgid "Name(Chinese):"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:32
+#: ./viewlet/template/blind.pt:33
 msgid "Name(English):"
 msgstr ""
 
@@ -1033,7 +1041,7 @@ msgstr ""
 msgid "Oman"
 msgstr ""
 
-#: ./article.py:344
+#: ./article.py:348
 #: ./config.py:70
 msgid "Original paper"
 msgstr ""
@@ -1098,7 +1106,7 @@ msgstr ""
 msgid "Phone number"
 msgstr ""
 
-#: ./viewlet/template/blind.pt:62
+#: ./viewlet/template/blind.pt:63
 msgid "Phone:"
 msgstr ""
 
@@ -1106,7 +1114,7 @@ msgstr ""
 msgid "Please fill in the retract reasons."
 msgstr ""
 
-#: ./article.py:389
+#: ./article.py:393
 msgid "Please limit the number of words in 500 words or less"
 msgstr ""
 
@@ -1114,7 +1122,7 @@ msgstr ""
 msgid "Please select"
 msgstr ""
 
-#: ./article.py:436
+#: ./article.py:441
 msgid "Please select authors"
 msgstr ""
 
@@ -1146,7 +1154,7 @@ msgstr ""
 msgid "Qatar"
 msgstr ""
 
-#: ./article.py:103
+#: ./article.py:102
 msgid "Recommend using double-blind review"
 msgstr ""
 
@@ -1162,7 +1170,7 @@ msgstr ""
 msgid "Research note"
 msgstr ""
 
-#: ./article.py:164
+#: ./article.py:166
 #: ./commentfile.py:44
 msgid "Result of Review"
 msgstr ""
@@ -1171,7 +1179,7 @@ msgstr ""
 msgid "Retract"
 msgstr ""
 
-#: ./article.py:131
+#: ./article.py:132
 msgid "Retract Reason"
 msgstr ""
 
@@ -1211,11 +1219,11 @@ msgstr ""
 msgid "Review comment attached file"
 msgstr ""
 
-#: ./article.py:123
+#: ./article.py:124
 msgid "Review comment file"
 msgstr ""
 
-#: ./article.py:185
+#: ./article.py:187
 msgid "Review confirm"
 msgstr ""
 
@@ -1231,7 +1239,7 @@ msgstr ""
 msgid "Running Title"
 msgstr ""
 
-#: ./article.py:365
+#: ./article.py:369
 msgid "Running title"
 msgstr ""
 
@@ -1271,7 +1279,7 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: ./article.py:449
+#: ./article.py:454
 msgid "Select at least one corresponding author."
 msgstr ""
 
@@ -1359,15 +1367,15 @@ msgstr ""
 msgid "Sri Lanka"
 msgstr ""
 
-#: ./article.py:320
+#: ./article.py:324
 msgid "Submit a new manuscript(fields in RED DOT are Required)"
 msgstr ""
 
-#: ./article.py:325
+#: ./article.py:329
 msgid "Submitting from"
 msgstr ""
 
-#: ./browser/views.py:39
+#: ./browser/views.py:40
 msgid "Successfully submitted for review."
 msgstr ""
 
@@ -1403,7 +1411,7 @@ msgstr ""
 msgid "SystemFolder"
 msgstr ""
 
-#: ./article.py:328
+#: ./article.py:332
 #: ./config.py:254
 #: ./profile.py:125
 msgid "Taiwan"
@@ -1425,7 +1433,7 @@ msgstr ""
 msgid "Thailand"
 msgstr ""
 
-#: ./article.py:516
+#: ./article.py:521
 msgid "This External reviewer already selected."
 msgstr ""
 
@@ -1434,12 +1442,12 @@ msgid "Title"
 msgstr ""
 
 #: ./browser/template/inviteReview.pt:18
-#: ./viewlet/template/blind.pt:47
+#: ./viewlet/template/blind.pt:48
 msgid "Title(Chinese):"
 msgstr ""
 
 #: ./browser/template/inviteReview.pt:19
-#: ./viewlet/template/blind.pt:52
+#: ./viewlet/template/blind.pt:53
 msgid "Title(English):"
 msgstr ""
 
@@ -1552,34 +1560,34 @@ msgid "for eg. Dr, Prof, Mr, Ms..."
 msgstr ""
 
 #. Default: "I confirm this manuscript has not been accepted                           for publication elsewhere, is not being considered                           for publication elsewhere and does not duplicate material                           already published. I confirm all authors consent to                           publication of this manuscript."
-#: ./article.py:462
+#: ./article.py:467
 msgid "help_allAuthorConsent"
 msgstr ""
 
 #. Default: "Select authors and order, first is main author,                                second is 2'nd author...<br>                                 Note: Before submitting, you mustbe agree 'All author consent'                                 , 'Exclusive or non-exclusive license' and check them."
-#: ./article.py:426
+#: ./article.py:431
 msgid "help_authors"
 msgstr ""
 
 #. Default: "Enter your cover letter here.                       DO NOT include your cover letter                       in the manuscript file that you                       will upload.The word limit of this                       column is 1024 characters."
-#: ./article.py:412
+#: ./article.py:417
 msgid "help_coverLetter"
 msgstr ""
 
 #. Default: "I have read and agreed with the following statements:                           1. I am authorized by all co-author(s) to submit this article                           on their behalf and as the contact for the Editorial process.                           I am responsible for communicating with the other authors about                           progress, submissions of revisions and final approval of proofs.                           2. All authors agree with the Personal Information Collection                           Statement , and the staff of the journal will be using the                           personal information that I provided in the APSERS system for                           the sole purpose of contacting me concerning the publishing of                           the Article.                           3. The article I have submitted to the journal for review is                           original, has been written by the stated authors and has not been                           published elsewhere. Also, the Article is not currently being                           considered for publication by any other journal and will not be                           submitted for such review while under review by this journal."
-#: ./article.py:475
+#: ./article.py:480
 msgid "help_license"
 msgstr ""
 
-#: ./article.py:306
+#: ./article.py:310
 msgid "manuscript metadata"
 msgstr ""
 
-#: ./event/beforeTransition.py:17
+#: ./event/beforeTransition.py:34
 msgid "must be upload review feedback comment file"
 msgstr ""
 
-#: ./article.py:438
+#: ./article.py:443
 msgid "name"
 msgstr ""
 
@@ -1595,7 +1603,7 @@ msgstr ""
 msgid "zh-cn"
 msgstr ""
 
-#: ./article.py:336
+#: ./article.py:340
 #: ./config.py:64
 #: ./journal.py:44
 msgid "zh-tw"

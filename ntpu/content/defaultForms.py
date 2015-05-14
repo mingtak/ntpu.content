@@ -172,7 +172,6 @@ class ArticleAddForm(DefaultAddForm):
 #                group = None
                 for key in group.fields.keys():
                     group.fields[key].mode = 'hidden'
-
         return
 
 

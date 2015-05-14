@@ -95,7 +95,6 @@ class IArticle(form.Schema, IImageScaleTraversable):
                 'reviewConfirm3',],
     )
 
-
     dexterity.write_permission(blindSetup='ntpu.content.IsSuperEditor')
     dexterity.read_permission(blindSetup='ntpu.content.IsSuperEditor')
     blindSetup = schema.Choice(
@@ -111,7 +110,9 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.widget(assignInternalReviewer=AutocompleteFieldWidget)
     assignInternalReviewer = RelationChoice(
         title=_(u'Assign internal reviewer'),
+        description=_(u'Double click or press down key to show selection, or input user name.'),
         source=availableInternalReviewer,
+#        vocabulary=u"plone.principalsource.Users",
         default=None,
         required=True,
     )
@@ -138,6 +139,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.widget(assignExternalReviewer1=AutocompleteFieldWidget)
     assignExternalReviewer1 = RelationChoice(
         title=_(u'Assign first external reviewer'),
+        description=_(u'Double click or press down key to show selection, or input user name.'),
         source=availableExternalReviewer,
         required=False,
     )
@@ -195,6 +197,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.widget(assignExternalReviewer2=AutocompleteFieldWidget)
     assignExternalReviewer2 = RelationChoice(
         title=_(u'Assign second external reviewer'),
+        description=_(u'Double click or press down key to show selection, or input user name.'),
         source=availableExternalReviewer,
         required=False,
     )
@@ -252,6 +255,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     form.widget(assignExternalReviewer3=AutocompleteFieldWidget)
     assignExternalReviewer3 = RelationChoice(
         title=_(u'Assign third external reviewer'),
+        description=_(u'Double click or press down key to show selection, or input user name.'),
         source=availableExternalReviewer,
         required=False,
     )
