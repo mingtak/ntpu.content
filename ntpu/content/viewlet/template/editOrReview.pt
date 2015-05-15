@@ -53,7 +53,8 @@
 </tal:edit>
 
 <tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
-                                      view.getView.getReviewState() == 'inReview'">
+                                      'Internal Reviewer' in view.getView.getRoles() and
+                                      view.getView.getCurrent().getId() == context.assignInternalReviewer.to_object.owner_info()['id']">
 ||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=assignInternal">
   確認提交
   </a>
