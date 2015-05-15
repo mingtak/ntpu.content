@@ -50,6 +50,8 @@ def getEmailList(item, event, groups):
 
 @grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToSiteAdministrator(item, event):
+    if event.old_state.getId() == event.new_state.getId():
+        return
     emailList = getEmailList(item, event, 'Site Administrators')
     if emailList == []:
         return
@@ -115,6 +117,8 @@ def mailToExternalReviewer(item, event):
 @grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToOwner(item, event):
     #要寄的條件寫在這裏
+    if event.old_state.getId() == event.new_state.getId():
+        return
     if event.new_state.getId() not in ['draft', 'modifyThenReview']:
         return
     catalog = item.portal_catalog

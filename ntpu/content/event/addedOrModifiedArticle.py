@@ -48,7 +48,7 @@ def addedOrModifiedArticle(obj, event):
             request=obj.REQUEST,
             type='warning'
         )
-        import pdb; pdb.set_trace()
+#        import pdb; pdb.set_trace()
         raise
     if obj.attachFile is None:
         return

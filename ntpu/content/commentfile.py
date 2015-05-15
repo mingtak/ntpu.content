@@ -25,7 +25,7 @@ from ntpu.content import MessageFactory as _
 """
 @grok.provider(IContextSourceBinder)
 def ownerProfile(context):
-    import pdb; pdb.set_trace()
+#    import pdb; pdb.set_trace()
     return ObjPathSourceBinder(Type="Profile", groups="ExternalReviewer")(context)
 """
 
