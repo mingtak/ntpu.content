@@ -76,4 +76,6 @@
   <browser:jbot
     directory="jbot_template" />
 
+  <!-- chameleon -->
+  <include package="five.pt" />
 </configure>

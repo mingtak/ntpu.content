@@ -39,7 +39,7 @@
         <p tal:condition="item/engTitle"><strong i18n:translate="">Article title(English):</strong>
            <span tal:replace="item/engTitle" />
         </p>
-      <form tal:attributes="action string:${item/absolute_url}">
+      <form tal:attributes="action item/absolute_url">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
       <br/>
@@ -64,7 +64,7 @@
            <span tal:replace="item/engTitle" />
         </p>
 
-      <form tal:attributes="action string:${item/absolute_url}">
+      <form tal:attributes="action item/absolute_url">
           <input type="submit" value="Detail" i18n:attributes="value"/>
       </form>
       <br/>
