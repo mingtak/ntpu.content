@@ -2,6 +2,7 @@ from plone.dexterity.browser.add import DefaultAddForm, DefaultAddView
 from plone.dexterity.browser.edit import DefaultEditForm, DefaultEditView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from z3c.form.interfaces import HIDDEN_MODE
+from plone.z3cform.fieldsets.utils import add, remove
 
 from zope.component import getMultiAdapter
 from plone import api
@@ -140,7 +141,6 @@ class ArticleEditForm(DefaultEditForm):
             keys = ['IAttachedFile.commentReply']
             self.hiddenFields(label=label, mode=None, keys=keys)
 
-
         self.hiddenModifySubmission(articleItem)
 
 
@@ -152,26 +152,30 @@ class ArticleEditView(DefaultEditView):
 class ArticleAddForm(DefaultAddForm):
     template = ViewPageTemplateFile('template/addForm.pt')
 
+    def dropFieldSet(self, label):
+        for group in self.groups:
+            if label == group.label:
+                for key in group.fields.keys():
+                    remove(self, key)
+                self.groups.remove(group)
+                break
+
+
     def update(self):
         DefaultAddForm.update(self)
-#        import pdb; pdb.set_trace()
 
     def updateWidgets(self):
         super(ArticleAddForm, self).updateWidgets()
-#        if not api.user.is_anonymous() and 'Manager' not in api.user.get_roles():
-#        self.widgets['submittingFrom'].disabled = True
         currentLanguage = getLanguage(self)
         if currentLanguage == 'en-us':
             for group in self.groups:
                 for key in group.fields.keys():
                     if key in ['engTitle', 'engKeywords', 'engAbstract',]:
-                       group.fields[key].mode = 'hidden'
-        for group in self.groups:
-            if group.label == 'Review State':
-#                group.label = ''
-#                group = None
-                for key in group.fields.keys():
-                    group.fields[key].mode = 'hidden'
+                        remove(self, key)
+
+        self.dropFieldSet(label="Review State")
+        self.dropFieldSet(label="Score table")
+
         return
 
 
@@ -206,18 +210,17 @@ class AuthorAddForm(DefaultAddForm):
 
     def update(self):
         DefaultAddForm.update(self)
-#        import pdb; pdb.set_trace()
 
     def updateWidgets(self):
 
         super(AuthorAddForm, self).updateWidgets()
-#        if not api.user.is_anonymous() and 'Manager' not in api.user.get_roles():
-#        self.widgets['submittingFrom'].disabled = True
         currentLanguage = getLanguage(self)
         if currentLanguage == 'en-us':
             for group in self.groups:
                 for key in group.fields.keys():
-                    if key in ['IAuthorInformation.authorNameC', 'IAuthorInformation.institutionC', 'IAuthorInformation.titleC']:
+                    if key in ['IAuthorInformation.authorNameC',
+                               'IAuthorInformation.institutionC',
+                               'IAuthorInformation.titleC']:
                        group.fields[key].mode = 'hidden'
 
         return
