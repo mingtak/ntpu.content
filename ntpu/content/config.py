@@ -21,7 +21,9 @@ StateZh_TW = {
 }
 
 Category = SimpleVocabulary(
-    [SimpleTerm(value='S01', title=_(u'Humanity, Arts, and Dance')),
+    [SimpleTerm(value='E01', title=_(u'category_Education', default=u'Education')),
+     SimpleTerm(value='E02', title=_(u'Humanities & Social Sciences')),
+     SimpleTerm(value='S01', title=_(u'Humanity, Arts, and Dance')),
      SimpleTerm(value='S02', title=_(u'Sport Siology, Recreation and Leisure Studies')),
      SimpleTerm(value='S03', title=_(u'Sports Administration, Sports Management')),
      SimpleTerm(value='S04', title=_(u'Sport Pedagogy, Motor Behavior')),
