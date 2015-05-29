@@ -360,7 +360,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(engTitle='ntpu.content.IsOwner')
     engTitle = schema.TextLine(
         title=_(u'English title'),
-        default=u' ',
+        #default=u' ',
         required=True,
     )
 
@@ -398,7 +398,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     dexterity.write_permission(engAbstract='ntpu.content.IsOwner')
     engAbstract = schema.Text(
         title=_(u'English abstract'),
-        default=u' ',
+        #default=u' ',
         required=True,
     )
 
