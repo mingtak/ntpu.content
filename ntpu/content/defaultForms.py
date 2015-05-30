@@ -8,8 +8,6 @@ from zope.component import getMultiAdapter
 from plone import api
 
 #from zope.interface import alsoProvides, Interface
-
-#from ntpu.content.article import IDemoWidget
 from plone.directives import dexterity, form
 
 from ntpu.content import MessageFactory as _
@@ -42,6 +40,23 @@ class EditView(DefaultEditView):
 ##### Edit form, use updateWidgets to turn hidden/display
 class ArticleEditForm(DefaultEditForm):
     template = ViewPageTemplateFile('template/editForm.pt')
+
+    def changeFieldDescription(self, label, fieldName, description):
+        if self.fields.get(fieldName):
+            self.fields.get(fieldName).field.description = description
+            return
+        for group in self.groups:
+            if group.label == label:
+                group.fields.get(fieldName).field.description = description
+                return
+
+    def dropFieldSet(self, label):
+        for group in self.groups:
+            if label == group.label:
+                for key in group.fields.keys():
+                    remove(self, key)
+                self.groups.remove(group)
+                break
 
     def getReviewerId(self, reviewerItem):
         """ reviewerItem like articleItem.assignExternalReviewer2 """
@@ -141,7 +156,27 @@ class ArticleEditForm(DefaultEditForm):
             keys = ['IAttachedFile.commentReply']
             self.hiddenFields(label=label, mode=None, keys=keys)
 
+        if api.content.get_state(self.context) in ['draft', 'modifyThenReview']:
+            self.dropFieldSet(label='Review State')
+            self.dropFieldSet(label='Score table')
+        elif api.content.get_state(self.context) in ['inReview', 'internalAssigned', 'accepted', 'rejected', 'retrial']:
+            self.dropFieldSet(label='Manuscript Metadata')
+            self.dropFieldSet(label='Authors')
+            self.dropFieldSet(label='Manuscript file')
+
+
         self.hiddenModifySubmission(articleItem)
+
+        file = getattr(self.context.getLastChild(), 'file', None)
+        if file:
+            filename = getattr(file, 'filename', None)
+            if filename:
+                url = "%s/@@download/file/%s" % (self.context.getLastChild().absolute_url(), filename)
+                descriptionString = _(u"Current version:<a href=%s>%s</a>" % (url, filename))
+                self.changeFieldDescription(
+                    label='Manuscript file',
+                    fieldName='IAttachedFile.attachFile',
+                    description=descriptionString)
 
 
 class ArticleEditView(DefaultEditView):
@@ -160,7 +195,6 @@ class ArticleAddForm(DefaultAddForm):
                 self.groups.remove(group)
                 break
 
-
     def update(self):
         DefaultAddForm.update(self)
 
@@ -173,8 +207,8 @@ class ArticleAddForm(DefaultAddForm):
                     if key in ['engTitle', 'engKeywords', 'engAbstract',]:
                         remove(self, key)
 
-        self.dropFieldSet(label="Review State")
-        self.dropFieldSet(label="Score table")
+        self.dropFieldSet(label='Review State')
+        self.dropFieldSet(label='Score table')
 
         return
 
