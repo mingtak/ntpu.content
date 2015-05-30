@@ -307,7 +307,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     form.fieldset(
-        _(u'manuscript metadata'),
+        _(u'Manuscript Metadata'),
         label=_(u"Manuscript Metadata"),
         fields=['submittingFrom',
                 'articleLanguage',
