@@ -1,12 +1,26 @@
+<?python
+from plone import api
+currentState = api.content.get_state(context)
+?>
+
 <div i18n:domain="ntpu.content">
 <br><br>
 
 <tal:checkEdit condition="python:'@@edit' not in context.REQUEST['URL'] and
                                   '@@retractArticle' not in context.REQUEST['URL']">
+<!-- 主編 -->
 <tal:review condition="python:'Super Editor' in view.getView.getRoles() and
                               view.getView.getReviewState() == 'inReview'" >
   <a href="./edit" i18n:translate="">Review</a>
 </tal:review>
+<tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
+                                      'Super Editor' in view.getView.getRoles() and
+                                      currentState == 'inReview'">
+||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=assignInternal">
+  確認提交
+  </a>
+</tal:assignInternal>
+
 
 <!-- 責編 -->
 <tal:review condition="python:'Internal Reviewer' in view.getView.getRoles() and
@@ -51,16 +65,6 @@
 ||  <a href="./content_status_modify?workflow_action=toReSubmitted">重新提交</a>
 </tal:check>
 </tal:edit>
-
-<tal:assignInternal condition="python:bool(context.assignInternalReviewer) and
-                                      'Internal Reviewer' in view.getView.getRoles() and
-                                      view.getView.getCurrent().getId() == context.assignInternalReviewer.to_object.owner_info()['id']">
-||  <a tal:attributes="href string:${context/absolute_url}/content_status_modify?workflow_action=assignInternal">
-  確認提交
-  </a>
-</tal:assignInternal>
-
-
 
 
 

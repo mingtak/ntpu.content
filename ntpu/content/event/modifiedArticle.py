@@ -53,35 +53,6 @@ def modifyInvitEmail(obj, event):
     obj.reindexObject()
 
 
-
-@grok.subscribe(IArticle, IObjectModifiedEvent)
-def sendInvitEmail(obj, event):
-#    import pdb; pdb.set_trace()
-    portal = api.portal.get()
-    if obj.assignExternalReviewer1 is not None and obj.invitEmail1 is None and obj.acceptInvit1 is None:
-        para = creatPara()
-        url = '%s/@@inviteReview?para=%s' % (portal.absolute_url(), para)
-        email = obj.assignExternalReviewer1.to_object.email
-        obj.invitEmail1 = para
-        sendMail(obj=obj,url=url, email=email)
-
-    if obj.assignExternalReviewer2 is not None and obj.invitEmail2 is None and obj.acceptInvit2 is None:
-        para = creatPara()
-        url = '%s/@@inviteReview?para=%s' % (portal.absolute_url(), para)
-        email = obj.assignExternalReviewer2.to_object.email
-        obj.invitEmail2 = para
-        sendMail(obj=obj,url=url, email=email)
-
-    if obj.assignExternalReviewer3 is not None and obj.invitEmail3 is None and obj.acceptInvit3 is None:
-        para = creatPara()
-        url = '%s/@@inviteReview?para=%s' % (portal.absolute_url(), para)
-        email = obj.assignExternalReviewer3.to_object.email
-        obj.invitEmail3 = para
-        sendMail(obj=obj,url=url, email=email)
-
-    obj.reindexObject()
-
-
 def notifyInternalReviewer(emailList=[], article=None, event=None):
 #    newState = event.new_state.getId()
 #    oldState = event.old_state.getId()

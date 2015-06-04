@@ -1,6 +1,6 @@
 <tal:reviewcomment define="selfBrain python:view.getView.getSelfBrain();
                            results python:{'modifyThenReview':'修改後再審', 'accepted':'建議推薦', 'rejected':'不予推薦',
-                                           'reSubmitted':'重新送審'}"
+                                           'reSubmitted':'重新送審', 'internalAssigned':'委員審查中'}"
                    condition="python:'Super Editor' in view.getView.getRoles()"
  i18n:domain="ntpu.content">
   <br>
@@ -13,7 +13,8 @@
   <div tal:condition="context/assignExternalReviewer1">
     <p><strong>審查進度/結果:</strong><span tal:content="python:results[selfBrain.review_state]"/></p>
     <p><strong>附加檔案:</strong>
-       <a tal:content="context/reviewFeedback/filename"
+       <a tal:condition="exists:context/reviewFeedback/filename"
+          tal:content="context/reviewFeedback/filename"
           tal:attributes="href string:${context/absolute_url}/@@download/reviewFeedback/${context/reviewFeedback/filename}"/>
 
     </p>
