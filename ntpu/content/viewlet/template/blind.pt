@@ -20,10 +20,9 @@
     <h3 i18n:translate="">Author Information</h3>
 <br>
 
-
     <div tal:condition="python:context.authors != None">
-      <tal:repeat define="brain view/getView/getSelfBrain"
-                  repeat="author brain/authorsInformation">
+      <tal:repeat define="article python:view.getView.getSelfBrain()"
+                  repeat="author article/authorsInformation">
         <p>
           <strong i18n:translate="">Name(Chinese): </strong>
           <span tal:content="python:author['authorNameC']" />
@@ -63,7 +62,6 @@
           <strong i18n:translate="">Phone: </strong>
           <span tal:content="python:author['phone']" />
         </p>
-
 <hr>
 
       </tal:repeat>
