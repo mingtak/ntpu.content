@@ -35,6 +35,12 @@ class ReviewConfirm(grok.View):
                     context.reindexObject()
                     redirect(context.absolute_url())
                     return
+                if not context.scoreR1Q1 or not context.scoreR1Q2 or not context.scoreR1Q3 or not context.scoreR1Q4:
+                    api.portal.show_message(message=_(u'No Review score yet.'), request=request, type='error')
+                    context.reviewConfirm1 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
 
                 context.reviewConfirm1 = True
                 api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
@@ -48,6 +54,13 @@ class ReviewConfirm(grok.View):
                     context.reindexObject()
                     redirect(context.absolute_url())
                     return
+                if not context.scoreR2Q1 or not context.scoreR2Q2 or not context.scoreR2Q3 or not context.scoreR2Q4:
+                    api.portal.show_message(message=_(u'No Review score yet.'), request=request, type='error')
+                    context.reviewConfirm1 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
+
                 context.reviewConfirm2 = True
                 api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
 
@@ -60,6 +73,13 @@ class ReviewConfirm(grok.View):
                     context.reindexObject()
                     redirect(context.absolute_url())
                     return
+                if not context.scoreR3Q1 or not context.scoreR3Q2 or not context.scoreR3Q3 or not context.scoreR3Q4:
+                    api.portal.show_message(message=_(u'No Review score yet.'), request=request, type='error')
+                    context.reviewConfirm1 = None
+                    context.reindexObject()
+                    redirect(context.absolute_url())
+                    return
+
                 context.reviewConfirm3 = True
                 api.portal.show_message(message=_(u'Successfully submitted for review.'), request=request, type='info')
 
@@ -78,6 +98,7 @@ class DownloadFile(grok.View):
         context.downloadCount += 1
         response = context.REQUEST.response
         string = '%s/@@download/attachFile/%s' % (context.absolute_url(), context.attachFile.filename)
+        string = string.encode('utf-8')
         response.redirect(string)
 
 
@@ -100,7 +121,7 @@ class InviteReview(grok.View):
         head = """
                <html><body><p>
                  <strong>敬愛的教授</strong>您好:<br>
-                   這裏是運動研究期刊編輯部, 有一份關接受擔任審查委員的邀請通知如下:<br>
+                   這裏是臺北市立大學研發處學術出版組, 有一份關接受擔任審查委員的邀請通知如下:<br>
                  <p>
                """
         tail = """
@@ -111,7 +132,7 @@ class InviteReview(grok.View):
         mailBody = MIMEText("%s%s%s%s" % (head, urlTag, accepter, tail), 'html', 'utf-8')
         api.portal.send_email(
             recipient=email,
-            subject='運動研究期刊編輯部:接受擔任審查委員通知信件',
+            subject='臺北市立大學研發處學術出版組:接受擔任審查委員通知信件',
             body='%s' % mailBody.as_string()
         )
 
@@ -122,7 +143,7 @@ class InviteReview(grok.View):
         head = """
                <html><body><p>
                  <strong>敬愛的教授</strong>您好:<br>
-                   這裏是運動研究期刊編輯部, 有一份關於拒絕擔任審查委員的邀請通知如下:<br>
+                   這裏是臺北市立大學研發處學術出版組, 有一份關於拒絕擔任審查委員的邀請通知如下:<br>
                  <p>
                """
         tail = """
@@ -133,7 +154,7 @@ class InviteReview(grok.View):
         mailBody = MIMEText("%s%s%s%s" % (head, urlTag,rejecter, tail), 'html', 'utf-8')
         api.portal.send_email(
             recipient=email,
-            subject='運動研究期刊編輯部:拒絕擔任審查委員通知信件',
+            subject='臺北市立大學研發處學術出版組:拒絕擔任審查委員通知信件',
             body='%s' % mailBody.as_string()
         )
 
