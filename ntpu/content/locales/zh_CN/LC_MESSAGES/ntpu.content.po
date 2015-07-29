@@ -632,6 +632,7 @@ msgstr "加彭"
 msgid "Gambia"
 msgstr "冈比亚"
 
+#. Default: "GGGGG"
 #: ./profile.py:82
 msgid "Gender"
 msgstr "性别"

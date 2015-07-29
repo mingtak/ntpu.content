@@ -80,8 +80,12 @@
          tal:content="context/attachFile/filename" />
 </div>
 
-
-
+<div tal:condition="context/commentReply">
+      <strong i18n:translate="">commentReply:</strong>
+      <a tal:attributes="href string:${context/absolute_url}/@@download/commentReply/${context/commentReply/filename}"
+         tal:content="context/commentReply/filename" />
+</div>
+<br/>
 <div>
       <strong i18n:translate="">Image:</strong><br>
       <tal:image repeat="image python:range(10)">

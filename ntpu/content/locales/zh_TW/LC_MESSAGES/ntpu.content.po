@@ -632,6 +632,7 @@ msgstr "加彭"
 msgid "Gambia"
 msgstr "岡比亞"
 
+#. Default: "GGGGG"
 #: ./profile.py:82
 msgid "Gender"
 msgstr "性別"
@@ -1208,7 +1209,7 @@ msgstr "審查意見"
 
 #: ./viewlet/template/editOrReview.pt:27
 msgid "Review Confirm"
-msgstr "提交審查"
+msgstr "提交審查結果"
 
 #: ./article.py:69
 msgid "Review State"

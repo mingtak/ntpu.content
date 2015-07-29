@@ -66,4 +66,18 @@ def retract(item, event):
         item.externalReviewerComment3 = None
         item.reviewCommentAttached3 = None
         item.reviewConfirm3 = None
+        item.reviewFeedback = None
+        item.scoreR1Q1 = None
+        item.scoreR1Q2 = None
+        item.scoreR1Q3 = None
+        item.scoreR1Q4 = None
+        item.scoreR2Q1 = None
+        item.scoreR2Q2 = None
+        item.scoreR2Q3 = None
+        item.scoreR2Q4 = None
+        item.scoreR3Q1 = None
+        item.scoreR3Q2 = None
+        item.scoreR3Q3 = None
+        item.scoreR3Q4 = None
+
         item.reindexObject()

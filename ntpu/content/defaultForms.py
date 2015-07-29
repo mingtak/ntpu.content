@@ -50,6 +50,10 @@ class ArticleEditForm(DefaultEditForm):
                 group.fields.get(fieldName).field.description = description
                 return
 
+    def removeFields(self, fieldList=[]):
+        for f_name in fieldList:
+            remove(self, f_name)
+
     def dropFieldSet(self, label):
         for group in self.groups:
             if label == group.label:
@@ -122,29 +126,25 @@ class ArticleEditForm(DefaultEditForm):
 
         if articleItem.assignExternalReviewer3 is not None and articleItem.acceptInvit3 != False:
             label = "Review State"
-            keys = ['assignExternalReviewer1']
+            keys = ['assignExternalReviewer3']
             self.hiddenFields(label=label, mode="display", keys=keys)
 
         if currentUserId != reviewer_1_id:
-            label = "Review State"
-            keys = ['acceptOrReject1',
-                    'externalReviewerComment1',
-                    'reviewCommentAttached1',]
-            self.hiddenFields(label=label, mode="hidden", keys=keys)
+#            label = "Review State"
+            keys = ['acceptOrReject1', 'externalReviewerComment1', 'reviewCommentAttached1',
+                'IScoreTable.scoreR1Q1', 'IScoreTable.scoreR1Q2', 'IScoreTable.scoreR1Q3', 'IScoreTable.scoreR1Q4',]
+            self.removeFields(fieldList=keys)
 
         if currentUserId != reviewer_2_id:
-            label = "Review State"
-            keys = ['acceptOrReject2',
-                    'externalReviewerComment2',
-                    'reviewCommentAttached2',]
-            self.hiddenFields(label=label, mode="hidden", keys=keys)
+            keys = ['acceptOrReject2', 'externalReviewerComment2', 'reviewCommentAttached2',
+                'IScoreTable.scoreR2Q1', 'IScoreTable.scoreR2Q2', 'IScoreTable.scoreR2Q3', 'IScoreTable.scoreR2Q4',]
+            self.removeFields(fieldList=keys)
 
         if currentUserId != reviewer_3_id:
             label = "Review State"
-            keys = ['acceptOrReject3',
-                    'externalReviewerComment3',
-                    'reviewCommentAttached3',]
-            self.hiddenFields(label=label, mode="hidden", keys=keys)
+            keys = ['acceptOrReject3', 'externalReviewerComment3', 'reviewCommentAttached3',
+                'IScoreTable.scoreR3Q1', 'IScoreTable.scoreR3Q2', 'IScoreTable.scoreR3Q3', 'IScoreTable.scoreR3Q4',]
+            self.removeFields(fieldList=keys)
 
         if articleItem.reviewConfirm1 is None or articleItem.reviewConfirm2 is None:
             label = "Review State"
