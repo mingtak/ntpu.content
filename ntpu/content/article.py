@@ -95,6 +95,13 @@ class IArticle(form.Schema, IImageScaleTraversable):
                 'reviewConfirm3',],
     )
 
+    dexterity.write_permission(sn='ntpu.content.IsSiteAdministrator')
+    dexterity.read_permission(sn='ntpu.content.IsSiteAdministrator')
+    sn = schema.Int(
+        title=_('sn'),
+        required=False,
+    )
+
     dexterity.write_permission(blindSetup='ntpu.content.IsSuperEditor')
     dexterity.read_permission(blindSetup='ntpu.content.IsSuperEditor')
     blindSetup = schema.Choice(
@@ -114,7 +121,8 @@ class IArticle(form.Schema, IImageScaleTraversable):
         source=availableInternalReviewer,
 #        vocabulary=u"plone.principalsource.Users",
         default=None,
-        required=True,
+#        required=True,
+        required=False,
     )
 
     dexterity.write_permission(reviewFeedback='ntpu.content.IsInternalReviewer')
@@ -832,7 +840,7 @@ def authorsInformation_indexer(obj):
         selfBrain = selfBrain[0]
         ownerId = obj.owner_info()['id']
         currentUserId = api.user.get_current().getId()
-        if ownerId != currentUserId:
+        if ownerId != currentUserId and 'Site Administrator' not in api.user.get_roles():
             return selfBrain.authorsInformation
 
     result = []
