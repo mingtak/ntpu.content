@@ -26,7 +26,7 @@
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/> -->
     <element value="ntpu.behavior.attachedfile.IAttachedFile" />
     <element value="funlog.behavior.namedfromtimestamp.INamedFromTimeStamp" />
-<!--    <element value="ntpu.behavior.scoretable.IScoreTable" /> -->
+    <element value="ntpu.behavior.scoretable.IScoreTable" />
   </property>
 
   <!-- View information -->
