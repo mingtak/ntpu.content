@@ -18,7 +18,7 @@ def notifyChangeReviewState(emailList=[], article=None, event=None):
     head = """
            <html><body><p>
              <strong>您好:</strong><br>
-               這裏是運動研究期刊編輯部, 有一份關於稿件新的狀態更新通知您:<br>
+               這裏是臺北市立大學研發處學術出版組, 有一份關於稿件新的狀態更新通知您:<br>
              <p>
            """
     tail = """
@@ -32,7 +32,7 @@ def notifyChangeReviewState(emailList=[], article=None, event=None):
     for siteAdmin in emailList:
         api.portal.send_email(
             recipient=siteAdmin[1],
-            subject='%s 您好，運動研究期刊:投搞狀態更新通知' % siteAdmin[0],
+            subject='%s 您好，臺北市立大學研發處學術出版組:投搞狀態更新通知' % siteAdmin[0],
             body='%s' % mailBody.as_string(),
         )
 
@@ -47,8 +47,8 @@ def getEmailList(item, event, groups):
         emailList.append([profile.Title, profile.email])
     return emailList
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToSiteAdministrator(item, event):
     if event.old_state.getId() == event.new_state.getId():
         return
@@ -57,8 +57,8 @@ def mailToSiteAdministrator(item, event):
         return
     notifyChangeReviewState(emailList=emailList, article=item, event=event)
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToSuperEditor(item, event):
     if event.new_state.getId() not in ['accepted', 'rejected', 'inReview']:
         return
@@ -67,8 +67,8 @@ def mailToSuperEditor(item, event):
         return
     notifyChangeReviewState(emailList=emailList, article=item, event=event)
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToInternalReviewer(item, event):
     #要寄的條件寫在這裏
     if event.new_state.getId() not in ['internalAssigned']:
@@ -78,8 +78,8 @@ def mailToInternalReviewer(item, event):
         return
     notifyChangeReviewState(emailList=emailList, article=item, event=event)
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToExternalReviewer(item, event):
     #要寄的條件寫在這裏
     if event.new_state.getId() != 'retrial':
@@ -113,8 +113,8 @@ def mailToExternalReviewer(item, event):
     item.reindexObject()
     notifyChangeReviewState(emailList=emailList, article=item, event=event)
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def mailToOwner(item, event):
     #要寄的條件寫在這裏
     if event.old_state.getId() == event.new_state.getId():
@@ -130,8 +130,8 @@ def mailToOwner(item, event):
     notifyChangeReviewState(emailList=emailList, article=item, event=event)
     return
 
-
-@grok.subscribe(IArticle, IAfterTransitionEvent)
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
 def retractToOwner(item, event):
     #退件寄信給作者
     if event.transition is None:
@@ -144,7 +144,7 @@ def retractToOwner(item, event):
     head = """
            <html><body><p>
              <strong>您好:</strong><br>
-               這裏是運動研究期刊編輯部, 有一份關於稿件的退稿通知:<br>
+               這裏是臺北市立大學研發處學術出版組, 有一份關於稿件的退稿通知:<br>
              <p>
            """
     tail = """
@@ -164,9 +164,23 @@ def retractToOwner(item, event):
 
     api.portal.send_email(
         recipient=profile.email,
-        subject=u'%s 您好，運動研究期刊:投搞狀態更新通知' % profile.myName,
+        subject=u'%s 您好，臺北市立大學研發處學術出版組:投搞狀態更新通知' % profile.myName,
         body='%s' % mailBody.as_string(),
     )
 
+    item.retractReason = None
+    item.reindexObject()
     return
 
+
+# 暫關event, 20150716
+#@grok.subscribe(IArticle, IAfterTransitionEvent)
+def notifySubmiitedSuccess(item, event):
+    #提交成功訊息
+    request = item.REQUEST
+    if event.transition is None:
+        return
+    if event.transition.getId() != 'submitting':
+        return
+    
+    api.portal.show_message(message=_('您的稿件已提交成功.'), request=request)
