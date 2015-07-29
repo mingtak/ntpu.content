@@ -25,6 +25,26 @@ currentState = api.content.get_state(context)
 <!-- 責編 -->
 <tal:review condition="python:'Internal Reviewer' in view.getView.getRoles() and
                               view.getView.getReviewState() in ['internalAssigned', 'retrial']" >
+<?python
+if context.reviewConfirm1 and context.reviewConfirm2 and not context.assignExternalReviewer3:
+    review_confirm = "ok_1_2"
+elif context.reviewConfirm1 and context.reviewConfirm2 and context.assignExternalReviewer3 and not context.reviewConfirm3:
+    review_confirm = "ok_1_2_not_3"
+elif context.reviewConfirm1 and context.reviewConfirm2 and context.assignExternalReviewer3 and context.reviewConfirm3:
+    review_confirm = "ok_1_2_3"
+else:
+    review_confirm = None
+?>
+<tal:result switch="review_confirm">
+    <span tal:case="string:ok_1_2">
+        審查委員已完成審查，請點選「審查」上傳審查意見或指定第三位審查委員
+    </span>
+    <span tal:case="string:ok_1_2_3">
+        所有審查委員均已完成審查，請點選「審查」上傳審查意見
+    </span>
+    <span tal:case="default">尚未完成審查
+    </span>
+</tal:result>
   <a href="./edit" i18n:translate="">Review</a>
 </tal:review>
 
@@ -35,16 +55,18 @@ currentState = api.content.get_state(context)
   <a href="./edit" i18n:translate="">Review</a>
 </tal:review>
 
+<!-- 自已的不能送　-->
 <tal:review condition="python:'External Reviewer' in view.getView.getRoles() and
                               view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
                               not bool(view.getView.checkReviewConfirm())" >
-  <a tal:attributes="href string:${context/absolute_url}/@@reviewConfirm" i18n:translate="">Review Confirm</a>
+||  <a tal:attributes="href string:${context/absolute_url}/@@reviewConfirm" i18n:translate="">Review Confirm</a>
 </tal:review>
 
+<!-- 編輯助理 -->
 <tal:edit condition="python:'Site Administrator' in view.getView.getRoles()" >
 <tal:check condition="python:view.getView.getSelfBrain().review_state in ['submitted']">
 ||  <a href="./edit">型式審</a>
-||  <a href="./content_status_modify?workflow_action=toInReview">送至主編</a>
+||  <a href="./content_status_modify?workflow_action=toInReview">提交主編</a>
 </tal:check>
 <tal:check condition="python:view.getView.getSelfBrain().review_state in ['reSubmitted']">
 ||  <a href="./edit">型式審</a>
@@ -65,8 +87,6 @@ currentState = api.content.get_state(context)
 ||  <a href="./content_status_modify?workflow_action=toReSubmitted">重新提交</a>
 </tal:check>
 </tal:edit>
-
-
 
 <tal:review_result condition="python:bool(context.reviewFeedback) and
                                      view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
