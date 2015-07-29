@@ -12,6 +12,7 @@
 
 <h3>稿件列表</h3>
 <div tal:define="brain view/brain" tal:repeat="item brain">
+<strong>序號:</strong><span tal:content="python:item.getObject().sn" /><br>
 <strong>案名(中文):</strong><span tal:content="item/articleTitleC"/><br>
 <strong>案名(En):</strong><span tal:content="item/articleTitleE"/><br>
 <a tal:attributes="href item/getURL">...Detail</a><br>
