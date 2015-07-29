@@ -1,5 +1,4 @@
-
-<tal:blind condition="python:bool(context.blindSetup) or
+<tal:blind condition="python:(bool(context.blindSetup) and 'InternalReviewer' in view.getView.getRoles()) or
                              view.getView.getCurrent().getId() == context.owner_info()['id'] or
                              'Site Administrator' in view.getView.getRoles() or
                              'Super Editor' in view.getView.getRoles()"

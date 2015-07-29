@@ -74,15 +74,15 @@
                     tal:attributes="class python:show_border and 'documentEditable' or ''">
 
 <!-- tal:checkroles 註解掉就大家都看得到 editbar -->
-<!-- <tal:checkroles define="roles context/@@get_roles"
+<tal:checkroles define="roles context/@@get_roles"
                 condition="python:'Manager' in roles or 'Site Administrator' in roles"
                 on-error="nothing">
--->
+
                     <div id="edit-bar"
                         tal:condition="show_border"
                         tal:content="structure provider:plone.contentviews" />
-<!-- </tal:checkroles>
--->
+</tal:checkroles>
+
                     <div metal:use-macro="context/global_statusmessage/macros/portal_message">
                      Status message
                     </div>

@@ -126,7 +126,7 @@ class InviteReview(grok.View):
                """
         tail = """
                <hr>
-               <p>本郵件由系統直接發出，請勿直接回覆本信件，若有相關疑問，請與本刊聯絡，電話:02-XXXXXXXX</p>
+               <p>本郵件由系統直接發出，請勿直接回覆本信件，若有相關疑問，請與本刊聯絡，電話:（02）2871-8288轉7808 陸小姐</p>
                </body></html>
                """
         mailBody = MIMEText("%s%s%s%s" % (head, urlTag, accepter, tail), 'html', 'utf-8')
@@ -148,7 +148,7 @@ class InviteReview(grok.View):
                """
         tail = """
                <hr>
-               <p>本郵件由系統直接發出，請勿直接回覆本信件，若有相關疑問，請與本刊聯絡，電話:02-XXXXXXXX</p>
+               <p>本郵件由系統直接發出，請勿直接回覆本信件，若有相關疑問，請與本刊聯絡，電話:（02）2871-8288轉7808 陸小姐</p>
                </body></html>
                """
         mailBody = MIMEText("%s%s%s%s" % (head, urlTag,rejecter, tail), 'html', 'utf-8')
