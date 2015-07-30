@@ -28,7 +28,7 @@ def checkReviewFeedback(item, event):
     if event.new_state.getId() != 'modifyThenReview':
         return
 
-    if item.reviewFeedback is not None:
+    if item.reviewFeedback or item.reviewFeedbackText:
         return
 
     message = _(u"must be upload review feedback comment file")
