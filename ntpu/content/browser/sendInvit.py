@@ -13,6 +13,7 @@ from ntpu.content.event.modifiedArticle import creatPara, sendMail
 
 from zope.event import notify
 from zope.lifecycleevent import ObjectModifiedEvent
+from datetime import datetime
 
 from ntpu.content import MessageFactory as _
 
@@ -30,7 +31,9 @@ class SendInvite(grok.View):
         request = context.REQUEST
         response = context.REQUEST.response
         reviewer = request['reviewer']
+        date = safe_unicode(datetime.now().strftime('%Y / %m / %d'))
 
+        log = ''
         if reviewer == "assignExternalReviewer1":
             assignExternalReviewer1 = context.assignExternalReviewer1
             invitEmail1 = context.invitEmail1
@@ -38,6 +41,7 @@ class SendInvite(grok.View):
             para = creatPara()
             email = context.assignExternalReviewer1.to_object.email
             context.invitEmail1 = para
+            log = '%s : send invit mail to %s' % (safe_unicode(date), safe_unicode(context.assignExternalReviewer1.to_object.myName))
 
         if reviewer == "assignExternalReviewer2":
             assignExternalReviewer2 = context.assignExternalReviewer2
@@ -46,6 +50,7 @@ class SendInvite(grok.View):
             para = creatPara()
             email = context.assignExternalReviewer2.to_object.email
             context.invitEmail2 = para
+            log = '%s : send invit mail to %s' % (safe_unicode(date), safe_unicode(context.assignExternalReviewer2.to_object.myName))
 
         if reviewer == "assignExternalReviewer3":
             assignExternalReviewer3 = context.assignExternalReviewer3
@@ -54,6 +59,15 @@ class SendInvite(grok.View):
             para = creatPara()
             email = context.assignExternalReviewer3.to_object.email
             context.invitEmail3 = para
+            log = '%s : send invit mail to %s' % (safe_unicode(date), safe_unicode(context.assignExternalReviewer3.to_object.myName))
+
+        if log and obj.logText:
+            obj.logText += '%s <br/>' % log
+        elif log:
+            obj.logText = '%s <br/>' % log
+
+
+
 
         url = '%s/@@inviteReview?para=%s' % (portal.absolute_url(), para)
         sendMail(obj=context, url=url, email=email)

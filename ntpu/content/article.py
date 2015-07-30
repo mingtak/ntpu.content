@@ -515,6 +515,12 @@ class IArticle(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    form.omitted('logText')
+    logText = schema.Text(
+        title=_(u'Log'),
+        required=False,
+    )
+
     @invariant
     def checkAuthor(data):
         portal = api.portal.get()
