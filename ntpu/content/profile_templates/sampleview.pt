@@ -75,6 +75,7 @@
 
 
 <!-- 個人桌面 -->
+<br />
     <h2 i18n:translate="">Personal Desktop</h2>
     <div tal:define="catalog python:context.portal_catalog;
                      items python:catalog({'Type':'Article', 'Creator':context.owner_info()['id']}, sort_on='created', sort_order='reverse')"

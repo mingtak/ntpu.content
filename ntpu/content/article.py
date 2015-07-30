@@ -71,6 +71,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
         fields=['blindSetup',
                 'assignInternalReviewer',
                 'retractReason',
+                'reviewFeedbackText',
                 'reviewFeedback',
                 'assignExternalReviewer1',
                 'invitEmail1',
@@ -97,6 +98,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
 
     dexterity.write_permission(sn='ntpu.content.IsSiteAdministrator')
     dexterity.read_permission(sn='ntpu.content.IsSiteAdministrator')
+    form.mode(sn='hidden')
     sn = schema.Int(
         title=_('sn'),
         required=False,
@@ -122,6 +124,14 @@ class IArticle(form.Schema, IImageScaleTraversable):
 #        vocabulary=u"plone.principalsource.Users",
         default=None,
 #        required=True,
+        required=False,
+    )
+
+    dexterity.write_permission(reviewFeedbackText='ntpu.content.IsInternalReviewer')
+#    dexterity.read_permission(assignExternalReviewer1='ntpu.content.IsInternalReviewer')
+#    form.mode(reviewFeedback='hidden')
+    reviewFeedbackText = schema.Text(
+        title=_(u'Review comment file'),
         required=False,
     )
 
@@ -161,7 +171,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     dexterity.write_permission(acceptInvit1='ntpu.content.IsExternalReviewer')
-    form.mode(acceptInvit1='hidden')
+    form.omitted('acceptInvit1')
     acceptInvit1 = schema.Bool(
         title=_(u'Accept invitation'),
         description=_(u'Accept the invitation to review'),
@@ -219,7 +229,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     dexterity.write_permission(acceptInvit2='ntpu.content.IsExternalReviewer')
-    form.mode(acceptInvit2='hidden')
+    form.omitted('acceptInvit2')
     acceptInvit2 = schema.Bool(
         title=_(u'Accept invitation'),
         description=_(u'Accept the invitation to review'),
@@ -277,7 +287,7 @@ class IArticle(form.Schema, IImageScaleTraversable):
     )
 
     dexterity.write_permission(acceptInvit3='ntpu.content.IsExternalReviewer')
-    form.mode(acceptInvit3='hidden')
+    form.omitted('acceptInvit3')
     acceptInvit3 = schema.Bool(
         title=_(u'Accept invitation'),
         description=_(u'Accept the invitation to review'),
@@ -880,3 +890,8 @@ def reviewConfirm3_indexer(obj):
 grok.global_adapter(reviewConfirm3_indexer, name='reviewConfirm3')
 
 # reviewConfirm[1,2,3] catalog begin
+
+@indexer(IArticle)
+def sn_indexer(obj):
+    return obj.sn
+grok.global_adapter(sn_indexer, name='sn')

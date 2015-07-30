@@ -19,7 +19,15 @@
   <index name="articleTitle" meta_type="KeywordIndex">
     <indexed_attr value="articleTitle" />
   </index>
+
+  <index name="articleTitleC" meta_type="FieldIndex">
+    <indexed_attr value="articleTitleC" />
+  </index>
   <column value="articleTitleC"/>
+
+  <index name="articleTitleE" meta_type="FieldIndex">
+    <indexed_attr value="articleTitleE" />
+  </index>
   <column value="articleTitleE"/>
 
   <index name="keywords" meta_type="KeywordIndex">
@@ -105,6 +113,11 @@
   <column value="abstract" />
 
   <column value="engAbstract" />
+
+  <index name="sn" meta_type="FieldIndex">
+    <indexed_attr value="sn" />
+  </index>
+  <column value="sn"/>
 
 </object>
 

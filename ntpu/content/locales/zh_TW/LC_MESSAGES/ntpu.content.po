@@ -1088,7 +1088,7 @@ msgstr "巴拉圭"
 
 #: ./profile_templates/sampleview.pt:78
 msgid "Personal Desktop"
-msgstr "個人桌面"
+msgstr "您的所有稿件："
 
 #: ./profile_templates/sampleview.pt:15
 msgid "Personal informat"

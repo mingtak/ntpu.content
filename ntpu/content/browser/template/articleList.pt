@@ -10,15 +10,15 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="content-core">
 
-<h3>稿件列表</h3>
+<h2>稿件列表</h2><br/>
 <div tal:define="brain view/brain" tal:repeat="item brain">
-<strong>序號:</strong><span tal:content="python:item.getObject().sn" /><br>
-<strong>案名(中文):</strong><span tal:content="item/articleTitleC"/><br>
-<strong>案名(En):</strong><span tal:content="item/articleTitleE"/><br>
-<a tal:attributes="href item/getURL">...Detail</a><br>
-<br>
+<strong>序號:</strong><span tal:content="python:item.getObject().sn" /><br/>
+<strong>案名(中文):</strong><span tal:content="item/articleTitleC"/><br/>
+<strong>案名(En):</strong><span tal:content="item/articleTitleE"/><br/>
+<a tal:attributes="href item/getURL">...Detail</a><br/>
+<br/>
 </div>
-
+<hr />
 
 
   </metal:content-core>

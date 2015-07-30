@@ -1,3 +1,5 @@
+<tal:check_to_show condition="python:'@@' not in context.REQUEST['URL'] and '++'not in context.REQUEST['URL']">
+
 <!-- 管理員桌面 -->
 
 <tal:admin define="roles context/@@get_roles;
@@ -5,6 +7,7 @@
            condition="python:'Site Administrator' in roles or 'Manager' in roles"
  i18n:domain="ntpu.content">
 
+<br/>
     <h3 i18n:translate="">Article Statistics</h3>
 
 
@@ -26,3 +29,5 @@
     </tal:repeat>
 <br><hr>
 </tal:admin>
+
+</tal:check_to_show>

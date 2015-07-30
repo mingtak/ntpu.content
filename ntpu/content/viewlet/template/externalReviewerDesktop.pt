@@ -1,3 +1,4 @@
+<tal:check_to_show condition="python:'@@' not in context.REQUEST['URL'] and '++'not in context.REQUEST['URL']">
 <!-- 審查委員桌面 -->
 <tal:admin define="roles context/@@get_roles;
                    currentUserId context/getCurrentUserId;
@@ -5,6 +6,7 @@
            condition="python:'External Reviewer' in roles"
  i18n:domain="ntpu.content">
 
+<br/>
     <h3 i18n:translate="">Article Statistics</h3>
 
 
@@ -18,3 +20,4 @@
 
 <br><hr>
 </tal:admin>
+</tal:check_to_show>

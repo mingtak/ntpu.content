@@ -1,0 +1,28 @@
+<tal:check_to_show condition="python:'@@' not in context.REQUEST['URL'] and '++'not in context.REQUEST['URL']">
+
+<br/>
+<h3>已建立作者名單</h3>
+
+<h5>提醒您，投稿前必需先建立作者資訊，若尚未建立，請點選
+    <a tal:attributes="href string:${context/absolute_url}/++add++ntpu.content.author">新增作者</a>
+</h5>
+<br/>
+<div tal:define="children context/getChildNodes" tal:repeat="child children">
+<tal:checkType condition="python:child.Type() == 'Author'">
+  <p><strong>姓名: </strong><span tal:replace="child/authorNameC"></span></p>
+  <p><strong>姓名(en): </strong><span tal:replace="child/authorNameE"></span></p>
+  <p><strong>所屬機關: </strong><span tal:replace="child/institutionC"></span></p>
+  <p><strong>所屬機關(en): </strong><span tal:replace="child/institutionE"></span></p>
+  <p><strong>職稱: </strong><span tal:replace="child/titleC"></span></p>
+  <p><strong>職稱(en)(en): </strong><span tal:replace="child/titleE"></span></p>
+  <p><strong>email: </strong><span tal:replace="child/email"></span></p>
+  <p><strong>電話: </strong><span tal:replace="child/phone"></span></p>
+  <p><a tal:attributes="href string:${child/absolute_url}/edit">修改作者資訊</a></p>
+  <br/>
+</tal:checkType>
+
+
+</div>
+<hr/>
+
+</tal:check_to_show>

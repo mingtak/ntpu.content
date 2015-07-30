@@ -10,14 +10,16 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="content-core">
 
-<h3>稿件列表</h3>
+<h2>稿件列表</h2><br/>
 <tal:check condition="python:getattr(context.REQUEST, 'state', None) == 'waitingAssignEx'">
 <div tal:define="brain view/waitingAssignEx" tal:repeat="item brain">
-<strong>案名(中文):</strong><span tal:content="item/articleTitle"/><br>
-<strong>案名(En):</strong><span tal:content="item/engTitle"/><br>
-<a tal:attributes="href item/absolute_url">...Detail</a><br>
-<br>
+<strong>案名(中文):</strong><span tal:content="item/articleTitle"/><br/>
+<strong>案名(En):</strong><span tal:content="item/engTitle"/><br/>
+<a tal:attributes="href item/absolute_url">...Detail</a><br/>
+<br/>
 </div>
+<br />
+<hr />
 </tal:check>
 
 <tal:check condition="python:getattr(context.REQUEST, 'state', None) == 'waitingForReview'">

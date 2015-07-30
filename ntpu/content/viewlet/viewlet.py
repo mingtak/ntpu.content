@@ -12,6 +12,20 @@ from plone import api
   viewlet named rule: Function_ViewletManager_ContextInterface
 """
 
+class AuthorList_IBelowContent_IProfile(grok.Viewlet):
+    grok.viewletmanager(IBelowContent)
+    grok.context(IProfile)
+    grok.require('cmf.AddPortalContent')
+    template = ViewPageTemplateFile('template/authorList.pt')
+    def render(self):
+        self.getView = api.content.get_view(
+            name='view',
+            context=self.context,
+            request=self.context.REQUEST,
+        )
+        return self.template()
+
+
 class Blind_IBelowContentBody_IArticle(grok.Viewlet):
     grok.viewletmanager(IBelowContentBody)
     grok.context(IArticle)
@@ -29,6 +43,7 @@ class Blind_IBelowContentBody_IArticle(grok.Viewlet):
 class AdminDesktop_IBelowContent_IProfile(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IProfile)
+    grok.require('cmf.AddPortalContent')
     template = ViewPageTemplateFile('template/adminDesktop.pt')
 
     def render(self):
@@ -43,6 +58,7 @@ class AdminDesktop_IBelowContent_IProfile(grok.Viewlet):
 class SuperEditorDesktop_IBelowContent_IProfile(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IProfile)
+    grok.require('cmf.AddPortalContent')
     template = ViewPageTemplateFile('template/superEditorDesktop.pt')
 
     def render(self):
@@ -57,6 +73,7 @@ class SuperEditorDesktop_IBelowContent_IProfile(grok.Viewlet):
 class ExternalReviewerDesktop_IBelowContent_IProfile(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IProfile)
+    grok.require('cmf.AddPortalContent')
     template = ViewPageTemplateFile('template/externalReviewerDesktop.pt')
 
     def render(self):
@@ -86,6 +103,7 @@ class ExternalReviewerDesktop_IBelowContent_IProfile(grok.Viewlet):
 class InternalReviewerDesktop_IBelowContent_IProfile(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IProfile)
+    grok.require('cmf.AddPortalContent')
     template = ViewPageTemplateFile('template/internalReviewerDesktop.pt')
 
     def reviewStateCount(self):

@@ -184,3 +184,51 @@ def notifySubmiitedSuccess(item, event):
         return
     
     api.portal.show_message(message=_('您的稿件已提交成功.'), request=request)
+
+
+@grok.subscribe(IArticle, IAfterTransitionEvent)
+def give_sn(item, event):
+    if event.transition is None:
+        return
+    if event.transition.getId() != 'submitting':
+        return
+
+    catalog = item.portal_catalog
+    brain = catalog({'Type':'Article'}, sort_on='sn', sort_order='reverse')
+    if not brain[0].sn:
+        item.sn = 1
+    else:
+        item.sn = brain[0].sn + 1
+    item.reindexObject()
+
+
+@grok.subscribe(IArticle, IAfterTransitionEvent)
+def check_same_title(item, event):
+    if event.transition is None:
+        return
+    if event.transition.getId() != 'submitting':
+        return
+
+    request = item.REQUEST
+    catalog = item.portal_catalog
+    brain = catalog({'Type':'Article',
+                     'articleTitleC':item.articleTitle,
+                     'articleTitleE':item.engTitle,
+                     'review_state':[
+                         'accepted',
+                         'inReview',
+                         'internalAssigned',
+                         'modifyThenReview',
+                         'reSubmitted',
+                         'rejected',
+                         'retrial',
+                         'submitted']},
+                    sort_on='sn', sort_order='reverse')
+
+    if len(brain) > 1:
+        with api.env.adopt_roles(['Site Administrator', 'Manager']):
+            item.sn = None
+            api.portal.show_message(message=u'你有一份同名稿件已經投稿待審，請勿重複投搞.', request=request, type='warning')
+            api.content.transition(obj=item, transition='retract')
+            item.reindexObject()
+

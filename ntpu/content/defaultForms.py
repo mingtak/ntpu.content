@@ -148,7 +148,7 @@ class ArticleEditForm(DefaultEditForm):
 
         if articleItem.reviewConfirm1 is None or articleItem.reviewConfirm2 is None:
             label = "Review State"
-            keys = ['assignExternalReviewer3', 'reviewFeedback']
+            keys = ['assignExternalReviewer3', 'reviewFeedback', 'reviewFeedbackText']
             self.hiddenFields(label=label, mode="hidden", keys=keys)
 
         if 'modifyThenReview' == api.content.get_state(obj=articleItem):
@@ -187,6 +187,15 @@ class ArticleEditView(DefaultEditView):
 class ArticleAddForm(DefaultAddForm):
     template = ViewPageTemplateFile('template/addForm.pt')
 
+    def changeFieldDescription(self, label, fieldName, description):
+        if self.fields.get(fieldName):
+            self.fields.get(fieldName).field.description = description
+            return
+        for group in self.groups:
+            if group.label == label:
+                group.fields.get(fieldName).field.description = description
+                return
+
     def dropFieldSet(self, label):
         for group in self.groups:
             if label == group.label:
@@ -209,6 +218,12 @@ class ArticleAddForm(DefaultAddForm):
 
         self.dropFieldSet(label='Review State')
         self.dropFieldSet(label='Score table')
+
+        self.changeFieldDescription(
+            label='Manuscript file',
+            fieldName='IAttachedFile.attachFile',
+            description=None)
+
 
         return
 
