@@ -36,12 +36,12 @@ else:
     review_confirm = None
 ?>
 <tal:result switch="review_confirm">
-    <span tal:case="string:ok_1_2">
+    <p tal:case="string:ok_1_2">
         審查委員已完成審查，請點選「審查」上傳審查意見或指定第三位審查委員
-    </span>
-    <span tal:case="string:ok_1_2_3">
+    </p>
+    <p tal:case="string:ok_1_2_3">
         所有審查委員均已完成審查，請點選「審查」上傳審查意見
-    </span>
+    </p>
     <span tal:case="default">尚未完成審查
     </span>
 </tal:result>
@@ -88,7 +88,7 @@ else:
 </tal:check>
 </tal:edit>
 
-<tal:review_result condition="python:bool(context.reviewFeedback) and
+<tal:review_result condition="python:bool(context.reviewFeedback or context.reviewFeedbackText) and
                                      view.getView.getReviewState() in ['internalAssigned', 'retrial'] and
                                      'Internal Reviewer' in view.getView.getRoles()">
 <hr>
