@@ -24,6 +24,8 @@ class ArticleList(grok.View):
     grok.name('articleList')
     grok.template('articleList')
 
+    def getRoles(self):
+        return api.user.get_roles()
 
     def update(self):
         context = self.context
@@ -87,7 +89,6 @@ class ArticleListForInter(grok.View):
                 yes += 1
             elif bool(item.assignExternalReviewer3) and not bool(item.acceptOrReject3):
                 no += 1
-#            import pdb; pdb.set_trace()
             if no > 0:
                 self.waitingForReview.append(item)
             if yes > 1 and no == 0:

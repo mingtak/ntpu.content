@@ -53,8 +53,7 @@ def notifyReviewState(article):
     )
 
 
-# 暫時不寄給作者了
-""" @grok.subscribe(IArticle, IObjectModifiedEvent) """
+@grok.subscribe(IArticle, IObjectModifiedEvent)
 def sendReviewResult(obj, event):
 #    import pdb; pdb.set_trace()
     portal = api.portal.get()

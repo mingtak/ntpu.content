@@ -40,6 +40,7 @@ def logEvent(obj, event):
 
 
     if log and obj.logText:
-        obj.logText += '%s <br/>' % log
+        if log not in obj.logText:
+            obj.logText += '%s <br/>' % log
     elif log:
         obj.logText = '%s <br/>' % log

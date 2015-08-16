@@ -4,7 +4,7 @@ from plone import api
 from zope.interface import Interface
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from email.mime.text import MIMEText
-#from Products.CMFPlone.utils import safe_unicode
+from Products.CMFPlone.utils import safe_unicode
 from ntpu.content.journal import IJournal
 from ntpu.content.article import IArticle
 from ntpu.content.profile import IProfile
@@ -61,10 +61,10 @@ class SendInvite(grok.View):
             context.invitEmail3 = para
             log = '%s : send invit mail to %s' % (safe_unicode(date), safe_unicode(context.assignExternalReviewer3.to_object.myName))
 
-        if log and obj.logText:
-            obj.logText += '%s <br/>' % log
+        if log and context.logText:
+            context.logText += '%s <br/>' % log
         elif log:
-            obj.logText = '%s <br/>' % log
+            context.logText = '%s <br/>' % log
 
 
 

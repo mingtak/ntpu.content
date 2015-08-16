@@ -15,6 +15,10 @@
 <strong>序號:</strong><span tal:content="python:item.getObject().sn" /><br/>
 <strong>案名(中文):</strong><span tal:content="item/articleTitleC"/><br/>
 <strong>案名(En):</strong><span tal:content="item/articleTitleE"/><br/>
+<tal:checkRoles condition="python:'Site Administrator' in view.getRoles()">
+  <strong>回覆結果</strong>(<span>AR:同意推薦 / AMAR:修改後同意推薦 / MR:修改後再審 / REJ:不予同意</span>):<br />
+  <span tal:content="structure python:item.getObject().logText"/><br/>
+</tal:checkRoles>
 <a tal:attributes="href item/getURL">...Detail</a><br/>
 <br/>
 </div>

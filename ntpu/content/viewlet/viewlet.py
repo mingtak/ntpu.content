@@ -197,6 +197,28 @@ class EditOrReview_IBelowContent_IArticle(grok.Viewlet):
         return self.template()
 
 
+class ReviewResultForAuthor_IBelowContent_IArticle(grok.Viewlet):
+    grok.viewletmanager(IBelowContent)
+    grok.context(IArticle)
+    template = ViewPageTemplateFile('template/reviewResultForAuthor.pt')
+
+    def currentUserId(self):
+        user = api.user.get_current()
+        if user:
+            return user.getId()
+
+    def getState(self):
+        return api.content.get_state(obj=self.context)    
+
+    def render(self):
+        self.getView = api.content.get_view(
+            name='view',
+            context=self.context,
+            request=self.context.REQUEST,
+        )
+        return self.template()
+
+
 class ReviewResultForInternalReviewer_IBelowContent_IArticle(grok.Viewlet):
     grok.viewletmanager(IBelowContent)
     grok.context(IArticle)

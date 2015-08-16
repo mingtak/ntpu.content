@@ -7,7 +7,7 @@
  i18n:domain="ntpu.content">
 
 <br/>
-    <h3>主編台：稿件進度一覽</h3>
+    <h3>主編：稿件進度一覽</h3>
 
 
     <tal:repeat repeat="state python:[['inReview','審查中'],

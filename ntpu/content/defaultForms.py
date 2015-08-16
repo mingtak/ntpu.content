@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from plone.dexterity.browser.add import DefaultAddForm, DefaultAddView
 from plone.dexterity.browser.edit import DefaultEditForm, DefaultEditView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -104,6 +105,28 @@ class ArticleEditForm(DefaultEditForm):
         if len(selfBrain) == 0:
             return
 
+#改label
+#        try:
+#            file = getattr(self.context.getLastChild(), 'file', None)
+#            import pdb; pdb.set_trace()
+#            if file:
+#                filename = getattr(file, 'filename', None)
+#                if filename:
+#嚴重錯誤，立即修復, 暫時以try處理，再觀查
+#                    import pdb; pdb.set_trace()
+#                    url = "%s/@@download/file/%s" % (self.context.getLastChild().absolute_url(), filename)
+#                    descriptionString = _(u"Current version:<a href=%s>%s</a>" % (url, filename))
+#                    self.changeFieldDescription(
+#                        label='Manuscript file',
+#                        fieldName='IAttachedFile.attachFile',
+#                        description=descriptionString)
+#        except:
+#            self.changeFieldDescription(
+#                label='Manuscript file',
+#                fieldName='IAttachedFile.attachFile',
+#                description=None)
+#改label end
+
         if 'Site Administrator' in view.getRoles():
             return
 
@@ -167,16 +190,19 @@ class ArticleEditForm(DefaultEditForm):
 
         self.hiddenModifySubmission(articleItem)
 
-        file = getattr(self.context.getLastChild(), 'file', None)
-        if file:
-            filename = getattr(file, 'filename', None)
-            if filename:
-                url = "%s/@@download/file/%s" % (self.context.getLastChild().absolute_url(), filename)
-                descriptionString = _(u"Current version:<a href=%s>%s</a>" % (url, filename))
-                self.changeFieldDescription(
-                    label='Manuscript file',
-                    fieldName='IAttachedFile.attachFile',
-                    description=descriptionString)
+#        file = getattr(self.context.getLastChild(), 'file', None)
+#        import pdb; pdb.set_trace()
+#        if file:
+#            filename = getattr(file, 'filename', None)
+#            if filename:
+#嚴重錯誤，立即修復
+#                import pdb; pdb.set_trace()
+#                url = "%s/@@download/file/%s" % (self.context.getLastChild().absolute_url(), filename)
+#                descriptionString = _(u"Current version:<a href=%s>%s</a>" % (url, filename))
+#                self.changeFieldDescription(
+#                    label='Manuscript file',
+#                    fieldName='IAttachedFile.attachFile',
+#                    description=descriptionString)
 
 
 class ArticleEditView(DefaultEditView):
