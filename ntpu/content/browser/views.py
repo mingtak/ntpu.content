@@ -4,7 +4,7 @@ from plone import api
 from zope.interface import Interface
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from email.mime.text import MIMEText
-#from Products.CMFPlone.utils import safe_unicode
+from Products.CMFPlone.utils import safe_unicode
 from ntpu.content.journal import IJournal
 from ntpu.content.article import IArticle
 
@@ -117,7 +117,7 @@ class InviteReview(grok.View):
 #            email.append(item.email)
         email = article.assignInternalReviewer.to_object.email
         urlTag = "<p>稿件連結: <a href='%s'>%s</a></p>" % (article.absolute_url(), article.absolute_url())
-        accepter="<p>委員姓名: %s</p>" % accepter.encode('utf-8')
+        accepter="<p>委員姓名: %s</p>" % safe_unicode(accepter).encode('utf-8')
         head = """
                <html><body><p>
                  <strong>敬愛的教授</strong>您好:<br>

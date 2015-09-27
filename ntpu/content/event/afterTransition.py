@@ -187,11 +187,12 @@ def give_sn(item, event):
         return
 
     catalog = item.portal_catalog
-    brain = catalog({'Type':'Article'}, sort_on='sn', sort_order='reverse')
-    if not brain[0].sn:
-        item.sn = 1
-    else:
-        item.sn = brain[0].sn + 1
+    with api.env.adopt_user(username="alicelu@utaipei.edu.tw"):
+        brain = catalog({'Type':'Article'}, sort_on='sn', sort_order='reverse')
+        if not brain[0].sn:
+            item.sn = 1
+        else:
+            item.sn = brain[0].sn + 1
     item.reindexObject()
 
 

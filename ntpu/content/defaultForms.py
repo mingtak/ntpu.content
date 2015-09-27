@@ -128,6 +128,12 @@ class ArticleEditForm(DefaultEditForm):
 #改label end
 
         if 'Site Administrator' in view.getRoles():
+#            articleItem = selfBrain.getObject()
+#            if 'modifyThenReview' == api.content.get_state(obj=articleItem):
+            label = "Manuscript file"
+            keys = ['IAttachedFile.commentReply']
+            self.hiddenFields(label=label, mode=None, keys=keys)
+
             return
 
 
