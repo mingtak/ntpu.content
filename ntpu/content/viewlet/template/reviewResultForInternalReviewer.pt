@@ -1,5 +1,6 @@
 <tal:checkRoles define="results python:{'AR':'建議推薦', 'AMAR':'修改後推薦', 'MR':'修改後再審', 'REJ':'不予推薦'}"
                 condition="python:'Internal Reviewer' in view.getView.getRoles() and
+                                  view.getView.getCurrent().getId() == context.assignInternalReviewer.to_object.owner_info()['id'] and
                                   '@@edit' not in context.REQUEST['URL']">
 <h3>審查委員回復如下:</h3><br/>
 <tal:result define="reviewer python:context.assignExternalReviewer1"
