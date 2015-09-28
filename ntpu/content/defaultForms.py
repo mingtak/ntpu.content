@@ -193,6 +193,12 @@ class ArticleEditForm(DefaultEditForm):
             self.dropFieldSet(label='Authors')
             self.dropFieldSet(label='Manuscript file')
 
+        #if current_user not this article's internalreviewer, remove externalreviewer field.
+        #修正具責編身份者，同時被指定為另一篇論文評審委員的顯示問題
+        if api.user.get_current().getId() != articleItem.assignInternalReviewer.to_object.owner_info()['id']:
+            remove(self, 'assignExternalReviewer1')
+            remove(self, 'assignExternalReviewer2')
+            remove(self, 'assignExternalReviewer3')
 
         self.hiddenModifySubmission(articleItem)
 
