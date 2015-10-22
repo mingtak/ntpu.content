@@ -6,6 +6,26 @@ from Products.DCWorkflow.interfaces import IBeforeTransitionEvent
 from ntpu.content import MessageFactory as _
 
 
+#check have attach file
+@grok.subscribe(IArticle, IBeforeTransitionEvent)
+def checkAttachFile(item, event):
+#    import pdb; pdb.set_trace()
+    if event.new_state.getId() != 'submitted':
+        return
+
+    if not item.getChildNodes():
+        message = _(u"Must be upload Attach file.")
+
+        api.portal.show_message(
+            message=message,
+            request=item.REQUEST,
+            type='error'
+        )
+        raise Invalid(message)
+
+    return
+
+
 @grok.subscribe(IArticle, IBeforeTransitionEvent)
 def checkCommentReply(item, event):
     if event.new_state.getId() != 'retria':
@@ -17,7 +37,7 @@ def checkCommentReply(item, event):
     message = _(u"Must be upload comment replay file.")
     api.portal.show_message(
         message=message,
-        request=obj.REQUEST,
+        request=item.REQUEST,
         type='error'
     )
     raise Invalid(message)
@@ -34,7 +54,7 @@ def checkReviewFeedback(item, event):
     message = _(u"must be upload review feedback comment file")
     api.portal.show_message(
         message=message,
-        request=obj.REQUEST,
+        request=item.REQUEST,
         type='error'
     )
     raise Invalid(message)
